@@ -57,6 +57,9 @@ opt.scrolloff = 8
 -- faster time to trigger CursorHold
 opt.updatetime = 200
 
+-- Faster timeout for mapped sequences, also when which-key is triggered
+opt.timeoutlen = 500
+
 -- allow backspace over autoindent, line breaks, and beyond start of insert
 opt.backspace = "indent,eol,start"
 
