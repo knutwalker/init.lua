@@ -5,10 +5,7 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v2.x",
 	cmd = "Neotree",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"MunifTanjim/nui.nvim",
-	},
+	dependencies = { "MunifTanjim/nui.nvim" },
 	keys = require("knutwalker.keymap").neotree,
 	config = {
 		close_if_last_window = true,

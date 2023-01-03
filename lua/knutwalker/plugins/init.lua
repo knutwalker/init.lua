@@ -1,9 +1,13 @@
 local keymap = require("knutwalker.keymap")
 
 return {
+	{ "nvim-lua/plenary.nvim", lazy = true },
+
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
+
 	{ "tpope/vim-fugitive", cmd = "Git", keys = keymap.git },
 
-	{ "tpope/vim-unimpaired", event = "BufReadPre" },
+	{ "tpope/vim-unimpaired", event = "BufReadPost" },
 
 	{ "tpope/vim-obsession", event = "VeryLazy" },
 
@@ -11,9 +15,9 @@ return {
 
 	{ "editorconfig/editorconfig-vim", event = "BufReadPre" },
 
-	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
+	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPost" },
 
-	{ "numToStr/Comment.nvim", config = true },
+	{ "numToStr/Comment.nvim", config = true, event = "BufReadPost" },
 
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
 
@@ -25,7 +29,7 @@ return {
 
 	{ "folke/which-key.nvim", config = true },
 
-	{ "kylechui/nvim-surround", tag = "v1.0.0", event = "BufReadPre", config = true },
+	{ "kylechui/nvim-surround", tag = "v1.0.0", event = "BufReadPost", config = true },
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = { check_ts = true } },
 
@@ -33,6 +37,7 @@ return {
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufReadPost",
 		config = {
 			ohar = "",
 			space_char_blankline = " ",
@@ -70,7 +75,6 @@ return {
 	{
 		"saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
-		requires = { { "nvim-lua/plenary.nvim" } },
 		keys = keymap.crates,
 		config = true,
 	},
@@ -88,13 +92,12 @@ return {
 		"folke/todo-comments.nvim",
 		cmd = { "TodoTrouble", "TodoTelescope" },
 		event = "BufReadPost",
-		config = true,
 		keys = keymap.todo_comments,
+		config = true,
 	},
 
 	{
 		"folke/trouble.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons" },
 		cmd = { "TroubleToggle", "Trouble" },
 		keys = keymap.trouble,
 		config = {
