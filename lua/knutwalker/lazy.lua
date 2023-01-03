@@ -34,4 +34,3 @@ require("lazy").setup("knutwalker.plugins", {
 	},
 })
 vim.keymap.set("n", "<leader>lz", "<cmd>:Lazy<cr>")
-vim.keymap.set("n", "<leader>ly", "<cmd>:Lazy<cr>")

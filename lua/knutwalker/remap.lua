@@ -139,6 +139,7 @@ bind("n", "<leader>gl", function(cwd)
 		},
 	})
 end, { desc = "Open [l]azygit" })
+bind("n", "<leader>ly", "<leader>gl", { desc = "Open [l]az[y]git", remap = true })
 
 --- git-drive integration
 local function git_drive(args)
