@@ -119,10 +119,9 @@ return {
 			end, { "i", "s" }),
 		})
 
-		-- disable completion with tab
-		-- this helps with copilot setup
-		-- cmp_mappings["<Tab>"] = nil
-		-- cmp_mappings["<S-Tab>"] = nil
+		-- If you want insert `(` after select function or method item
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 		-- Setup LSP keymap when attached to an LSP
 		-- If rust-analyzer attaches, we use the rust-tools provided actions
