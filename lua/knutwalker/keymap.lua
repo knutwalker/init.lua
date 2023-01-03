@@ -94,17 +94,8 @@ M.crates = {
 		function()
 			require("crates").update_crate()
 		end,
-		desc = "[u]pdate [c]rate on current line",
-		noremap = true,
-		silent = true,
-	},
-	{
-		"<leader>cu",
-		function()
-			require("crates").update_crate()
-		end,
-		desc = "[u]pate [c]rates in selection",
-		"v",
+		mode = { "n", "v" },
+		desc = "[u]pdate [c]rate on line/in selection",
 		noremap = true,
 		silent = true,
 	},
@@ -122,17 +113,8 @@ M.crates = {
 		function()
 			require("crates").upgrade_crate()
 		end,
-		desc = "[U]pgrade [c]rate on current line",
-		noremap = true,
-		silent = true,
-	},
-	{
-		"<leader>cU",
-		function()
-			require("crates").upgrade_crate()
-		end,
-		desc = "[U]pgrade [c]rates in selection",
-		"v",
+		mode = { "n", "v" },
+		desc = "[U]pgrade [c]rate on line/in selection",
 		noremap = true,
 		silent = true,
 	},
@@ -422,6 +404,7 @@ M.dial = {
 		function()
 			return require("dial.map").inc_normal()
 		end,
+		desc = "Increment",
 		expr = true,
 		noremap = true,
 	},
@@ -430,6 +413,7 @@ M.dial = {
 		function()
 			return require("dial.map").dec_normal()
 		end,
+		desc = "Decrement",
 		expr = true,
 		noremap = true,
 	},
@@ -439,6 +423,7 @@ M.dial = {
 			return require("dial.map").inc_visual()
 		end,
 		mode = "v",
+		desc = "Increment",
 		expr = true,
 		noremap = true,
 	},
@@ -448,6 +433,7 @@ M.dial = {
 			return require("dial.map").dec_visual()
 		end,
 		mode = "v",
+		desc = "Decrement",
 		expr = true,
 		noremap = true,
 	},
@@ -457,6 +443,7 @@ M.dial = {
 			return require("dial.map").inc_gvisual()
 		end,
 		mode = "v",
+		desc = "Increment",
 		expr = true,
 		noremap = true,
 	},
@@ -466,6 +453,7 @@ M.dial = {
 			return require("dial.map").dec_gvisual()
 		end,
 		mode = "v",
+		desc = "Decrement",
 		expr = true,
 		noremap = true,
 	},
@@ -737,7 +725,7 @@ M.telescope = {
 		function()
 			require("telescope.builtin").registers()
 		end,
-		[[[F]ind ["]Registers]],
+		desc = [[[F]ind ["]Registers]],
 	},
 	{
 		"<leader>fk",
@@ -753,41 +741,41 @@ M.telescope = {
 		end,
 		desc = "[F]ind [c]commands",
 	},
-	{ "<leader>fe", ":Telescope symbols<CR>", "[F]ind [e]mojis" },
+	{ "<leader>fe", ":Telescope symbols<CR>", desc = "[F]ind [e]mojis" },
 	{
 		"<leader>gg",
 		function()
 			require("telescope.builtin").git_status()
 		end,
-		"[G]it status",
+		desc = "[G]it status",
 	},
 	{
 		"<leader>gb",
 		function()
 			require("telescope.builtin").git_branches()
 		end,
-		"[G]it [b]ranches",
+		desc = "[G]it [b]ranches",
 	},
 	{
 		"<leader>gc",
 		function()
 			require("telescope.builtin").git_commits()
 		end,
-		"[G]it [c]ommits",
+		desc = "[G]it [c]ommits",
 	},
 	{
 		"<leader>gd",
 		function()
 			require("telescope.builtin").git_bcommits()
 		end,
-		"[G]it [d]iff current file",
+		desc = "[G]it [d]iff current file",
 	},
 	{
 		"<leader>{",
 		function()
 			require("telescope.builtin").diagnostics()
 		end,
-		"Search Diagnostics",
+		desc = "Search Diagnostics",
 	},
 }
 
