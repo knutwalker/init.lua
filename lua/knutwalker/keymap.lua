@@ -625,6 +625,13 @@ M.telescope = {
 		desc = "Search files",
 	},
 	{
+		"<leader>?",
+		function()
+			require("telescope.builtin").find_files({ no_ignore = true })
+		end,
+		desc = "Search all files",
+	},
+	{
 		"<leader>b",
 		function()
 			require("telescope.builtin").buffers()
