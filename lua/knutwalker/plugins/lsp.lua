@@ -90,7 +90,7 @@ return {
 			-- Insert selected item
 			["<C-y>"] = cmp.mapping.confirm({ select = true }),
 			-- Replace with selected item
-			["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+			["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 			-- Open usggestions
 			["<C-space>"] = cmp.mapping.complete(),
 			-- Close suggestions, in all modes
