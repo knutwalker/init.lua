@@ -143,8 +143,8 @@ return {
 					border = "none",
 					floating_preview_opts = {},
 					peek_definition_code = {
-						["gdf"] = "@function.outer",
-						["gdF"] = "@class.outer",
+						["gk"] = "@function.outer",
+						["gh"] = "@class.outer",
 					},
 				},
 			},
