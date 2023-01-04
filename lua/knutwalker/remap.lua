@@ -39,7 +39,7 @@ bind("n", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
 bind("v", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
 
 -- always trigger ESC when Ctrl-C is pressed
-bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode" })
+bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode", noremap = true })
 
 -- faster write
 bind("n", "<leader>x", ":w<CR>", { desc = "Write buffer" })
@@ -67,11 +67,8 @@ bind(
 	{ desc = "Search/Replace word under cursor" }
 )
 
--- jk to exit insert mode
--- bind('i', 'jk', '<ESC>')
-
 -- space escape to remove highlighting
-bind("n", "<leader><ESC>", ":nohl<CR>", { desc = "Remove highlighting" })
+bind("n", "<ESC>", ":nohl<CR>", { desc = "Remove highlighting" })
 
 -- delete with space x without copying into register
 bind("n", "x", '"_x', { desc = "[X] Delete without copying into register" })

@@ -55,7 +55,7 @@ return {
 					end,
 				},
 			},
-			lualine_y = { "progress" },
+			lualine_y = { "progress", "searchcount" },
 			lualine_z = { { "location", separator = "", padding = 0 }, "ObsessionStatus" },
 		},
 		inactive_sections = {
