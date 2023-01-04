@@ -683,11 +683,11 @@ M.telescope = {
 		desc = "[F]ind [g]rep string across files (including hidden)",
 	},
 	{
-		"<leader>fw",
+		"<leader>f*",
 		function()
 			require("telescope.builtin").grep_string()
 		end,
-		desc = "[F]ind [w]ord under cursor across files",
+		desc = "[F]ind [*]word under cursor across files",
 	},
 	{
 		"<leader>f/",
