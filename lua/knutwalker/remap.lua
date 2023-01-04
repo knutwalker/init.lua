@@ -41,6 +41,9 @@ bind("v", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
 -- always trigger ESC when Ctrl-C is pressed
 bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode", noremap = true })
 
+-- use 0 to go to the first non-ws character
+bind("n", "0", "^", { desc = "Go to first non-whitespace character" })
+
 -- faster write
 bind("n", "<leader>x", ":w<CR>", { desc = "Write buffer" })
 
