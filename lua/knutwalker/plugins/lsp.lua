@@ -44,6 +44,12 @@ return {
 
 		-- LSP Signature
 		{ "ray-x/lsp_signature.nvim", config = true },
+
+		-- Incremental renaming
+		{
+			"smjonas/inc-rename.nvim",
+			config = true,
+		},
 	},
 	config = function()
 		local lsp = require("lsp-zero")
@@ -253,7 +259,11 @@ return {
 			end
 
 			if capabilities.renameProvider then
-				bind("<leader>rr", buf.rename, "[R]ename")
+				vim.keymap.set("n", "<leader>rr", function()
+					return ":IncRename " .. vim.fn.expand("<cword>")
+				end, { expr = true, desc = "LSP: [R]ename under cursor" })
+				bind("<leader>rn", ":IncRename ", "[R]e[n]ame to")
+				bind("<leader>rR", buf.rename, "[R]ename (non-incremental)")
 			end
 
 			if capabilities.signatureHelpProvider then
