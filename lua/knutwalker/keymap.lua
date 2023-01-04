@@ -714,11 +714,11 @@ M.telescope = {
 		desc = "[F]ind [h]elp tags",
 	},
 	{
-		"<leader>fx",
+		"<leader>f'",
 		function()
 			require("telescope.builtin").marks()
 		end,
-		desc = "[F]ind marks[x]",
+		desc = "[F]ind [']marks",
 	},
 	{
 		"<leader>fM",
