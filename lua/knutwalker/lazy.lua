@@ -28,7 +28,6 @@ require("lazy").setup("knutwalker.plugins", {
 		rtp = {
 			disabled_plugins = {
 				"netrwPlugin",
-				"matchparen",
 			},
 		},
 	},
