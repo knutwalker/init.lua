@@ -105,4 +105,22 @@ return {
 			use_diagnostic_signs = true,
 		},
 	},
+
+	{
+		"princejoogie/chafa.nvim",
+		dependencies = {
+			"m00qek/baleia.nvim",
+		},
+		event = {
+			"BufReadPre *.jpeg",
+			"BufReadPre *.jpg",
+			"BufReadPre *.png",
+			"BufReadPre *.bmp",
+			"BufReadPre *.webp",
+			"BufReadPre *.tiff",
+			"BufReadPre *.tif",
+		},
+		cmd = "ViewImage",
+		config = true,
+	},
 }
