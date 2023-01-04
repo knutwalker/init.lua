@@ -4,9 +4,6 @@ vim.g.maplocalleader = " "
 
 local bind = vim.keymap.set
 
--- Disable default space behavior
-bind({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-
 -- move things around in visual mode
 bind("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 bind("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
