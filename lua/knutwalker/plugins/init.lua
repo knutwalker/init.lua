@@ -11,7 +11,7 @@ return {
 
 	{ "tpope/vim-obsession", event = "VeryLazy" },
 
-	{ "makerj/vim-pdf", ft = "pdf" },
+	{ "makerj/vim-pdf", event = "BufReadPre *.pdf" },
 
 	{ "editorconfig/editorconfig-vim", event = "BufReadPre" },
 
@@ -74,7 +74,7 @@ return {
 
 	{
 		"saecki/crates.nvim",
-		event = { "BufRead Cargo.toml" },
+		event = { "BufReadPre Cargo.toml" },
 		keys = keymap.crates,
 		config = true,
 	},
