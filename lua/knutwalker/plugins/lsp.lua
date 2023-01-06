@@ -267,7 +267,7 @@ return {
 			end
 
 			if capabilities.signatureHelpProvider then
-				bind("<leader>h", buf.signature_help, "Signature [H]elp")
+				bind("<leader>H", buf.signature_help, "Signature [H]elp")
 				bind("<C-h>", buf.signature_help, "Signature [H]elp", "i")
 			end
 
