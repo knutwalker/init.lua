@@ -505,21 +505,6 @@ return {
 		vim.keymap.set("n", "<leader>}", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
 		vim.keymap.set("i", "<M-d>", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
 
-		-- Use single line diagnostics while in insert mode
-		-- and multiline diagnostics when not in insert mode
-
-		vim.api.nvim_create_autocmd("InsertEnter", {
-			callback = function()
-				vim.diagnostic.config({ virtual_lines = false, virtual_text = true })
-			end,
-		})
-
-		vim.api.nvim_create_autocmd("InsertLeave", {
-			callback = function()
-				vim.diagnostic.config({ virtual_lines = true, virtual_text = false })
-			end,
-		})
-
 		-- Configure rust-tools
 
 		local extension_path = vim.fn.stdpath("data") .. "/codelldb/extension/"
