@@ -102,6 +102,7 @@ return {
 		keys = keymap.trouble,
 		config = {
 			auto_open = false,
+			auto_jump = {},
 			use_diagnostic_signs = true,
 		},
 	},
