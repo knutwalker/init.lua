@@ -174,16 +174,14 @@ M.dap = {
 		desc = "Debugger: Start",
 	},
 	{
-		-- Shift+F5
-		"<F17>",
+		"<S-F5>",
 		function()
 			require("dap").terminate()
 		end,
 		desc = "Debugger: Stop",
 	},
 	{
-		-- Control+F5
-		"<F29>",
+		"<C-F5>",
 		function()
 			require("dap").restart_frame()
 		end,
@@ -197,8 +195,7 @@ M.dap = {
 		desc = "Debugger: Pause",
 	},
 	{
-		-- Shift + F8
-		"<F20>",
+		"<S-F8>",
 		function()
 			require("dap").toggle_breakpoint()
 		end,
@@ -219,8 +216,7 @@ M.dap = {
 		desc = "Debugger: Step Into",
 	},
 	{
-		-- Shift+F7
-		"<F19>",
+		"<S-F7>",
 		function()
 			require("dap").step_out()
 		end,
