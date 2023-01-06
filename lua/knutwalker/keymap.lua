@@ -824,6 +824,24 @@ M.trouble = {
 		silent = true,
 		noremap = true,
 	},
+	{
+		"]x",
+		function()
+			require("trouble").next({ skip_groups = true, jump = true })
+		end,
+		desc = "Jump to the next Trouble item",
+		silent = true,
+		nowait = true,
+	},
+	{
+		"[x",
+		function()
+			require("trouble").previous({ skip_groups = true, jump = true })
+		end,
+		desc = "Jump to the previous Trouble item",
+		silent = true,
+		nowait = true,
+	},
 }
 
 M.zen_mode = {
