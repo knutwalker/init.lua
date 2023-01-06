@@ -283,11 +283,26 @@ return {
 			end
 
 			if client.name == "rust_analyzer" then
-				local bindra = function(keys, func, desc)
+				local bindra = function(keys, func, desc, mode)
 					desc = "[R]ust " .. desc
-					vim.keymap.set("n", keys, func, { buffer = bufnr, remap = false, desc = desc })
+					mode = mode or "n"
+					vim.keymap.set(mode, keys, func, { buffer = bufnr, remap = false, desc = desc })
 				end
 
+				local hints_on = false
+				local function toggle_hints()
+					local enable = not hints_on
+					hints_on = enable
+					print("Inlay hints have been " .. (enable and "enabled" or "disabled"))
+					if enable then
+						rt.inlay_hints.set()
+					else
+						rt.inlay_hints.unset()
+					end
+				end
+
+				bindra("<leader>h", toggle_hints, "Toggle inlay [h]ints", { "n", "v" })
+				bindra("<M-h>", toggle_hints, "Toggle inlay [h]ints", "i")
 				bindra("<leader>Rhs", rt.inlay_hints.set, "inlay [h]ints [s]et")
 				bindra("<leader>Rhu", rt.inlay_hints.unset, "inlay [h]ints [u]nset")
 				bindra("<leader>Rhe", rt.inlay_hints.enable, "inlay [h]ints [e]nable")
