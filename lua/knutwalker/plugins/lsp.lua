@@ -568,6 +568,7 @@ return {
 			server = rust_lsp_opts,
 			tools = {
 				inlay_hints = {
+					auto = false,
 					only_current_line = false,
 				},
 				hover_actions = {
