@@ -478,10 +478,10 @@ return {
 			-- Update diagnostics live while typing
 			-- if false, diagnostics are only updated on InsertLeave
 			update_in_insert = true,
-			-- Don't show diagnostics in the virtual text
-			virtual_text = false,
-			-- Show diagnostics as multiple lines
-			virtual_lines = true,
+			-- Single line diagnostics at the end
+			virtual_text = true,
+			-- multi line diagnostics in between
+			virtual_lines = false,
 		})
 
 		-- save configs for RA and null-ls since we set those up manually
