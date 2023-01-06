@@ -534,6 +534,7 @@ return {
 				cachePriming = { numThreads = 4 },
 				checkOnSave = { command = "clippy" },
 				completion = { callable = { snippets = "add_parentheses" }, privateEditable = { enable = true } },
+				diagnostics = { disabled = { "inactive-code" } },
 				files = { excludeDirs = { "references" } },
 				hover = {
 					actions = {
