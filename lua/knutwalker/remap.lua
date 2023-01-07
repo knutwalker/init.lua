@@ -132,6 +132,15 @@ bind("n", "<leader>gl", function()
 end, { desc = "Open [l]azygit" })
 bind("n", "<leader>ly", "<leader>gl", { desc = "Open [l]az[y]git", remap = true })
 
+-- git-coprs integration
+bind("n", "<leader>gp", function()
+	require("lazy.util").float_term({ "git-coprs" }, {
+		border = "rounded",
+		size = { width = 0.9, height = 0.9 },
+		margin = { top = 0, right = 0, bottom = 0, left = 0 },
+	})
+end, { desc = "Open [G]ithub [P]Rs for selection with git-coprs" })
+
 --- git-drive integration
 local function git_drive(args)
 	local cmd = { "git-drive" }
