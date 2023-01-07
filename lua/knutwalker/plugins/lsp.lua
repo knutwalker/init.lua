@@ -159,6 +159,8 @@ return {
 					bind([[<leader>\]], rt.hover_actions.hover_actions, "RA Hover Action", { "n", "x", "v" })
 				end
 				bind("<leader><CR>", buf.code_action, "Code Action", { "n", "x", "v" })
+				bind("<M-Return>", buf.code_action, "Code Action", { "n", "x", "v" })
+				bind("<M-Return>", "<C-o>:lua vim.lsp.buf.code_action()<CR>", "Code Action", { "i" })
 			end
 
 			if capabilities.codeLensProvider then
