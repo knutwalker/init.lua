@@ -17,8 +17,6 @@ return {
 
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPost" },
 
-	{ "numToStr/Comment.nvim", config = true, event = "BufReadPost" },
-
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
 
 	{ "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
@@ -85,6 +83,15 @@ return {
 		config = function()
 			require("refactoring").setup({})
 			require("telescope").load_extension("refactoring")
+		end,
+	},
+
+	{
+		"echasnovski/mini.comment",
+		branch = "stable",
+		event = "BufReadPost",
+		config = function()
+			require("mini.comment").setup()
 		end,
 	},
 
