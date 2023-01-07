@@ -27,8 +27,6 @@ return {
 
 	{ "folke/which-key.nvim", config = true },
 
-	{ "kylechui/nvim-surround", tag = "v1.0.0", event = "BufReadPost", config = true },
-
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = { check_ts = true } },
 
 	{ "szw/vim-maximizer", keys = keymap.maximizer, cmd = "MaximizerToggle" },
