@@ -44,9 +44,6 @@ bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode",
 -- use 0 to go to the first non-ws character
 bind("n", "0", "^", { desc = "Go to first non-whitespace character" })
 
--- faster write
-bind("n", "<leader>x", ":w<CR>", { desc = "Write buffer" })
-
 -- save in insert mode
 bind("i", "<C-s>", "<CMD>:w<CR><ESC>")
 bind("n", "<C-s>", "<CMD>:w<CR><ESC>")

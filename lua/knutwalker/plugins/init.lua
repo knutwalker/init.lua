@@ -31,6 +31,8 @@ return {
 
 	{ "szw/vim-maximizer", keys = keymap.maximizer, cmd = "MaximizerToggle" },
 
+	{ "famiu/bufdelete.nvim", keys = keymap.bufdelete, cmd = { "Bdelete" } },
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",

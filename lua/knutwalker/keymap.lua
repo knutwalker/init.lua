@@ -881,4 +881,17 @@ M.symbols_outline = {
 	{ "<F12>", "<cmd>SymbolsOutline<CR>", mode = { "n", "v", "i" }, desc = "Symbols outline" },
 }
 
+M.bufdelete = {
+	{
+		"<leader>x",
+		"<cmd>Bdelete<CR>",
+		desc = "Delete buffer",
+	},
+	{
+		"<leader>X",
+		"<cmd>Bdelete!<CR>",
+		desc = "Force Delete buffer",
+	},
+}
+
 return M
