@@ -96,8 +96,12 @@ return {
 			-- Close suggestions, in all modes
 			["<C-e>"] = cmp.mapping.close(),
 			-- Close suggestions, only in insert mode
-			["<ESC>"] = cmp.mapping(function()
-				cmp.close()
+			["<ESC>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.close()
+				else
+					fallback()
+				end
 			end, { "i" }),
 			-- Tab selects the next placeholder, the next item, expands the snippet, or calls the fallback
 			["<Tab>"] = cmp.mapping(function(fallback)
