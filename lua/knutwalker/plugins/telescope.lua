@@ -21,12 +21,12 @@ return {
 				sorting_strategy = "ascending",
 				mappings = {
 					i = {
-						["<c-t>"] = function(...)
+						["<c-y>"] = function(...)
 							require("trouble.providers.telescope").open_with_trouble(...)
 						end,
 					},
 					n = {
-						["<c-t>"] = function(...)
+						["<c-y>"] = function(...)
 							require("trouble.providers.telescope").open_with_trouble(...)
 						end,
 					},
