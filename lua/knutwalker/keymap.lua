@@ -744,7 +744,20 @@ M.telescope = {
 		end,
 		desc = "[F]ind [c]commands",
 	},
-	{ "<leader>fe", ":Telescope symbols<CR>", desc = "[F]ind [e]mojis" },
+	{
+		"<leader>fe",
+		function()
+			require("telescope.builtin").symbols({ sources = { "emoji" } })
+		end,
+		desc = "[F]ind [e]mojis",
+	},
+	{
+		"<leader>fE",
+		function()
+			require("telescope.builtin").symbols({ sources = { "emoji", "kaomoji", "gitmoji" } })
+		end,
+		desc = "[F]ind All [E]mojis",
+	},
 	{
 		"<leader>gg",
 		function()
