@@ -521,9 +521,16 @@ M.neotree = {
 	{
 		"<leader>t",
 		function()
-			require("neo-tree.command").execute({ toggle = true })
+			require("neo-tree.command").execute({ action = "focus", reveal = true })
 		end,
-		desc = "Open File[t]ree",
+		desc = "Open/Focus File[t]ree",
+	},
+	{
+		"<leader>T",
+		function()
+			require("neo-tree.command").execute({ action = "close" })
+		end,
+		desc = "Close File[t]ree",
 	},
 }
 
