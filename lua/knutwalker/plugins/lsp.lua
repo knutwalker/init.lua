@@ -24,6 +24,28 @@ return {
 		"hrsh7th/cmp-emoji",
 		"saadparwaiz1/cmp_luasnip",
 
+		-- Copilot autocompletion
+		{
+			"zbirenbaum/copilot-cmp",
+			dependencies = {
+				{
+					"zbirenbaum/copilot.lua",
+					event = "InsertEnter",
+					config = {
+						panel = {
+							enabled = false,
+						},
+						suggestion = {
+							enabled = false,
+							auto_trigger = false,
+						},
+						filetypes = { TelescopePrompt = false, markdown = true, yaml = true },
+					},
+				},
+			},
+			config = true,
+		},
+
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
@@ -416,6 +438,7 @@ return {
 						git = "[git]",
 						path = "[path]",
 						buffer = "[buf]",
+						Copilot = "[copilot]",
 					},
 				}),
 			},
@@ -424,6 +447,8 @@ return {
 			sorting = {
 				priority_weight = 2,
 				comparators = {
+					require("copilot_cmp.comparators").prioritize,
+					require("copilot_cmp.comparators").score,
 
 					-- cmp.config.compare.exact,
 					cmp.config.compare.locality,
@@ -449,6 +474,7 @@ return {
 
 			-- setup completion sources
 			sources = cmp.config.sources({
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
 				{ name = "luasnip" },
