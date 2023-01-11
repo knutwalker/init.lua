@@ -103,10 +103,23 @@ return {
 						-- You can use the capture groups defined in textobjects.scm
 						["aa"] = { query = "@parameter.outer", desc = "Select outer parameter" },
 						["ia"] = { query = "@parameter.inner", desc = "Select inner parameter" },
+						["ab"] = { query = "@block.outer", desc = "Select outer block" },
+						["ib"] = { query = "@block.inner", desc = "Select inner block" },
 						["af"] = { query = "@function.outer", desc = "Select outer function" },
 						["if"] = { query = "@function.inner", desc = "Select inner function" },
 						["ac"] = { query = "@class.outer", desc = "Select outer class" },
 						["ic"] = { query = "@class.inner", desc = "Select inner class" },
+						["a/"] = { query = "@comment.outer", desc = "Select outer comment" },
+						["i/"] = { query = "@comment.outer", desc = "Select outer comment" },
+
+						["a<leader>a"] = { query = "@call.outer", desc = "Select outer call" },
+						["i<leader>a"] = { query = "@call.inner", desc = "Select inner call" },
+						["a<leader>c"] = { query = "@conditional.outer", desc = "Select outer conditional" },
+						["i<leader>c"] = { query = "@conditional.inner", desc = "Select inner conditional" },
+						["a<leader>l"] = { query = "@loop.outer", desc = "Select outer loop" },
+						["i<leader>l"] = { query = "@loop.inner", desc = "Select inner loop" },
+						["a<leader>s"] = { query = "@statement.outer", desc = "Select outer statement" },
+						["i<leader>s"] = { query = "@statement.inner", desc = "Select inner statement" },
 					},
 				},
 				move = {
