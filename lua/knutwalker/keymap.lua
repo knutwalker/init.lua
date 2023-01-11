@@ -731,6 +731,13 @@ M.telescope = {
 		desc = "[F]ind [M]an",
 	},
 	{
+		[[<leader>"]],
+		function()
+			require("telescope.builtin").registers()
+		end,
+		desc = [[[F]ind ["]Registers]],
+	},
+	{
 		[[<leader>f"]],
 		function()
 			require("telescope.builtin").registers()
