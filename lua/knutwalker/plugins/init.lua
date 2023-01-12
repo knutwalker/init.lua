@@ -33,6 +33,8 @@ return {
 
 	{ "famiu/bufdelete.nvim", keys = keymap.bufdelete, cmd = { "Bdelete" } },
 
+	{ "avli/vim-lox-syntax", event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",

@@ -162,5 +162,18 @@ return {
 				},
 			},
 		})
+		local lox_ts_path = vim.fn.stdpath("data") .. "/lox/tree-sitter-lox"
+		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+		parser_config.lox = {
+			install_info = {
+				url = lox_ts_path,
+				files = { "src/parser.c" },
+				branch = "main",
+				generate_requires_npm = true,
+				requires_generate_from_grammar = false,
+			},
+			filetype = "lox",
+		}
+		require("plenary.filetype").add_file("crox")
 	end,
 }
