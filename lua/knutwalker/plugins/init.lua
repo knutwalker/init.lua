@@ -37,6 +37,8 @@ return {
 
 	{ "kosayoda/nvim-lightbulb", event = "BufReadPre", opts = { autocmd = { enabled = true } } },
 
+	{ "andrewferrier/debugprint.nvim", keys = "g?", config = true },
+
 	{
 		"RaafatTurki/hex.nvim",
 		config = true,
