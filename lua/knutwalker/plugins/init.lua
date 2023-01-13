@@ -27,7 +27,7 @@ return {
 
 	{ "folke/which-key.nvim", config = true },
 
-	{ "windwp/nvim-autopairs", event = "InsertEnter", config = { check_ts = true } },
+	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = { check_ts = true } },
 
 	{ "szw/vim-maximizer", keys = keymap.maximizer, cmd = "MaximizerToggle" },
 
@@ -38,7 +38,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
-		config = {
+		opts = {
 			ohar = "",
 			space_char_blankline = " ",
 			show_current_context = true,
@@ -58,7 +58,7 @@ return {
 		"karb94/neoscroll.nvim",
 		enabled = false,
 		event = "VeryLazy",
-		config = {
+		opts = {
 			-- All these keys will be mapped to their corresponding default scrolling animation
 			mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
 			hide_cursor = true, -- Hide cursor while scrolling
@@ -109,7 +109,7 @@ return {
 		"folke/trouble.nvim",
 		cmd = { "TroubleToggle", "Trouble" },
 		keys = keymap.trouble,
-		config = {
+		opts = {
 			auto_open = false,
 			auto_jump = {},
 			use_diagnostic_signs = true,

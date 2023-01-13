@@ -7,7 +7,7 @@ return {
 	cmd = "Neotree",
 	dependencies = { "MunifTanjim/nui.nvim" },
 	keys = require("knutwalker.keymap").neotree,
-	config = {
+	opts = {
 		close_if_last_window = true,
 		sort_case_insensitive = true,
 		filesystem = {

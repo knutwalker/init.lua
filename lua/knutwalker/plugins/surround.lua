@@ -2,7 +2,7 @@ return {
 	"kylechui/nvim-surround",
 	tag = "v1.0.0",
 	event = "BufReadPost",
-	config = {
+	opts = {
 		surrounds = {
 			["y"] = {
 				add = function()
