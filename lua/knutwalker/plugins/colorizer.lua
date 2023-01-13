@@ -2,7 +2,7 @@ return {
 	"NvChad/nvim-colorizer.lua",
 	event = "BufReadPre",
 	opts = {
-		filetypes = { "*", "!lazy" },
+		filetypes = { "*", "!lazy", "!mason" },
 		user_default_options = {
 			RGB = true, -- #RGB hex codes
 			RRGGBB = true, -- #RRGGBB hex codes
