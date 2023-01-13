@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+-- big cursor in insert mode
+opt.guicursor = "n-v-c-sm:hor100,i-ci-ve:ver25,r-cr-o:block"
 -- highlight line with cursor
 opt.cursorline = true
 
