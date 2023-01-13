@@ -908,4 +908,14 @@ M.bufdelete = {
 	},
 }
 
+M.hex = {
+	{
+		"<leader>zx",
+		function()
+			require("hex").toggle()
+		end,
+		desc = "Toggle He[x]",
+	},
+}
+
 return M

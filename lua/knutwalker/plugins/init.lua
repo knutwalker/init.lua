@@ -38,6 +38,18 @@ return {
 	{ "kosayoda/nvim-lightbulb", event = "BufReadPre", opts = { autocmd = { enabled = true } } },
 
 	{
+		"RaafatTurki/hex.nvim",
+		config = true,
+		keys = keymap.hex,
+		cmd = {
+			"HexDump",
+			"HexAssemble",
+			"HexToggle",
+		},
+		event = { "BufReadPre *.out", "BufReadPre *.bin" },
+	},
+
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
 		opts = {
