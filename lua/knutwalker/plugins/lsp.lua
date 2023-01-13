@@ -485,6 +485,8 @@ return {
 			}, {
 				{ name = "buffer", keyword_length = 5 },
 			}),
+
+			view = { entries = { name = "custom", selection_order = "near_cursor" } },
 		})
 
 		lsp.set_preferences({
