@@ -35,6 +35,8 @@ return {
 
 	{ "avli/vim-lox-syntax", event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
 
+	{ "kosayoda/nvim-lightbulb", event = "BufReadPre", opts = { autocmd = { enabled = true } } },
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
