@@ -24,6 +24,11 @@ return {
 			lualine_a = { "mode" },
 			lualine_b = {
 				{ "diagnostics", separator = "" },
+				{
+					function()
+						return require("nvim-lightbulb").get_status_text()
+					end,
+				},
 			},
 			lualine_c = {
 				{
