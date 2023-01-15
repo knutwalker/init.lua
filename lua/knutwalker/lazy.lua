@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-local default_color_scheme = "onedark_dark"
+local default_color_scheme = "onedark_vivid"
 function ColorMyPencils(color)
 	color = color or default_color_scheme
 	vim.cmd.colorscheme(color)
