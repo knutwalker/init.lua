@@ -17,7 +17,7 @@ function M.setup_before_lsp()
 		-- if false, diagnostics are only updated on InsertLeave
 		update_in_insert = true,
 		-- Single line diagnostics at the end
-		virtual_text = true,
+		virtual_text = false,
 		-- multi line diagnostics in between
 		virtual_lines = false,
 	})
