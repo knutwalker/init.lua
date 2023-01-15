@@ -22,20 +22,13 @@ return {
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", "diagnostics" },
+			lualine_b = {
+				{ "diagnostics", separator = "" },
+			},
 			lualine_c = {
 				{
 					"filename",
 					path = 1, -- show relative path to project root
-				},
-				{
-					function()
-						local ret = require("nvim-navic").get_location()
-						return ret:len() > 2000 and "navic error" or ret
-					end,
-					cond = function()
-						return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-					end,
 				},
 			},
 			lualine_x = {
@@ -66,7 +59,24 @@ return {
 			lualine_y = {},
 			lualine_z = {},
 		},
-		tabline = {},
+		tabline = {
+			lualine_a = {},
+			lualine_b = { "branch", "diff" },
+			lualine_c = {
+				{
+					function()
+						local ret = require("nvim-navic").get_location()
+						return ret:len() > 2000 and "navic error" or ret
+					end,
+					cond = function()
+						return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+					end,
+				},
+			},
+			lualine_x = {},
+			lualine_y = {},
+			lualine_z = { "tabs" },
+		},
 		winbar = {},
 		inactive_winbar = {},
 		extensions = { "fugitive", "neo-tree", "nvim-dap-ui", "symbols-outline", "quickfix" },
