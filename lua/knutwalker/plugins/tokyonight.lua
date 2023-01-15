@@ -41,6 +41,6 @@ return {
 		})
 
 		tokyonight.load()
-		ColorMyPencils()
+		require("knutwalker.colors").set()
 	end,
 }

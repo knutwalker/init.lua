@@ -12,7 +12,6 @@ return {
 				highlight_inactive_windows = true, -- When the window is out of focus, change the normal background?
 			},
 		})
-
-		ColorMyPencils()
+		require("knutwalker.colors").set()
 	end,
 }

@@ -877,7 +877,7 @@ M.zen_mode = {
 		function()
 			require("zen-mode").toggle()
 			vim.wo.wrap = false
-			ColorMyPencils()
+			require("knutwalker.colors").set()
 		end,
 		desc = "Toggle [Z]en mode",
 	},

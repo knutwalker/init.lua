@@ -80,17 +80,6 @@ return {
 			"sumneko_lua",
 		})
 
-		-- Fix Undefined global 'ColorMyPencils'
-		lsp.configure("sumneko_lua", {
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "ColorMyPencils" },
-					},
-				},
-			},
-		})
-
 		require("knutwalker.plugins.lsp.cmp").setup(lsp)
 		require("knutwalker.plugins.lsp.diagnostics").setup_before_lsp()
 		lsp.on_attach(require("knutwalker.plugins.lsp.attach").setup())
@@ -109,7 +98,6 @@ return {
 			configure_diagnostics = false,
 		})
 
-
 		-- save configs for RA/JDT and null-ls since we set those up manually
 		local rust_lsp_opts = lsp.build_options("rust_analyzer", {})
 		local jdtls_lsp_opts = lsp.build_options("jdtls", {})
@@ -120,7 +108,6 @@ return {
 
 		-- Setup LSP diagnostics
 		require("knutwalker.plugins.lsp.diagnostics").setup_after_lsp()
-
 
 		-- Configure rust-tools
 		require("knutwalker.plugins.lsp.rust").setup(rust_lsp_opts)
