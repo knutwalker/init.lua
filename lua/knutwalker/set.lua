@@ -44,7 +44,7 @@ opt.list = true
 opt.listchars = "space:·,lead:·,trail:·,nbsp:☐,tab:▸ ,extends:❯,precedes:❮"
 
 -- always show the sign column
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = "number"
 
 -- show columns at 80 and 120 width
 opt.colorcolumn = "80,120"
