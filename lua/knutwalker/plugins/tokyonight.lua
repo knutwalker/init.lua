@@ -1,7 +1,6 @@
 -- Tokyo Night colorscheme
 return {
 	"folke/tokyonight.nvim",
-	enabled = false,
 	lazy = false,
 	priority = 1000,
 	config = function()
@@ -14,7 +13,7 @@ return {
 			styles = {
 				-- Style to be applied to different syntax groups
 				-- Value is any valid attr-list value for `:help nvim_set_hl`
-				comments = { italic = true },
+				comments = {},
 				keywords = {},
 				functions = {},
 				variables = {},
@@ -22,12 +21,16 @@ return {
 				sidebars = "dark", -- style for sidebars, see below
 				floats = "transparent", -- style for floating windows
 			},
+			on_highlights = function(hl, c)
+				hl.GitSignsAdd = { fg = c.green }
+				hl.GitSignsChange = { fg = c.yellow }
+				hl.GitSignsDelete = { fg = c.red }
+			end,
 			-- Set a darker background on sidebar-like windows. For example: `['qf', 'vista_kind', 'terminal', 'packer']`
 			sidebars = {
 				"qf",
 				"vista_kind",
 				"terminal",
-				-- "packer",
 				"spectre_panel",
 				"NeogitStatus",
 				"help",
