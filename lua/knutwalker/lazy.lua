@@ -12,10 +12,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
+local default_color_scheme = "onedark_dark"
+function ColorMyPencils(color)
+	color = color or default_color_scheme
+	vim.cmd.colorscheme(color)
+end
+
 -- load lazy
 require("lazy").setup("knutwalker.plugins", {
 	defaults = { lazy = false },
-	install = { colorscheme = { "tokyonight-moon" } },
+	install = { colorscheme = { default_color_scheme } },
 	checker = {
 		-- do not automatically check for plugin updates
 		enabled = false,
