@@ -23,8 +23,6 @@ return {
 
 	{ "ThePrimeagen/harpoon", keys = keymap.harpoon },
 
-	{ "mbbill/undotree", cmd = "UndotreeToggle", keys = keymap.undotree },
-
 	{ "folke/which-key.nvim", config = true },
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = { check_ts = true } },
