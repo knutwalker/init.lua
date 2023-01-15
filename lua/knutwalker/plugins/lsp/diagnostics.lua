@@ -21,20 +21,29 @@ function M.setup_before_lsp()
 		-- multi line diagnostics in between
 		virtual_lines = false,
 	})
+
+	-- Toggle between multiline and single line diagnostics
+	local function toggle_lsp_lines()
+		local config = vim.diagnostic.config()
+		local flag = config.virtual_text
+		vim.diagnostic.config({ virtual_lines = flag, virtual_text = not flag })
+	end
+	vim.keymap.set("n", "<leader>]", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
+	vim.keymap.set("i", "<M-d>", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
+
+	-- Toggle between diagnostics on and off
+	local function toggle_lsp_diagnostics()
+		local config = vim.diagnostic.config()
+		local flag = config.virtual_text or config.virtual_lines
+		vim.diagnostic.config({ virtual_lines = false, virtual_text = not flag })
+	end
+	vim.keymap.set("n", "<leader>}", toggle_lsp_diagnostics, { desc = "Toggle LSP diagnostics" })
+	vim.keymap.set("i", "<M-S-d>", toggle_lsp_diagnostics, { desc = "Toggle LSP diagnostics" })
 end
 
 function M.setup_after_lsp()
 	-- Readme says to setup lsp-lines after lspconfig
 	require("lsp_lines").setup()
-
-	-- Toggle between multiline and single line diagnostics
-	local function toggle_lsp_lines()
-		local flag = not vim.diagnostic.config().virtual_lines
-		print("LSP lines has been " .. (flag and "enabled" or "disabled"))
-		vim.diagnostic.config({ virtual_lines = flag, virtual_text = not flag })
-	end
-	vim.keymap.set("n", "<leader>}", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
-	vim.keymap.set("i", "<M-d>", toggle_lsp_lines, { desc = "Toggle LSP line diagnostics" })
 end
 
 return M
