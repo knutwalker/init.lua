@@ -79,6 +79,6 @@ return {
 		},
 		winbar = {},
 		inactive_winbar = {},
-		extensions = { "fugitive", "neo-tree", "nvim-dap-ui", "symbols-outline", "quickfix" },
+		extensions = { "neo-tree", "nvim-dap-ui", "symbols-outline", "quickfix" },
 	},
 }
