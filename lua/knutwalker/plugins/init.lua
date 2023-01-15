@@ -33,8 +33,6 @@ return {
 
 	{ "avli/vim-lox-syntax", event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
 
-	{ "kosayoda/nvim-lightbulb", event = "BufReadPre", opts = { autocmd = { enabled = true } } },
-
 	{ "andrewferrier/debugprint.nvim", keys = "g?", config = true },
 
 	{
@@ -146,5 +144,26 @@ return {
 		},
 		cmd = "ViewImage",
 		config = true,
+	},
+
+	{
+		"kosayoda/nvim-lightbulb",
+		event = "BufReadPre",
+		opts = {
+			autocmd = {
+				-- setup autocommands to update availability
+				enabled = true,
+			},
+			sign = {
+				-- disable gutter sign
+				enabled = false,
+			},
+			status_text = {
+				-- enable text for status line
+				enabled = true,
+				text = "💡",
+				text_unavailable = "",
+			},
+		},
 	},
 }
