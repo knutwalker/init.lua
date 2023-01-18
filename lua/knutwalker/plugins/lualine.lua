@@ -34,6 +34,12 @@ return {
 				{
 					"filename",
 					path = 1, -- show relative path to project root
+					shorting_target = 0, -- don't shorten the path, important for the jdt fix
+					fmt = function(str)
+						-- only print the jar/class for jdt paths
+						local m = str:match("jdt://contents/([^?]+)%?=.*")
+						return m or str -- :gsub("%%%%5C", ""):gsub("%%%%3C", ""):gsub("%%%%3E", "")
+					end,
 				},
 			},
 			lualine_x = {
