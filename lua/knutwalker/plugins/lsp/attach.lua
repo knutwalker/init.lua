@@ -100,7 +100,7 @@ function M.setup()
 
 			bind("<leader>fM", function()
 				vim.g.autoformat_disabled = not vim.g.autoformat_disabled
-				print("Autoformat: " .. vim.inspect(not vim.g.autoformat_disabled))
+				vim.notify("Autoformat: " .. vim.inspect(not vim.g.autoformat_disabled))
 			end, "Toggle [F]or[m]at on save")
 
 			local auto_group = "lsp_auto_format_" .. bufnr

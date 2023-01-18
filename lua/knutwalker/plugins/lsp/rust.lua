@@ -73,7 +73,7 @@ function M.attach(bind)
 	local function toggle_hints()
 		local enable = not hints_on
 		hints_on = enable
-		print("Inlay hints have been " .. (enable and "enabled" or "disabled"))
+		vim.notify("Inlay hints have been " .. (enable and "enabled" or "disabled"))
 		if enable then
 			rt.inlay_hints.set()
 		else
