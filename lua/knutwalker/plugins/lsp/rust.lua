@@ -8,8 +8,9 @@ function M.setup(lsp_opts)
 			},
 			cachePriming = { numThreads = 4 },
 			checkOnSave = { command = "clippy" },
+			check = { command = "clippy" },
 			completion = { callable = { snippets = "add_parentheses" }, privateEditable = { enable = true } },
-			diagnostics = { disabled = { "inactive-code" } },
+			diagnostics = { enable = true, disabled = { "inactive-code" }, experimental = { enable = true } },
 			files = { excludeDirs = { "references" } },
 			hover = {
 				actions = {
