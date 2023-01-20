@@ -94,10 +94,10 @@ function M.attach(bind)
 
 	bind("<leader>Rj", function()
 		rt.move_item.move_item(false)
-	end, "[R]ust Move item down")
+	end, "[R]ust Move item down", { "n", "x", "v" })
 	bind("<leader>Rk", function()
 		rt.move_item.move_item(true)
-	end, "[R]ust Move item up")
+	end, "[R]ust Move item up", { "n", "x", "v" })
 
 	bind("<leader>Rha", rt.hover_actions.hover_actions, "[R]ust [h]over [a]ctions")
 	bind("<leader>Rhr", rt.hover_range.hover_range, "[R]ust [h]over [r]ange")
@@ -105,7 +105,7 @@ function M.attach(bind)
 	bind("<leader>Rc", rt.open_cargo_toml.open_cargo_toml, "[R]ust [c]argo toml")
 	bind("<leader>Rp", rt.parent_module.parent_module, "[R]ust [p]arent module")
 
-	bind("<leader>RJ", rt.join_lines.join_lines, "[R]ust [J]oin lines")
+	bind("<leader>RJ", rt.join_lines.join_lines, "[R]ust [J]oin lines", { "n", "x", "v" })
 
 	bind("<leader>Rs", function()
 		rt.ssr.ssr(vim.fn.input("SSR > "))
