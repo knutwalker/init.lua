@@ -35,6 +35,8 @@ return {
 
 	{ "andrewferrier/debugprint.nvim", keys = "g?", config = true },
 
+	{ "rareitems/put_at_end.nvim", keys = keymap.put_at_end },
+
 	{
 		"echasnovski/mini.move",
 		event = "BufReadPost",
