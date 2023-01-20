@@ -36,6 +36,14 @@ return {
 	{ "andrewferrier/debugprint.nvim", keys = "g?", config = true },
 
 	{
+		"echasnovski/mini.move",
+		event = "BufReadPost",
+		config = function()
+			require("mini.move").setup()
+		end,
+	},
+
+	{
 		"RaafatTurki/hex.nvim",
 		config = true,
 		keys = keymap.hex,
