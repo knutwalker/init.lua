@@ -92,6 +92,7 @@ bind("n", "<leader><tab>[", ":tabp<CR>", { desc = "[P]revious tab" })
 bind("n", "<leader><tab>f", ":tabfirst<CR>", { desc = "[F]irst tab" })
 bind("n", "<leader><tab>l", ":tablast<CR>", { desc = "[L]ast tab" })
 bind("n", "<leader><tab>c", ":tabclose<CR>", { desc = "[C]lose current tab" })
+bind("n", "<leader><tab>x", ":tabclose<CR>", { desc = "Close current tab" })
 bind("n", "<leader><tab><space>", ":tabs<CR>", { desc = "[L]ist all tabs" })
 
 -- navigate the quickfix list
