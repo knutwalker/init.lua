@@ -36,8 +36,8 @@ function M.setup()
 		bind("<M-Return>", buf.code_action, "Code Action", { "n", "x", "v" })
 		bind("<M-Return>", "<C-o>:lua vim.lsp.buf.code_action()<CR>", "Code Action", { "i" })
 
-		bind("<leader>lc", cl.run, "Run Code Lens")
-		bind("<leader>lR", cl.refresh, "Refresh Code Lens")
+		bind("<leader>lr", cl.run, "[R]un Code Lens")
+		bind("<leader>lR", cl.refresh, "[R]efresh Code Lens")
 
 		bind("gl", buf.declaration, "[G]o to dec[l]aration")
 
