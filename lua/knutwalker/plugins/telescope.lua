@@ -6,6 +6,7 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-symbols.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "gmake" },
+		{ "LukasPietzschmann/telescope-tabs", config = true, lazy = true },
 	},
 	keys = require("knutwalker.keymap").telescope,
 	config = function()

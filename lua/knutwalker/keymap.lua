@@ -807,6 +807,20 @@ M.telescope = {
 		end,
 		desc = "Search Diagnostics",
 	},
+	{
+		"<leader>f<tab>",
+		function()
+			require("telescope-tabs").list_tabs()
+		end,
+		desc = "Search Tabs",
+	},
+	{
+		"<leader><tab>`",
+		function()
+			require("telescope-tabs").go_to_previous()
+		end,
+		desc = "Go to previous tab",
+	},
 }
 
 M.todo_comments = {
