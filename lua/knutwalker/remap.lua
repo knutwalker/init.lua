@@ -59,6 +59,11 @@ bind("n", "Q", "<nop>")
 -- Open project in tmux session
 bind("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
+-- Toggle dark/light mode
+bind("n", "<leader>M", function()
+	require("knutwalker.colors").toggle()
+end, { desc = "Toggle dark/light [M]ode" })
+
 -- Search for selected word
 bind(
 	"n",
