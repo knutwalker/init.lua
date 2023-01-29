@@ -619,7 +619,9 @@ M.telescope = {
 		"<leader>/",
 		function()
 			local builtin = require("telescope.builtin")
-			local opts = {}
+			local opts = {
+				show_untracked = true,
+			}
 			local ok = pcall(builtin.git_files, opts)
 			if not ok then
 				builtin.find_files(opts)
