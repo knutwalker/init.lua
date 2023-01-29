@@ -37,6 +37,8 @@ return {
 
 	{ "rareitems/put_at_end.nvim", keys = keymap.put_at_end },
 
+	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
+
 	{
 		"echasnovski/mini.move",
 		event = "BufReadPost",
