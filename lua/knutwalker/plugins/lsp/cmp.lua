@@ -108,6 +108,7 @@ function M.setup(lsp)
 		preselect = "none",
 		-- matches what is configured in set.lua
 		completion = {
+			autocomplete = false,
 			completeopt = "menu,menuone,noinsert,noselect,preview",
 		},
 		-- configure the LSP as expansion engine, this should be set by LSP-zero as well
