@@ -26,9 +26,6 @@ opt.backup = false
 opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 opt.undofile = true
 
--- automatically write changes to file
-opt.autowrite = true
-
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
