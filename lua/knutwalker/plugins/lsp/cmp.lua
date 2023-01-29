@@ -142,9 +142,6 @@ function M.setup(lsp)
 		sorting = {
 			priority_weight = 2,
 			comparators = {
-				require("copilot_cmp.comparators").prioritize,
-				require("copilot_cmp.comparators").score,
-
 				-- cmp.config.compare.exact,
 				cmp.config.compare.locality,
 				cmp.config.compare.recently_used,
@@ -164,15 +161,18 @@ function M.setup(lsp)
 				cmp.config.compare.score,
 				cmp.config.compare.offset,
 				cmp.config.compare.order,
+
+				require("copilot_cmp.comparators").prioritize,
+				require("copilot_cmp.comparators").score,
 			},
 		},
 
 		-- setup completion sources
 		sources = cmp.config.sources({
-			{ name = "copilot" },
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
+			{ name = "copilot" },
 			{ name = "crates" },
 			{ name = "emoji" },
 			{ name = "git" },
