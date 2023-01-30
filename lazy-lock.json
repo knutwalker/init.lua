@@ -61,6 +61,7 @@
   "put_at_end.nvim": { "branch": "master", "commit": "e4b794b84ab32be9d9a8093c7ef08d7a8c9e5e50" },
   "refactoring.nvim": { "branch": "master", "commit": "57c32c6b7a211e5a3a5e4ddc4ad2033daff5cf9a" },
   "rust-tools.nvim": { "branch": "master", "commit": "b297167d9e01accc9b9afe872ce91e791df2dde0" },
+  "surround-ui.nvim": { "branch": "main", "commit": "3e89ea10fc38e447682435a23bfa27cf1ffea989" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "fab3e2212e206f4f8b3bbaa656e129443c9b802e" },
   "telescope-symbols.nvim": { "branch": "master", "commit": "f7d7c84873c95c7bd5682783dd66f84170231704" },

@@ -40,6 +40,20 @@ return {
 	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
 
 	{
+		"roobert/surround-ui.nvim",
+		keys = "<leader>m",
+		dependencies = {
+			"kylechui/nvim-surround",
+			"folke/which-key.nvim",
+		},
+		config = function()
+			require("surround-ui").setup({
+				root_key = "m",
+			})
+		end,
+	},
+
+	{
 		"echasnovski/mini.move",
 		event = "BufReadPost",
 		config = function()
