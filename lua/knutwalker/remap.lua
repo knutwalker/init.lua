@@ -20,6 +20,7 @@ bind("n", "N", "Nzzzv", { desc = "Previous search result" })
 
 -- paste with space v without losing the copied content
 bind({ "n", "v", "x" }, "<leader>v", '"_dp', { desc = "Paste without losing copied content" })
+bind({ "n", "v", "x" }, "<leader>V", '"_dP', { desc = "Paste without losing copied content" })
 
 -- yank and paste to and from the system clipboard
 bind("n", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
