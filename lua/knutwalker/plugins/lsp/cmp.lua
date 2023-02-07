@@ -172,12 +172,12 @@ function M.setup(lsp)
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
-			{ name = "copilot" },
 			{ name = "crates" },
 			{ name = "emoji" },
 			{ name = "git" },
 			{ name = "path" },
 		}, {
+			{ name = "copilot" },
 			{ name = "buffer", keyword_length = 5 },
 		}),
 
