@@ -76,7 +76,6 @@ return {
 
 		lsp.preset("recommended")
 
-
 		require("knutwalker.plugins.lsp.cmp").setup(lsp)
 		require("knutwalker.plugins.lsp.diagnostics").setup_before_lsp()
 		lsp.on_attach(require("knutwalker.plugins.lsp.attach").setup())
