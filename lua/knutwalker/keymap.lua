@@ -789,6 +789,13 @@ function M.telescope()
 			desc = "[F]ind All [E]mojis",
 		},
 		{
+			"<leader>fq",
+			function()
+				require("telescope.builtin").quickfix()
+			end,
+			desc = "[F]ind [q]uickfix items",
+		},
+		{
 			"<leader>gg",
 			function()
 				require("telescope.builtin").git_status()
