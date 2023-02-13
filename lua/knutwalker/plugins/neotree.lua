@@ -3,7 +3,7 @@ return {
 	branch = "v2.x",
 	cmd = "Neotree",
 	dependencies = { "MunifTanjim/nui.nvim" },
-	keys = require("knutwalker.keymap").neotree,
+	keys = require("knutwalker.keymap").neotree(),
 	init = function()
 		-- Unless you are still migrating, remove the deprecated commands from v1.x
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])

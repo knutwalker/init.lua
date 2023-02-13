@@ -1,7 +1,7 @@
 return {
 	"folke/zen-mode.nvim",
 	cmd = "ZenMode",
-	keys = require("knutwalker.keymap").zen_mode,
+	keys = require("knutwalker.keymap").zen_mode(),
 	opts = {
 		window = {
 			width = 90,

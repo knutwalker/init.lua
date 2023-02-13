@@ -1,7 +1,7 @@
 return {
 	"mbbill/undotree",
 	cmd = "UndotreeToggle",
-	keys = require("knutwalker.keymap").undotree,
+	keys = require("knutwalker.keymap").undotree(),
 	init = function()
 		-- Undotree config, before plugin is loaded
 		vim.g.undotree_WindowLayout = 4

@@ -1,6 +1,6 @@
 return {
 	"monaqa/dial.nvim",
-	keys = require("knutwalker.keymap").dial,
+	keys = require("knutwalker.keymap").dial(),
 	config = function()
 		local augend = require("dial.augend")
 		require("dial.config").augends:register_group({

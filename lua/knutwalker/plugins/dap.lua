@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-dap",
-	keys = require("knutwalker.keymap").dap,
+	keys = require("knutwalker.keymap").dap(),
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",

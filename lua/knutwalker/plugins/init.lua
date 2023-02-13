@@ -5,7 +5,7 @@ return {
 
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 
-	{ "tpope/vim-fugitive", cmd = "Git", keys = keymap.git },
+	{ "tpope/vim-fugitive", cmd = "Git", keys = keymap.git() },
 
 	{ "tpope/vim-unimpaired", event = "BufReadPost" },
 
@@ -21,21 +21,21 @@ return {
 
 	{ "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
 
-	{ "ThePrimeagen/harpoon", keys = keymap.harpoon },
+	{ "ThePrimeagen/harpoon", keys = keymap.harpoon() },
 
 	{ "folke/which-key.nvim", config = true },
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = { check_ts = true } },
 
-	{ "szw/vim-maximizer", keys = keymap.maximizer, cmd = "MaximizerToggle" },
+	{ "szw/vim-maximizer", keys = keymap.maximizer(), cmd = "MaximizerToggle" },
 
-	{ "famiu/bufdelete.nvim", keys = keymap.bufdelete, cmd = { "Bdelete" } },
+	{ "famiu/bufdelete.nvim", keys = keymap.bufdelete(), cmd = { "Bdelete" } },
 
 	{ "avli/vim-lox-syntax", event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
 
 	{ "andrewferrier/debugprint.nvim", keys = "g?", config = true },
 
-	{ "rareitems/put_at_end.nvim", keys = keymap.put_at_end },
+	{ "rareitems/put_at_end.nvim", keys = keymap.put_at_end() },
 
 	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
 
@@ -64,7 +64,7 @@ return {
 	{
 		"RaafatTurki/hex.nvim",
 		config = true,
-		keys = keymap.hex,
+		keys = keymap.hex(),
 		cmd = {
 			"HexDump",
 			"HexAssemble",
@@ -88,7 +88,7 @@ return {
 	{
 		"simrat39/symbols-outline.nvim",
 		cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-		keys = keymap.symbols_outline,
+		keys = keymap.symbols_outline(),
 		config = true,
 	},
 
@@ -113,13 +113,13 @@ return {
 	{
 		"saecki/crates.nvim",
 		event = { "BufReadPre Cargo.toml" },
-		keys = keymap.crates,
+		keys = keymap.crates(),
 		config = true,
 	},
 
 	{
 		"ThePrimeagen/refactoring.nvim",
-		keys = keymap.refactoring,
+		keys = keymap.refactoring(),
 		config = function()
 			require("refactoring").setup({})
 			require("telescope").load_extension("refactoring")
@@ -139,14 +139,14 @@ return {
 		"folke/todo-comments.nvim",
 		cmd = { "TodoTrouble", "TodoTelescope" },
 		event = "BufReadPost",
-		keys = keymap.todo_comments,
+		keys = keymap.todo_comments(),
 		config = true,
 	},
 
 	{
 		"folke/trouble.nvim",
 		cmd = { "TroubleToggle", "Trouble" },
-		keys = keymap.trouble,
+		keys = keymap.trouble(),
 		opts = {
 			auto_open = false,
 			auto_jump = {},

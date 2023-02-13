@@ -8,7 +8,7 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "gmake" },
 		{ "LukasPietzschmann/telescope-tabs", config = true, lazy = true },
 	},
-	keys = require("knutwalker.keymap").telescope,
+	keys = require("knutwalker.keymap").telescope(),
 	config = function()
 		local telescope = require("telescope")
 		telescope.setup({
