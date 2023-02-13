@@ -1007,4 +1007,49 @@ function M.hex()
 	}
 end
 
+function M.navigator()
+	return {
+		{
+			"<C-h>",
+			function()
+				require("Navigator").left()
+			end,
+			desc = "Move to the next pane left",
+			mode = { "n", "t" },
+		},
+		{
+			"<C-j>",
+			function()
+				require("Navigator").down()
+			end,
+			desc = "Move to the next pane down",
+			mode = { "n", "t" },
+		},
+		{
+			"<C-k>",
+			function()
+				require("Navigator").up()
+			end,
+			desc = "Move to the next pane up",
+			mode = { "n", "t" },
+		},
+		{
+			"<C-l>",
+			function()
+				require("Navigator").right()
+			end,
+			desc = "Move to the next pane right",
+			mode = { "n", "t" },
+		},
+		{
+			[[<C-\]],
+			function()
+				require("Navigator").previous()
+			end,
+			desc = "Move to the previous pane",
+			mode = { "n", "t" },
+		},
+	}
+end
+
 return M

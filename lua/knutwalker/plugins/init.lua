@@ -192,4 +192,10 @@ return {
 			},
 		},
 	},
+
+	{
+		"numToStr/Navigator.nvim",
+		keys = keymap.navigator(),
+		config = true,
+	},
 }

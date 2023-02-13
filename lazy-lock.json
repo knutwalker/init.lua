@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "58fbfc627a93281a77f7d161d4ff702e639677b1" },
+  "Navigator.nvim": { "branch": "master", "commit": "91d86506ac2a039504d5205d32a1d4bc7aa57072" },
   "baleia.nvim": { "branch": "main", "commit": "8ba437c2da2c917529e1c3952412a2780cecf6c6" },
   "bufdelete.nvim": { "branch": "master", "commit": "f79e9d186b42fba5f1b1362006e7c70240db97a4" },
   "cargo-limit": { "branch": "master", "commit": "4d1b4232f074b3b5d7647a591379cfdacc7a4ee9" },
