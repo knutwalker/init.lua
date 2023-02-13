@@ -76,9 +76,6 @@ return {
 
 		lsp.preset("recommended")
 
-		lsp.ensure_installed({
-			"sumneko_lua",
-		})
 
 		require("knutwalker.plugins.lsp.cmp").setup(lsp)
 		require("knutwalker.plugins.lsp.diagnostics").setup_before_lsp()
