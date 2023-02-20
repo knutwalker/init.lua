@@ -635,7 +635,7 @@ function M.telescope()
 		{
 			"<leader>/",
 			function()
-				local builtin = require("telescope.builtin")
+				local builtin = require("telescope").extensions.menufacture
 				local opts = {
 					show_untracked = true,
 				}
@@ -649,7 +649,7 @@ function M.telescope()
 		{
 			"<leader>?",
 			function()
-				require("telescope.builtin").find_files({ no_ignore = true })
+				require("telescope").extensions.menufacture.find_files({ no_ignore = true })
 			end,
 			desc = "Search all files",
 		},
@@ -670,14 +670,14 @@ function M.telescope()
 		{
 			"<leader>ff",
 			function()
-				require("telescope.builtin").find_files()
+				require("telescope").extensions.menufacture.find_files()
 			end,
 			desc = "[F]ind all [F]iles",
 		},
 		{
 			"<leader>fF",
 			function()
-				require("telescope.builtin").find_files({
+				require("telescope").extensions.menufacture.find_files({
 					hidden = true,
 					no_ignore = true,
 				})
@@ -687,14 +687,14 @@ function M.telescope()
 		{
 			"<leader>fg",
 			function()
-				require("telescope.builtin").live_grep()
+				require("telescope").extensions.menufacture.live_grep()
 			end,
 			desc = "[F]ind [g]rep string across files",
 		},
 		{
 			"<leader>fG",
 			function()
-				require("telescope.builtin").live_grep({
+				require("telescope").extensions.menufacture.live_grep({
 					hidden = true,
 					no_ignore = true,
 					additional_args = function(args)
@@ -707,7 +707,7 @@ function M.telescope()
 		{
 			"<leader>f*",
 			function()
-				require("telescope.builtin").grep_string()
+				require("telescope").extensions.menufacture.grep_string()
 			end,
 			desc = "[F]ind [*]word under cursor across files",
 		},

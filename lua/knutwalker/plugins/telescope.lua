@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-symbols.nvim",
+		"molecule-man/telescope-menufacture",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "gmake" },
 		{ "LukasPietzschmann/telescope-tabs", config = true, lazy = true },
 	},
@@ -42,5 +43,6 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
+		telescope.load_extension("menufacture")
 	end,
 }
