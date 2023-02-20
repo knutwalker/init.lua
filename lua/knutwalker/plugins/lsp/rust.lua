@@ -113,6 +113,22 @@ function M.attach(bind)
 	end, "[R]ust [s]tructural search/replace")
 
 	bind("<leader>RC", rt.crate_graph.view_crate_graph, "[R]ust [C]rate graph")
+
+	bind("<leader>RW", function()
+		local cargo = "^" .. os.getenv("HOME") .. "/.cargo/"
+		local rustup = "^" .. os.getenv("HOME") .. "/.rustup/"
+		local folders = vim.lsp.buf.list_workspace_folders()
+		for _, value in pairs(folders) do
+			print(value)
+			if value:find(cargo) ~= nil or value:find(rustup) ~= nil then
+				vim.notify("Removing rust stdlib at " .. value .. " from workspaces")
+				vim.lsp.buf.remove_workspace_folder(value)
+			elseif value:find(cargo) ~= nil then
+				vim.notify("Removing dependency at " .. value .. " from workspaces")
+				vim.lsp.buf.remove_workspace_folder(value)
+			end
+		end
+	end, "[R]ust clean [W]orkspace")
 end
 
 return M
