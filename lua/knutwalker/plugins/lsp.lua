@@ -27,27 +27,6 @@ return {
 		"hrsh7th/cmp-emoji",
 		"saadparwaiz1/cmp_luasnip",
 
-		-- Copilot autocompletion
-		{
-			"zbirenbaum/copilot-cmp",
-			dependencies = {
-				{
-					"zbirenbaum/copilot.lua",
-					event = "InsertEnter",
-					opts = {
-						panel = {
-							enabled = false,
-						},
-						suggestion = {
-							enabled = false,
-							auto_trigger = false,
-						},
-						filetypes = { TelescopePrompt = false, markdown = true, yaml = true },
-					},
-				},
-			},
-			config = true,
-		},
 
 		-- Snippets
 		"L3MON4D3/LuaSnip",

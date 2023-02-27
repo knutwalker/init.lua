@@ -148,14 +148,6 @@ function M.setup(lsp)
 				-- derank copilot entries
 				-- this is the inverse of
 				-- require("copilot_cmp.comparators").prioritize,
-				function(entry1, entry2)
-					if entry1.copilot and not entry2.copilot then
-						return false
-					elseif entry2.copilot and not entry1.copilot then
-						return true
-					end
-				end,
-				require("copilot_cmp.comparators").score,
 
 				cmp.config.compare.locality,
 				cmp.config.compare.recently_used,
@@ -187,7 +179,6 @@ function M.setup(lsp)
 			{ name = "emoji" },
 			{ name = "git" },
 			{ name = "path" },
-			{ name = "copilot" },
 		}, {
 			{ name = "buffer", keyword_length = 5 },
 		}),

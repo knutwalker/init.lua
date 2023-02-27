@@ -198,4 +198,23 @@ return {
 		keys = keymap.navigator(),
 		config = true,
 	},
+
+	{
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		keys = keymap.copilot(),
+		opts = {
+			panel = {
+				enabled = true,
+			},
+			suggestion = {
+				enabled = true,
+				auto_trigger = true,
+				keymap = {
+					accept = "<C-l>",
+				},
+			},
+			filetypes = { TelescopePrompt = false, markdown = true, yaml = true },
+		},
+	},
 }
