@@ -232,4 +232,14 @@ return {
 			"BufReadPre *.markdown",
 		},
 	},
+
+	{
+		"ellisonleao/glow.nvim",
+		cmd = "Glow",
+		opts = {
+			glow_path = "/opt/homebrew/bin/glow@1.4.1",
+			width_ratio = 0.8,
+			height_ratio = 0.8,
+		},
+	},
 }
