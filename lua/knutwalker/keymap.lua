@@ -1052,4 +1052,23 @@ function M.navigator()
 	}
 end
 
+function M.peek()
+	return {
+		{
+			"<leader>Mo",
+			function()
+				require("peek").open()
+			end,
+			desc = "[M]arkdown: [o]pen preview",
+		},
+		{
+			"<leader>Mc",
+			function()
+				require("peek").close()
+			end,
+			desc = "[M]arkdown: [c]lose preview",
+		},
+	}
+end
+
 return M

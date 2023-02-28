@@ -217,4 +217,19 @@ return {
 			filetypes = { TelescopePrompt = false, markdown = true, yaml = true },
 		},
 	},
+
+	{
+		"toppair/peek.nvim",
+		build = "deno task --quiet build:fast",
+		opts = {
+			auto_load = false,
+			syntax = true,
+			app = "browser",
+		},
+		keys = keymap.peek(),
+		event = {
+			"BufReadPre *.md",
+			"BufReadPre *.markdown",
+		},
+	},
 }

@@ -56,6 +56,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "bd7a222287c5828cd0607cd0a5605e52f0460074" },
   "octo.nvim": { "branch": "master", "commit": "f336322f865cfa310ae15435c6bec337687b6b20" },
   "onedarkpro.nvim": { "branch": "main", "commit": "39e24f92f8029262759e897ce5331a65d8c47a3c" },
+  "peek.nvim": { "branch": "master", "commit": "7fb50a540edf28a99e8f3871e093dff65d5e493d" },
   "playground": { "branch": "master", "commit": "c481c660fa903a0e295902b1765ecfbd6e76a556" },
   "plenary.nvim": { "branch": "master", "commit": "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" },
   "put_at_end.nvim": { "branch": "master", "commit": "e4b794b84ab32be9d9a8093c7ef08d7a8c9e5e50" },

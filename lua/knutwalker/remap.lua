@@ -57,7 +57,7 @@ bind("n", "Q", "<nop>")
 bind("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Toggle dark/light mode
-bind("n", "<leader>M", function()
+bind("n", "<leader>MM", function()
 	require("knutwalker.colors").toggle()
 end, { desc = "Toggle dark/light [M]ode" })
 
