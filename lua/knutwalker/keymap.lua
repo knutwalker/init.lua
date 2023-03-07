@@ -965,7 +965,9 @@ function M.put_at_end()
 		{
 			"<M-,>",
 			function()
-				require("put_at_end").put_comma()
+				-- comma and period are swapped
+				-- See https://github.com/rareitems/put_at_end.nvim/pull/1
+				require("put_at_end").put_period()
 			end,
 			mode = "i",
 			desc = "Put comma at end of line",
@@ -973,7 +975,9 @@ function M.put_at_end()
 		{
 			"<leader>,",
 			function()
-				require("put_at_end").put_comma()
+				-- comma and period are swapped
+				-- See https://github.com/rareitems/put_at_end.nvim/pull/1
+				require("put_at_end").put_period()
 			end,
 			desc = "Put comma at end of line",
 		},
