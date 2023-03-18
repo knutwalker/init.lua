@@ -27,7 +27,6 @@ return {
 		"hrsh7th/cmp-emoji",
 		"saadparwaiz1/cmp_luasnip",
 
-
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
@@ -71,6 +70,13 @@ return {
 			set_lsp_keymaps = false,
 			-- Don't configure diagnostics, we do this ourselves
 			configure_diagnostics = false,
+		})
+
+		-- configure yaml language server
+		lsp.configure("yamlls", {
+			settings = {
+				yaml = { keyOrdering = false },
+			},
 		})
 
 		-- save configs for RA/JDT and null-ls since we set those up manually
