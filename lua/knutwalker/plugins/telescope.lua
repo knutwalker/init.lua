@@ -42,6 +42,14 @@ return {
 			pickers = {
 				buffers = {
 					sort_mru = true,
+					mappings = {
+						i = {
+							["<c-x>"] = actions.delete_buffer,
+						},
+						n = {
+							["<c-x>"] = actions.delete_buffer,
+						},
+					},
 				},
 			},
 		})
