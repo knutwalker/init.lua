@@ -11,6 +11,7 @@ return {
 	},
 	keys = require("knutwalker.keymap").telescope(),
 	config = function()
+		local actions = require("telescope.actions")
 		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
@@ -26,11 +27,15 @@ return {
 						["<c-y>"] = function(...)
 							require("trouble.providers.telescope").open_with_trouble(...)
 						end,
+						["<c-x>"] = false,
+						["<c-h>"] = actions.select_horizontal,
 					},
 					n = {
 						["<c-y>"] = function(...)
 							require("trouble.providers.telescope").open_with_trouble(...)
 						end,
+						["<c-x>"] = false,
+						["<c-h>"] = actions.select_horizontal,
 					},
 				},
 			},
