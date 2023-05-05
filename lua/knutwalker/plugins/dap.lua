@@ -43,8 +43,8 @@ return {
 			"jayp0521/mason-nvim-dap.nvim",
 			config = function()
 				local mason_nvim_dap = require("mason-nvim-dap")
+				-- mason_nvim_dap.setup({ automatic_setup = true, handlers = {} })
 				mason_nvim_dap.setup({ automatic_setup = true })
-				mason_nvim_dap.setup_handlers({})
 			end,
 		},
 	},
