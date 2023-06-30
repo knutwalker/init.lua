@@ -119,7 +119,6 @@ function M.attach(bind)
 		local rustup = "^" .. os.getenv("HOME") .. "/.rustup/"
 		local folders = vim.lsp.buf.list_workspace_folders()
 		for _, value in pairs(folders) do
-			print(value)
 			if value:find(cargo) ~= nil or value:find(rustup) ~= nil then
 				vim.notify("Removing rust stdlib at " .. value .. " from workspaces")
 				vim.lsp.buf.remove_workspace_folder(value)
