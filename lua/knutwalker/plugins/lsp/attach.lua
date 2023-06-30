@@ -83,6 +83,7 @@ function M.setup()
 			local fmt_opts = {
 				filter = fmt_filter,
 				bufnr = bufnr,
+				async = false,
 			}
 
 			local function format()
