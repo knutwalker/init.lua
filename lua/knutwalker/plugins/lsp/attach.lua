@@ -78,8 +78,6 @@ function M.setup()
 			local function fmt_filter(fmt_client)
 				--  only use null-ls for formatting instead of lsp server
 				return fmt_client.name == "null-ls"
-					or fmt_client.name == "rustfmt"
-					or fmt_client.name == "rust_analyzer"
 			end
 
 			local fmt_opts = {
