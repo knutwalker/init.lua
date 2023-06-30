@@ -10,7 +10,7 @@ return {
 		require("gitsigns").setup({
 			-- current_line_blame = true,
 			numhl = true,
-			signcolumn = false,
+			signcolumn = true,
 			on_attach = function(bufnr)
 				local gs = package.loaded.gitsigns
 
