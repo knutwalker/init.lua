@@ -61,11 +61,11 @@ function M.setup(lsp_opts)
 					runtimes = {
 						{
 							name = "JavaSE-11",
-							path = sdkman_dir .. "/11.0.15-tem/",
+							path = sdkman_dir .. "/11.0.18-tem/",
 						},
 						{
 							name = "JavaSE-17",
-							path = sdkman_dir .. "/17.0.5-tem/",
+							path = sdkman_dir .. "/17.0.7-tem/",
 						},
 					},
 				},
