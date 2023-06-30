@@ -39,6 +39,8 @@ return {
 
 	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
 
+	{ "chrisgrieser/nvim-various-textobjs", event = "BufReadPost", opts = { useDefaultKeymaps = true } },
+
 	{
 		"roobert/surround-ui.nvim",
 		keys = "<leader>m",
