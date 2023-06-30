@@ -81,8 +81,6 @@ function M.setup()
 			end
 
 			local fmt_opts = {
-				format_on_save = { enabled = true },
-				disabled = {},
 				filter = fmt_filter,
 				bufnr = bufnr,
 			}
