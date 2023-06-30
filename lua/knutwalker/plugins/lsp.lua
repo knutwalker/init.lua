@@ -32,7 +32,7 @@ return {
 		"rafamadriz/friendly-snippets",
 
 		-- Progress Report
-		"j-hui/fidget.nvim",
+		{ "j-hui/fidget.nvim", tag = "legacy" },
 
 		-- LSP kind symbols for completion items
 		"onsails/lspkind-nvim",
