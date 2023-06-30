@@ -12,7 +12,9 @@ function M.setup(opts)
 			null_ls.builtins.formatting.isort,
 			null_ls.builtins.formatting.black,
 			null_ls.builtins.formatting.stylua,
-			null_ls.builtins.formatting.rustfmt,
+			null_ls.builtins.formatting.rustfmt.with({
+				extra_args = { "--edition=2021" },
+			}),
 		},
 	})
 end
