@@ -21,7 +21,7 @@ function M.setup(lsp)
 		-- Replace with selected item
 		["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 		-- Open usggestions
-		["<C-space>"] = cmp.mapping.complete(),
+		["<C-u>"] = cmp.mapping.complete(),
 		-- Close suggestions, in all modes
 		["<C-e>"] = cmp.mapping.close(),
 		-- Close suggestions, only in insert mode
