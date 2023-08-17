@@ -1,7 +1,7 @@
 local M = {}
 
-M.default_color_scheme = "tokyonight-moon"
-M.default_color_scheme_light = "tokyonight-day"
+M.default_color_scheme = "kanagawa-dragon"
+M.default_color_scheme_light = "kanagawa-lotus"
 
 function M.set(color)
 	vim.cmd.colorscheme(color or M.default_color_scheme)
