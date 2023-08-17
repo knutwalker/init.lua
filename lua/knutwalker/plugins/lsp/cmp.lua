@@ -14,14 +14,16 @@ function M.setup(lsp)
 	local cmp_mappings = lsp.defaults.cmp_mappings({
 		-- Select previous item
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-		-- Select next items
+		-- Open suggestions or select next items
 		["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 		-- Insert selected item
 		["<C-y>"] = cmp.mapping.confirm({ select = true }),
 		-- Replace with selected item
 		["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 		-- Open usggestions
-		["<C-u>"] = cmp.mapping.complete(),
+		["<C-t>"] = cmp.mapping.complete(),
+		-- Open usggestions
+		["<C-Space>"] = cmp.mapping.complete(),
 		-- Close suggestions, in all modes
 		["<C-e>"] = cmp.mapping.close(),
 		-- Close suggestions, only in insert mode
