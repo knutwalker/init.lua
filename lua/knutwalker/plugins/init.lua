@@ -27,7 +27,7 @@ return {
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = { check_ts = true } },
 
-	{ "szw/vim-maximizer", keys = keymap.maximizer(), cmd = "MaximizerToggle" },
+	{ "declancm/maximize.nvim", keys = keymap.maximizer(), opts = { default_keymaps = false } },
 
 	{ "famiu/bufdelete.nvim", keys = keymap.bufdelete(), cmd = { "Bdelete" } },
 
