@@ -37,6 +37,29 @@ return {
 					end,
 				},
 			},
+			["?"] = {
+				add = { "dbg!(", ")" },
+				delete = "^(.-%!%()().-(%))()$",
+			},
+			["m"] = {
+				add = function()
+					local result = require("nvim-surround.config").get_input("Enter the macro name: ")
+					if result then
+						return { { result .. "!(" }, { ")" } }
+					end
+				end,
+				find = "[^=%s%(%){}]+!%b()",
+				delete = "^(.-!%()().-(%))()$",
+				change = {
+					target = "^.-([%w_]+)()!%(.-%)()()$",
+					replacement = function()
+						local result = require("nvim-surround.config").get_input("Enter the macro name: ")
+						if result then
+							return { { result }, { "" } }
+						end
+					end,
+				},
+			},
 		},
 	},
 }
