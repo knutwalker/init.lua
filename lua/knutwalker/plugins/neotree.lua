@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v2.x",
+	branch = "v3.x",
 	cmd = "Neotree",
 	dependencies = { "MunifTanjim/nui.nvim" },
 	keys = require("knutwalker.keymap").neotree(),
