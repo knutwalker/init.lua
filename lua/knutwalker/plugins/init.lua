@@ -244,4 +244,15 @@ return {
 			height_ratio = 0.8,
 		},
 	},
+
+	{
+		"DreamMaoMao/yazi.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+		keys = {
+			{ "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle [Y]azi" },
+		},
+	},
 }
