@@ -181,7 +181,7 @@ function M.setup(lsp)
 			{ name = "git" },
 			{ name = "path" },
 		}, {
-			{ name = "buffer", keyword_length = 5 },
+			{ name = "buffer", keyword_length = 4 },
 		}),
 
 		view = { entries = { name = "custom", selection_order = "near_cursor" } },
