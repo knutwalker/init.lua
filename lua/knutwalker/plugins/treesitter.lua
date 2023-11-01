@@ -23,7 +23,7 @@ return {
 			-- A list of parser names, or 'all'
 			ensure_installed = {
 				-- vim related things
-				"help",
+				"vimdoc",
 				"c",
 				"lua",
 				"vim",
