@@ -52,8 +52,6 @@ return {
 	config = function()
 		local lsp = require("lsp-zero")
 
-		lsp.preset("recommended")
-
 		require("knutwalker.plugins.lsp.cmp").setup(lsp)
 		require("knutwalker.plugins.lsp.diagnostics").setup_before_lsp()
 		lsp.on_attach(require("knutwalker.plugins.lsp.attach").setup())
@@ -84,8 +82,17 @@ return {
 		local jdtls_lsp_opts = lsp.build_options("jdtls", {})
 		local null_ls_opts = lsp.build_options("null-ls", {})
 
-		lsp.nvim_workspace()
 		lsp.setup()
+		require("mason").setup({})
+		require("mason-lspconfig").setup({
+			handlers = {
+				lsp.default_setup,
+				lua_ls = function()
+					local lua_opts = lsp.nvim_lua_ls()
+					require("lspconfig").lua_ls.setup(lua_opts)
+				end,
+			},
+		})
 
 		-- Setup LSP diagnostics
 		require("knutwalker.plugins.lsp.diagnostics").setup_after_lsp()

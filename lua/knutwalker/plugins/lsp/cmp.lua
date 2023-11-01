@@ -104,7 +104,8 @@ function M.setup(lsp)
 		[kinds.Snippet] = 24,
 		[kinds.Text] = 25,
 	}
-	lsp.setup_nvim_cmp({
+
+	cmp.setup({
 		mapping = cmp_mappings,
 		-- Do not preselect an item from the completions
 		preselect = "none",
