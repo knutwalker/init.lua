@@ -78,6 +78,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPost",
+		main = "ibl",
 		opts = {
 			ohar = "",
 			space_char_blankline = " ",
