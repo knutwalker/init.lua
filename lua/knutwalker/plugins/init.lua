@@ -80,11 +80,17 @@ return {
 		event = "BufReadPost",
 		main = "ibl",
 		opts = {
-			ohar = "",
-			space_char_blankline = " ",
-			show_current_context = true,
-			show_current_context_start = true,
-			show_trailing_blankline_indent = true,
+			indent = {
+				char = "",
+			},
+			whitespace = {
+				remove_blankline_trail = false,
+			},
+			scope = {
+				enabled = true,
+				show_start = true,
+				show_end = false,
+			},
 		},
 	},
 
