@@ -7,6 +7,10 @@ function M.setup(lsp_opts)
 				emitMustUse = true,
 			},
 			cachePriming = { numThreads = 4 },
+			cargo = {
+				buildScripts = { enable = true },
+				features = "all",
+			},
 			checkOnSave = { command = "clippy" },
 			check = { command = "clippy" },
 			completion = { callable = { snippets = "add_parentheses" }, privateEditable = { enable = true } },
