@@ -39,7 +39,14 @@ return {
 
 	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
 
-	{ "chrisgrieser/nvim-various-textobjs", event = "BufReadPost", opts = { useDefaultKeymaps = true } },
+	{
+		"chrisgrieser/nvim-various-textobjs",
+		event = "BufReadPost",
+		opts = {
+			useDefaultKeymaps = true,
+			disabledKeymaps = { "gc" },
+		},
+	},
 
 	{
 		"roobert/surround-ui.nvim",
