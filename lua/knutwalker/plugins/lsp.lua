@@ -77,6 +77,8 @@ return {
 			},
 		})
 
+		lsp.configure("cypher_ls", {})
+
 		-- save configs for RA/JDT and null-ls since we set those up manually
 		local rust_lsp_opts = lsp.build_options("rust_analyzer", {})
 		local jdtls_lsp_opts = lsp.build_options("jdtls", {})
