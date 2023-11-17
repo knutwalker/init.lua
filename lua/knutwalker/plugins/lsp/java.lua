@@ -31,7 +31,7 @@ function M.setup(lsp_opts)
 			"--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
 			"--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
 			"-jar",
-			jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+			jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar",
 			"-configuration",
 			jdtls_path .. "/config_mac",
 			"-data",
@@ -61,11 +61,15 @@ function M.setup(lsp_opts)
 					runtimes = {
 						{
 							name = "JavaSE-11",
-							path = sdkman_dir .. "/11.0.18-tem/",
+							path = sdkman_dir .. "/11.0.21-tem/",
 						},
 						{
 							name = "JavaSE-17",
-							path = sdkman_dir .. "/17.0.7-tem/",
+							path = sdkman_dir .. "/17.0.9-tem/",
+						},
+						{
+							name = "JavaSE-21",
+							path = sdkman_dir .. "/21.0.1-tem/",
 						},
 					},
 				},
