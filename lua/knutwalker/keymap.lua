@@ -1094,4 +1094,14 @@ function M.peek()
 	}
 end
 
+function M.glow()
+	return {
+		{
+			"<leader>MM",
+			"<cmd>Glow<CR>",
+			desc = "[M]arkdown render",
+		},
+	}
+end
+
 return M

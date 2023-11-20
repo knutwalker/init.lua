@@ -252,8 +252,9 @@ return {
 	{
 		"ellisonleao/glow.nvim",
 		cmd = "Glow",
+		keys = keymap.glow(),
 		opts = {
-			glow_path = "/opt/homebrew/bin/glow@1.4.1",
+			glow_path = "/opt/homebrew/bin/glow",
 			width_ratio = 0.8,
 			height_ratio = 0.8,
 		},
