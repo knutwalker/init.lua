@@ -15,7 +15,7 @@ return {
 		{ "mfussenegger/nvim-jdtls" },
 
 		-- Formatting
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		"jayp0521/mason-null-ls.nvim",
 
 		-- Autocompletion
