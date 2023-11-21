@@ -67,10 +67,6 @@ function M.setup(lsp_opts)
 							name = "JavaSE-17",
 							path = sdkman_dir .. "/17.0.9-tem/",
 						},
-						{
-							name = "JavaSE-21",
-							path = sdkman_dir .. "/21.0.1-tem/",
-						},
 					},
 				},
 				contentProvider = { preferred = "fernflower" },
