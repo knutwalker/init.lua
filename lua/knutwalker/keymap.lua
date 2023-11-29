@@ -466,7 +466,7 @@ end
 function M.harpoon()
 	return {
 		{
-			"<leader>i",
+			"<leader>m",
 			function()
 				require("harpoon.mark").add_file()
 			end,
@@ -474,15 +474,21 @@ function M.harpoon()
 		},
 
 		{
-			"<leader>fi",
-			function()
-				require("harpoon.ui").toggle_quick_menu()
-			end,
-			desc = "Toggle Harpoon [I]nterface",
+			"<leader>fm",
+			":Telescope harpoon marks<CR>",
+			desc = "[F]ind Harpoon [m]arks",
 		},
 
 		{
-			"<C-4>",
+			"<leader>fM",
+			function()
+				require("harpoon.ui").toggle_quick_menu()
+			end,
+			desc = "[F]ind Harpoon [M]arks (Harpoon UI)",
+		},
+
+		{
+			"g3",
 			function()
 				require("harpoon.ui").nav_file(1)
 			end,
@@ -490,7 +496,7 @@ function M.harpoon()
 		},
 
 		{
-			"<C-5>",
+			"g4",
 			function()
 				require("harpoon.ui").nav_file(2)
 			end,
@@ -498,7 +504,7 @@ function M.harpoon()
 		},
 
 		{
-			"<C-6>",
+			"g5",
 			function()
 				require("harpoon.ui").nav_file(3)
 			end,
@@ -506,7 +512,7 @@ function M.harpoon()
 		},
 
 		{
-			"<C-7>",
+			"g6",
 			function()
 				require("harpoon.ui").nav_file(4)
 			end,
@@ -514,7 +520,7 @@ function M.harpoon()
 		},
 
 		{
-			"<C-8>",
+			"g7",
 			function()
 				require("harpoon.ui").nav_file(5)
 			end,

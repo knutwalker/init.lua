@@ -21,8 +21,6 @@ return {
 
 	{ "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
 
-	{ "ThePrimeagen/harpoon", keys = keymap.harpoon() },
-
 	{ "folke/which-key.nvim", config = true },
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = { check_ts = true } },
@@ -40,6 +38,17 @@ return {
 	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
 
 	{
+		"ThePrimeagen/harpoon",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		keys = keymap.harpoon(),
+		setup = function()
+			require("telescope").load_extension("harpoon")
+		end,
+	},
+
+	{
 		"chrisgrieser/nvim-various-textobjs",
 		event = "BufReadPost",
 		opts = {
@@ -50,14 +59,14 @@ return {
 
 	{
 		"roobert/surround-ui.nvim",
-		keys = "<leader>m",
+		keys = "<leader>i",
 		dependencies = {
 			"kylechui/nvim-surround",
 			"folke/which-key.nvim",
 		},
 		config = function()
 			require("surround-ui").setup({
-				root_key = "m",
+				root_key = "i",
 			})
 		end,
 	},
