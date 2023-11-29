@@ -92,13 +92,13 @@ function M.setup()
 
 			vim.api.nvim_buf_create_user_command(bufnr, "Format", format, { desc = "Format file with LSP" })
 
-			bind("<leader>fm", format, "[F]or[m]at")
-			bind("<leader>fm", format, "[F]or[m]at", "v")
+			bind("<leader>lf", format, "[L]sp: [F]ormat")
+			bind("<leader>lf", format, "[L]sp: [F]ormat", "v")
 
-			bind("<leader>fM", function()
+			bind("<leader>lF", function()
 				vim.g.autoformat_disabled = not vim.g.autoformat_disabled
 				vim.notify("Autoformat: " .. vim.inspect(not vim.g.autoformat_disabled))
-			end, "Toggle [F]or[m]at on save")
+			end, "Toggle [L]sp [F]ormat on save")
 
 			local auto_group = "lsp_auto_format_" .. bufnr
 			vim.api.nvim_create_augroup(auto_group, { clear = true })
