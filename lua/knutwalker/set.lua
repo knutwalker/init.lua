@@ -1,4 +1,4 @@
-local opt = vim.opt
+local opt = vim.o
 
 -- big cursor in insert mode
 opt.guicursor = "n-v-c-sm:hor100,i-ci-ve:ver25,r-cr-o:block"
@@ -72,7 +72,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- include - when jumping over keywords e.g. with w or b
-opt.iskeyword:append("-")
+vim.opt.iskeyword:append("-")
 
 -- Disable command line
 opt.cmdheight = 0
