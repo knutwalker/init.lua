@@ -13,7 +13,6 @@ return {
 
 	{ "makerj/vim-pdf", event = "BufReadPre *.pdf" },
 
-	{ "editorconfig/editorconfig-vim", event = "BufReadPre" },
 
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPost" },
 
