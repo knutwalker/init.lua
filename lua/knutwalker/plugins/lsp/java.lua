@@ -31,7 +31,7 @@ function M.setup(lsp_opts)
 			"--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
 			"--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
 			"-jar",
-			jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar",
+			jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.600.v20231012-1237.jar",
 			"-configuration",
 			jdtls_path .. "/config_mac",
 			"-data",
@@ -66,6 +66,10 @@ function M.setup(lsp_opts)
 						{
 							name = "JavaSE-17",
 							path = sdkman_dir .. "/17.0.9-tem/",
+						},
+						{
+							name = "JavaSE-22",
+							path = sdkman_dir .. "/22.ea.26-open/",
 						},
 					},
 				},

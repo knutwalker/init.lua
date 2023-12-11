@@ -10,7 +10,10 @@ function M.setup(opts)
 			null_ls.builtins.diagnostics.mypy,
 			null_ls.builtins.formatting.isort,
 			null_ls.builtins.formatting.black,
-			null_ls.builtins.formatting.google_java_format,
+			null_ls.builtins.formatting.google_java_format.with({
+				-- milliseconds
+				timeout = 10000,
+			}),
 			null_ls.builtins.formatting.stylua,
 			null_ls.builtins.formatting.rustfmt.with({
 				extra_args = { "--edition=2021" },
