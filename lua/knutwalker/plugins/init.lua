@@ -13,7 +13,6 @@ return {
 
 	{ "makerj/vim-pdf", event = "BufReadPre *.pdf" },
 
-
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPost" },
 
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
@@ -155,7 +154,17 @@ return {
 		branch = "stable",
 		event = "BufReadPost",
 		config = function()
-			require("mini.comment").setup()
+			require("mini.comment").setup({
+				options = {
+					ignore_blank_line = true,
+				},
+				mappings = {
+					comment = "g/", -- Normal and Visual modes
+					comment_line = "g//", -- Toggle comment on current line
+					comment_visual = "g/", -- Toggle comment on visual selection
+					textobject = "gc", -- Define 'comment' textobject (like `dgc` - delete whole comment block)
+				},
+			})
 		end,
 	},
 
