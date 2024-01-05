@@ -4,7 +4,7 @@ return {
 	keys = require("knutwalker.keymap").zen_mode(),
 	opts = {
 		window = {
-			width = 90,
+			width = 0.60,
 			options = {
 				number = true,
 				relativenumber = true,
@@ -13,7 +13,7 @@ return {
 		plugins = {
 			gitsigns = true,
 			tmux = true,
-			kitty = { enabled = false, font = "+2" },
+			alacritty = { enabled = true, font = "18" },
 		},
 	},
 }
