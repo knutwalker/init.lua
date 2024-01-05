@@ -156,7 +156,7 @@ return {
 		config = function()
 			require("mini.comment").setup({
 				options = {
-					ignore_blank_line = true,
+					ignore_blank_line = false,
 				},
 				mappings = {
 					comment = "g/", -- Normal and Visual modes
