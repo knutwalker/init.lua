@@ -15,6 +15,7 @@ function M.setup(opts)
 				timeout = 10000,
 			}),
 			null_ls.builtins.formatting.stylua,
+			null_ls.builtins.formatting.taplo,
 			null_ls.builtins.formatting.rustfmt.with({
 				extra_args = { "--edition=2021" },
 			}),
