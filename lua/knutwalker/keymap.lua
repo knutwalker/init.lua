@@ -992,27 +992,11 @@ end
 function M.put_at_end()
 	return {
 		{
-			"<M-,>",
-			function()
-				require("put_at_end").put_comma()
-			end,
-			mode = "i",
-			desc = "Put comma at end of line",
-		},
-		{
 			"<leader>,",
 			function()
 				require("put_at_end").put_comma()
 			end,
 			desc = "Put comma at end of line",
-		},
-		{
-			"<M-;>",
-			function()
-				require("put_at_end").put_semicolon()
-			end,
-			mode = "i",
-			desc = "Put semicolon at end of line",
 		},
 		{
 			"<leader>;",
