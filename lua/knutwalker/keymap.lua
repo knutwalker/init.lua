@@ -526,6 +526,22 @@ function M.harpoon()
 			end,
 			desc = "Navigate to fifth file",
 		},
+
+		{
+			"g8",
+			function()
+				require("harpoon.ui").nav_file(6)
+			end,
+			desc = "Navigate to sixth file",
+		},
+
+		{
+			"g9",
+			function()
+				require("harpoon.ui").nav_file(7)
+			end,
+			desc = "Navigate to seventh file",
+		},
 	}
 end
 
