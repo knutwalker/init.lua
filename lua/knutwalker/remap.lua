@@ -60,7 +60,7 @@ bind("i", ";", ";<c-g>u")
 bind("n", "Q", "<nop>")
 
 -- Open project in tmux session
-bind("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+bind("n", "<C-f>", "<cmd>silent !tmux neww sessionizer<CR>")
 
 -- Toggle dark/light mode
 bind("n", "<leader>M`", function()
