@@ -47,6 +47,10 @@ function M.setup(lsp_opts)
 	local codelldb_path = codelldb_extension .. "adapter/codelldb"
 	local liblldb_path = codelldb_extension .. "lldb/lib/liblldb.dylib"
 
+	lsp_opts = vim.tbl_deep_extend("force", lsp_opts, {
+		capabilities = { experimental = { snippetTextEdit = false } },
+	})
+
 	require("rust-tools").setup({
 		server = lsp_opts,
 		tools = {
