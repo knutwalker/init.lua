@@ -13,8 +13,25 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- go to last loc when opening a buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+local ignore_buftype = { "quickfix", "nofile", "help" }
+local ignore_filetype = { "gitcommit", "gitrebase", "jproperties" }
+vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
 	callback = function()
+		if vim.tbl_contains(ignore_buftype, vim.bo.buftype) then
+			return
+		end
+
+		if vim.tbl_contains(ignore_filetype, vim.bo.filetype) then
+			-- reset cursor to first line
+			vim.cmd([[normal! gg]])
+			return
+		end
+
+		-- Check if a line was specified one the commandline
+		if vim.fn.line(".") > 1 then
+			return
+		end
+
 		local mark = vim.api.nvim_buf_get_mark(0, '"')
 		local lcount = vim.api.nvim_buf_line_count(0)
 		if mark[1] > 0 and mark[1] <= lcount then
@@ -24,7 +41,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- use q to close certain windows
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"qf",
 		"help",
