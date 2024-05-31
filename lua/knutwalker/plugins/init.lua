@@ -236,6 +236,7 @@ return {
 		"zbirenbaum/copilot.lua",
 		event = "InsertEnter",
 		keys = keymap.copilot(),
+		enabled = false,
 		opts = {
 			panel = {
 				enabled = true,
