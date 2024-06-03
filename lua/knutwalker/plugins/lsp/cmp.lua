@@ -127,6 +127,7 @@ function M.setup(lsp)
 				ellipsis_char = "…",
 				preset = "default",
 				menu = {
+					Supermaven = "[🤖]",
 					nvim_lsp = "[lsp]",
 					nvim_lua = "[lua]",
 					luasnip = "[snip]",
@@ -146,10 +147,6 @@ function M.setup(lsp)
 			comparators = {
 
 				cmp.config.compare.exact,
-
-				-- derank copilot entries
-				-- this is the inverse of
-				-- require("copilot_cmp.comparators").prioritize,
 
 				cmp.config.compare.locality,
 				cmp.config.compare.recently_used,
@@ -174,6 +171,7 @@ function M.setup(lsp)
 
 		-- setup completion sources
 		sources = cmp.config.sources({
+			-- { name = "supermaven" },
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },

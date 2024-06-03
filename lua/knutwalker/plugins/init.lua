@@ -233,6 +233,22 @@ return {
 	},
 
 	{
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({
+				keymaps = {
+					accept_suggestion = "<C-l>",
+					clear_suggestion = "<C-]>",
+					accept_word = "<C-j>",
+				},
+				ignore_filetypes = { gitcommit = true },
+				disable_inline_completion = false, -- `true` disables inline completion for use with cmp
+				disable_keymaps = false, -- `true` disables built in keymaps for more manual control
+			})
+		end,
+	},
+
+	{
 		"zbirenbaum/copilot.lua",
 		event = "InsertEnter",
 		keys = keymap.copilot(),
