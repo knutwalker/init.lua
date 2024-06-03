@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"qf",
+		"oil",
 		"help",
 		"man",
 		"notify",

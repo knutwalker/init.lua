@@ -577,16 +577,35 @@ end
 function M.neotree()
 	return {
 		{
-			"<leader>t",
+			"<leader><tab>t",
 			function()
 				require("neo-tree.command").execute({ action = "focus", reveal = true })
 			end,
 			desc = "Open/Focus File[t]ree",
 		},
 		{
-			"<leader>T",
+			"<leader><tab>T",
 			function()
 				require("neo-tree.command").execute({ action = "close" })
+			end,
+			desc = "Close File[t]ree",
+		},
+	}
+end
+
+function M.oil()
+	return {
+		{
+			"<leader>t",
+			function()
+				require("oil").open_float(os.getenv("SESSION_ROOT"))
+			end,
+			desc = "Open/Focus File[t]ree",
+		},
+		{
+			"<leader>T",
+			function()
+				require("oil").close()
 			end,
 			desc = "Close File[t]ree",
 		},
