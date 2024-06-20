@@ -1,5 +1,6 @@
 return {
 	"mbbill/undotree",
+	enabled = false,
 	cmd = "UndotreeToggle",
 	keys = require("knutwalker.keymap").undotree(),
 	init = function()

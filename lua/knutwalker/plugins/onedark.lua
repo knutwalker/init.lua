@@ -1,6 +1,7 @@
 -- One dark colorscheme
 return {
 	"olimorris/onedarkpro.nvim",
+	enabled = false,
 	lazy = true,
 	priority = 1000,
 	config = function()

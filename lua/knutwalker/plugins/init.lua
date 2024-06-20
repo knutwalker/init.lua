@@ -5,19 +5,19 @@ return {
 
 	{ "kyazdani42/nvim-web-devicons", lazy = true },
 
-	{ "tpope/vim-fugitive", cmd = "Git", keys = keymap.git() },
+	{ "tpope/vim-fugitive", cmd = "Git", keys = keymap.git(), enabled = false },
 
 	{ "tpope/vim-unimpaired", event = "BufReadPost" },
 
 	{ "tpope/vim-obsession", event = "VeryLazy" },
 
-	{ "makerj/vim-pdf", event = "BufReadPre *.pdf" },
+	{ "makerj/vim-pdf", event = "BufReadPre *.pdf", enabled = false },
 
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPost" },
 
 	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
 
-	{ "ThePrimeagen/vim-be-good", cmd = "VimBeGood" },
+	{ "ThePrimeagen/vim-be-good", cmd = "VimBeGood", enabled = false },
 
 	{ "folke/which-key.nvim", config = true },
 
@@ -33,7 +33,7 @@ return {
 
 	{ "rareitems/put_at_end.nvim", keys = keymap.put_at_end() },
 
-	{ "pwntester/octo.nvim", cmd = "Octo", config = true },
+	{ "pwntester/octo.nvim", cmd = "Octo", config = true, enabled = false },
 
 	{
 		"ThePrimeagen/harpoon",
@@ -189,6 +189,7 @@ return {
 
 	{
 		"princejoogie/chafa.nvim",
+		enabled = false,
 		dependencies = {
 			"m00qek/baleia.nvim",
 		},
