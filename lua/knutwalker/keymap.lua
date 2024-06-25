@@ -1,5 +1,13 @@
 local M = {}
 
+function M.supermaven()
+	return {
+		accept_suggestion = "<C-l>",
+		clear_suggestion = "<C-]>",
+		accept_word = "<C-j>",
+	}
+end
+
 function M.copilot()
 	return {
 		{ "<leader>Cs", ":Copilot status<CR>", desc = "Show [C]opilot [s]tatus" },
