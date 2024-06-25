@@ -40,6 +40,22 @@ vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
 	end,
 })
 
+-- relative line numbers in normal mode but
+-- absolute line numbers in insert mode
+vim.api.nvim_create_autocmd("InsertLeave", {
+	desc = "set relativenumber",
+	group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true }),
+	pattern = "*.*",
+	command = "set relativenumber",
+})
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+	desc = "set number",
+	group = vim.api.nvim_create_augroup("set_number", { clear = true }),
+	pattern = "*",
+	command = "set number norelativenumber",
+})
+
 -- use q to close certain windows
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
