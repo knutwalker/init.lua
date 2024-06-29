@@ -75,13 +75,8 @@ function M.setup()
 		bind("<leader>fs", telescope.lsp_workspace_symbols, "Search [S]ymbols in this workspace (once)")
 
 		if capabilities.documentFormattingProvider then
-			local function fmt_filter(fmt_client)
-				--  only use null-ls for formatting instead of lsp server
-				return fmt_client.name == "null-ls"
-			end
 
 			local fmt_opts = {
-				filter = fmt_filter,
 				bufnr = bufnr,
 				async = false,
 			}

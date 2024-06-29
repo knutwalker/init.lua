@@ -2,6 +2,7 @@ return {
 	"mfussenegger/nvim-dap",
 	keys = require("knutwalker.keymap").dap(),
 	dependencies = {
+         "nvim-neotest/nvim-nio",
 		{
 			"rcarriga/nvim-dap-ui",
 			config = function()

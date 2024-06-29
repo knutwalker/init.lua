@@ -83,10 +83,10 @@ return {
 		-- save configs for RA/JDT and null-ls since we set those up manually
 		local rust_lsp_opts = lsp.build_options("rust_analyzer", {})
 		local jdtls_lsp_opts = lsp.build_options("jdtls", {})
-		local null_ls_opts = lsp.build_options("null-ls", {})
 
 		lsp.setup()
 		require("mason").setup({})
+		require("mason-null-ls").setup({})
 		require("mason-lspconfig").setup({
 			handlers = {
 				lsp.default_setup,
@@ -107,7 +107,6 @@ return {
 		require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
 
 		-- Configure Formatter
-		require("knutwalker.plugins.lsp.null_ls").setup(null_ls_opts)
 
 		-- Configure git source
 		require("cmp_git").setup()
