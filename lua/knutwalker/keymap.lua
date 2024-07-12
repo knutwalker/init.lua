@@ -4,7 +4,7 @@ function M.supermaven()
 	return {
 		accept_suggestion = "<C-l>",
 		clear_suggestion = "<C-]>",
-		accept_word = "<C-j>",
+		accept_word = "<C-k>",
 	}
 end
 
