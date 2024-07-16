@@ -242,6 +242,7 @@ return {
 
     {
         "supermaven-inc/supermaven-nvim",
+        commit = 'df3ecf7',
         event = "InsertEnter",
         config = function()
             require("supermaven-nvim").setup({
