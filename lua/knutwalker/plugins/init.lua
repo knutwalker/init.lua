@@ -149,12 +149,13 @@ return {
 
     {
         "echasnovski/mini.comment",
-        branch = "stable",
+        version = false,
         event = "BufReadPost",
         config = function()
             require("mini.comment").setup({
                 options = {
                     ignore_blank_line = false,
+                    pad_comment_parts = false,
                 },
                 mappings = {
                     comment = "g/",        -- Normal and Visual modes
