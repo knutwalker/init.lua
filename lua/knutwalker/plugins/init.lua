@@ -247,7 +247,7 @@ return {
         config = function()
             require("supermaven-nvim").setup({
                 keymaps = keymap.supermaven(),
-                ignore_filetypes = { gitcommit = true },
+                ignore_filetypes = { gitcommit = true, oil = false },
                 log_level = "off",
                 disable_inline_completion = false, -- `true` disables inline completion for use with cmp
                 disable_keymaps = false,           -- `true` disables built in keymaps for more manual control
