@@ -44,6 +44,17 @@ return {
             event = "VeryLazy",
         },
 
+        -- Code Actions
+        {
+            "rachartier/tiny-code-action.nvim",
+            -- dependencies = {
+            --     { "nvim-lua/plenary.nvim" },
+            --     { "nvim-telescope/telescope.nvim" },
+            -- },
+            event = "LspAttach",
+            config = true,
+        },
+
         -- File location
         { "SmiteshP/nvim-navic",      lazy = true },
 
