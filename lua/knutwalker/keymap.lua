@@ -457,80 +457,96 @@ function M.harpoon()
     return {
         {
             "<leader>m",
-            function()
-                require("harpoon.mark").add_file()
-            end,
+            function() require("harpoon"):list():add() end,
             desc = "Add file to harpoon",
         },
-
         {
             "<leader>fm",
-            ":Telescope harpoon marks<CR>",
+            function()
+                local harpoon_files = require("harpoon"):list()
+                local conf = require("telescope.config").values
+                local file_paths = {}
+                for _, item in ipairs(harpoon_files.items) do
+                    table.insert(file_paths, item.value)
+                end
+                require("telescope.pickers").new({}, {
+                    prompt_title = "Harpoon",
+                    finder = require("telescope.finders").new_table({
+                        results = file_paths,
+                    }),
+                    previewer = conf.file_previewer({}),
+                    sorter = conf.generic_sorter({}),
+                }):find()
+            end,
             desc = "[F]ind Harpoon [m]arks",
         },
-
         {
             "<leader>fM",
             function()
-                require("harpoon.ui").toggle_quick_menu()
+                local harpoon = require("harpoon")
+                harpoon.ui:toggle_quick_menu(harpoon:list())
             end,
             desc = "[F]ind Harpoon [M]arks (Harpoon UI)",
         },
-
         {
-            "g3",
-            function()
-                require("harpoon.ui").nav_file(1)
-            end,
+            "]'",
+            function() require("harpoon"):list():next() end,
+            desc = "Navigate to next harpoon entry",
+        },
+        {
+            "['",
+            function() require("harpoon"):list():prev() end,
+            desc = "Navigate to previous harpoon entry",
+        },
+        {
+            "<leader>1",
+            function() require("harpoon"):list():select(1) end,
             desc = "Navigate to first file",
         },
-
         {
-            "g4",
-            function()
-                require("harpoon.ui").nav_file(2)
-            end,
+            "<leader>2",
+            function() require("harpoon"):list():select(2) end,
             desc = "Navigate to second file",
         },
-
         {
-            "g5",
-            function()
-                require("harpoon.ui").nav_file(3)
-            end,
+            "<leader>3",
+            function() require("harpoon"):list():select(3) end,
             desc = "Navigate to third file",
         },
-
         {
-            "g6",
-            function()
-                require("harpoon.ui").nav_file(4)
-            end,
+            "<leader>4",
+            function() require("harpoon"):list():select(4) end,
             desc = "Navigate to fourth file",
         },
-
         {
-            "g7",
-            function()
-                require("harpoon.ui").nav_file(5)
-            end,
+            "<leader>5",
+            function() require("harpoon"):list():select(5) end,
             desc = "Navigate to fifth file",
         },
-
         {
-            "g8",
-            function()
-                require("harpoon.ui").nav_file(6)
-            end,
+            "<leader>6",
+            function() require("harpoon"):list():select(6) end,
             desc = "Navigate to sixth file",
         },
-
         {
-            "g9",
-            function()
-                require("harpoon.ui").nav_file(7)
-            end,
+            "<leader>7",
+            function() require("harpoon"):list():select(7) end,
             desc = "Navigate to seventh file",
+        },
+        {
+            "<leader>8",
+            function() require("harpoon"):list():select(8) end,
+            desc = "Navigate to eighth file",
+        },
+        {
+            "<leader>9",
+            function() require("harpoon"):list():select(9) end,
+            desc = "Navigate to ninth file",
+        },
+        {
+            "<leader>0",
+            function() require("harpoon"):list():select(10) end,
+            desc = "Navigate to tenth file",
         },
     }
 end

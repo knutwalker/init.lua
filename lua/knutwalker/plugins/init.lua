@@ -21,12 +21,13 @@ return {
 
     {
         "ThePrimeagen/harpoon",
+        branch = "harpoon2",
         dependencies = {
             "nvim-telescope/telescope.nvim",
         },
         keys = keymap.harpoon(),
         setup = function()
-            require("telescope").load_extension("harpoon")
+            require("harpoon"):setup()
         end,
     },
 
