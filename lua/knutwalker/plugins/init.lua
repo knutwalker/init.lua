@@ -9,8 +9,6 @@ return {
 
     { "tpope/vim-unimpaired",          event = "BufReadPost" },
 
-    { "tpope/vim-obsession",           event = "VeryLazy" },
-
     { "makerj/vim-pdf",                event = "BufReadPre *.pdf",                                                enabled = false },
 
     { "mg979/vim-visual-multi",        branch = "master",                                                         event = "BufReadPost" },
@@ -334,6 +332,13 @@ return {
                 window_inactive_recent = "#727169",
                 session = "#949fb5",
             },
+        },
+    },
+
+    {
+        'rmagatti/auto-session',
+        config = {
+            auto_session_suppress_dirs = { '/', '~/', '~/Downloads', '~/dev/tmp/' },
         },
     },
 }
