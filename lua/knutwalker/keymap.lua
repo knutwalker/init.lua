@@ -969,4 +969,10 @@ function M.glow()
     }
 end
 
+function M.yazi()
+    return {
+        { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle [Y]azi" },
+    }
+end
+
 return M

@@ -192,9 +192,7 @@ return {
             "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
         },
-        keys = {
-            { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle [Y]azi" },
-        },
+        keys = keymap.yazi(),
     },
 
     {
