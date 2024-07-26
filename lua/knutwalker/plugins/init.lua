@@ -5,21 +5,9 @@ return {
 
     { "kyazdani42/nvim-web-devicons",  lazy = true },
 
-    { "tpope/vim-fugitive",            cmd = "Git",                                                               keys = keymap.git(),               enabled = false },
-
     { "tpope/vim-unimpaired",          event = "BufReadPost" },
 
-    { "makerj/vim-pdf",                event = "BufReadPre *.pdf",                                                enabled = false },
-
-    { "mg979/vim-visual-multi",        branch = "master",                                                         event = "BufReadPost" },
-
-    { "dstein64/vim-startuptime",      cmd = "StartupTime" },
-
-    { "ThePrimeagen/vim-be-good",      cmd = "VimBeGood",                                                         enabled = false },
-
     { "folke/which-key.nvim",          config = true },
-
-    { "windwp/nvim-autopairs",         event = "InsertEnter",                                                     opts = { check_ts = true } },
 
     { "declancm/maximize.nvim",        keys = keymap.maximizer(),                                                 opts = { default_keymaps = false } },
 
@@ -30,8 +18,6 @@ return {
     { "andrewferrier/debugprint.nvim", keys = "g?",                                                               config = true },
 
     { "rareitems/put_at_end.nvim",     keys = keymap.put_at_end() },
-
-    { "pwntester/octo.nvim",           cmd = "Octo",                                                              config = true,                     enabled = false },
 
     {
         "ThePrimeagen/harpoon",
@@ -76,18 +62,6 @@ return {
     },
 
     {
-        "RaafatTurki/hex.nvim",
-        config = true,
-        keys = keymap.hex(),
-        cmd = {
-            "HexDump",
-            "HexAssemble",
-            "HexToggle",
-        },
-        event = { "BufReadPre *.out", "BufReadPre *.bin" },
-    },
-
-    {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
         main = "ibl",
@@ -107,44 +81,10 @@ return {
     },
 
     {
-        "simrat39/symbols-outline.nvim",
-        cmd = { "SymbolsOutline", "SymbolsOutlineOpen" },
-        keys = keymap.symbols_outline(),
-        config = true,
-    },
-
-    {
-        "karb94/neoscroll.nvim",
-        enabled = false,
-        event = "VeryLazy",
-        opts = {
-            -- All these keys will be mapped to their corresponding default scrolling animation
-            mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-            hide_cursor = true,          -- Hide cursor while scrolling
-            stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-            respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-            cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-            easing_function = nil,       -- Default easing function
-            pre_hook = nil,              -- Function to run before the scrolling animation starts
-            post_hook = nil,             -- Function to run after the scrolling animation ends
-            performance_mode = false,    -- Disable "Performance Mode" on all buffers.
-        },
-    },
-
-    {
         "saecki/crates.nvim",
         event = { "BufReadPre Cargo.toml" },
         keys = keymap.crates(),
         config = true,
-    },
-
-    {
-        "ThePrimeagen/refactoring.nvim",
-        keys = keymap.refactoring(),
-        config = function()
-            require("refactoring").setup({})
-            require("telescope").load_extension("refactoring")
-        end,
     },
 
     {
@@ -184,25 +124,6 @@ return {
             auto_jump = {},
             use_diagnostic_signs = true,
         },
-    },
-
-    {
-        "princejoogie/chafa.nvim",
-        enabled = false,
-        dependencies = {
-            "m00qek/baleia.nvim",
-        },
-        event = {
-            "BufReadPre *.jpeg",
-            "BufReadPre *.jpg",
-            "BufReadPre *.png",
-            "BufReadPre *.bmp",
-            "BufReadPre *.webp",
-            "BufReadPre *.tiff",
-            "BufReadPre *.tif",
-        },
-        cmd = "ViewImage",
-        config = true,
     },
 
     {
@@ -252,41 +173,6 @@ return {
                 disable_keymaps = false,           -- `true` disables built in keymaps for more manual control
             })
         end,
-    },
-
-    {
-        "zbirenbaum/copilot.lua",
-        event = "InsertEnter",
-        keys = keymap.copilot(),
-        enabled = false,
-        opts = {
-            panel = {
-                enabled = true,
-            },
-            suggestion = {
-                enabled = true,
-                auto_trigger = false,
-                keymap = {
-                    accept = "<C-l>",
-                },
-            },
-            filetypes = { TelescopePrompt = false, markdown = true, yaml = true },
-        },
-    },
-
-    {
-        "toppair/peek.nvim",
-        build = "deno task --quiet build:fast",
-        opts = {
-            auto_load = false,
-            syntax = true,
-            app = "browser",
-        },
-        keys = keymap.peek(),
-        event = {
-            "BufReadPre *.md",
-            "BufReadPre *.markdown",
-        },
     },
 
     {

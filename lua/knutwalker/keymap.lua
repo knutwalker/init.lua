@@ -8,24 +8,6 @@ function M.supermaven()
     }
 end
 
-function M.copilot()
-    return {
-        { "<leader>Cs", ":Copilot status<CR>",  desc = "Show [C]opilot [s]tatus" },
-        { "<leader>Cv", ":Copilot version<CR>", desc = "Show [C]opilot [v]ersion" },
-        { "<leader>Cl", ":Copilot panel<CR>",   desc = "Open [C]opilot [l]ist" },
-        {
-            "<leader>Ca",
-            function()
-                require("copilot.suggestion").toggle_auto_trigger()
-            end,
-            desc = "Toggle [C]opilot [a]uto-trigger",
-        },
-        { "<leader>CC", ":Copilot toggle<CR>", desc = "Toggle [C]opilot" },
-        { "<leader>Cd", ":CopilotDetach<CR>",  desc = "[D]etach [C]opilot from buffer" },
-        { "<leader>CS", ":CopilotStop<CR>",    desc = "[S]top [C]opilot" },
-    }
-end
-
 function M.crates()
     return {
         {
@@ -582,25 +564,6 @@ function M.maximizer()
     }
 end
 
-function M.neotree()
-    return {
-        {
-            "<leader><tab>t",
-            function()
-                require("neo-tree.command").execute({ action = "focus", reveal = true })
-            end,
-            desc = "Open/Focus File[t]ree",
-        },
-        {
-            "<leader><tab>T",
-            function()
-                require("neo-tree.command").execute({ action = "close" })
-            end,
-            desc = "Close File[t]ree",
-        },
-    }
-end
-
 function M.oil()
     return {
         {
@@ -616,88 +579,6 @@ function M.oil()
                 require("oil").close()
             end,
             desc = "Close File[t]ree",
-        },
-    }
-end
-
-function M.refactoring()
-    return {
-        {
-            "<leader>rs",
-            function()
-                require("refactoring").select_refactor()
-            end,
-            mode = { "n", "v" },
-            silent = true,
-            expr = false,
-            desc = "Refactor [S]elect",
-        },
-        {
-            "<leader>r/",
-            "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-            mode = { "n", "v" },
-            noremap = true,
-            desc = "Search available refactors",
-        },
-        {
-            "<leader>rf",
-            [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-            mode = "v",
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor Extract [f]unction",
-        },
-        {
-            "<leader>rF",
-            [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-            mode = "v",
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor function to [F]ile",
-        },
-        {
-            "<leader>rv",
-            [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-            mode = "v",
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor Extract [v]ariable",
-        },
-        {
-            "<leader>ri",
-            [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-            mode = "v",
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor [i]nline variable",
-        },
-        {
-            "<leader>rb",
-            [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor Extract [b]lock",
-        },
-        {
-            "<leader>rB",
-            [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor [B]lock to File",
-        },
-        {
-            "<leader>ri",
-            [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-            noremap = true,
-            silent = true,
-            expr = false,
-            desc = "Refactor [i]nline variable",
         },
     }
 end
@@ -999,24 +880,6 @@ function M.zen_mode()
     }
 end
 
-function M.git()
-    return {
-        { "<leader>gs", "<CMD>Git<CR>", desc = "[G]it [S]tatus" },
-    }
-end
-
-function M.undotree()
-    return {
-        { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle [U]ndo tree" },
-    }
-end
-
-function M.symbols_outline()
-    return {
-        { "<F12>", "<cmd>SymbolsOutline<CR>", mode = { "n", "v", "i" }, desc = "Symbols outline" },
-    }
-end
-
 function M.bufdelete()
     return {
         {
@@ -1047,18 +910,6 @@ function M.put_at_end()
                 require("put_at_end").put_semicolon()
             end,
             desc = "Put semicolon at end of line",
-        },
-    }
-end
-
-function M.hex()
-    return {
-        {
-            "<leader>zx",
-            function()
-                require("hex").toggle()
-            end,
-            desc = "Toggle He[x]",
         },
     }
 end
@@ -1104,25 +955,6 @@ function M.navigator()
             end,
             desc = "Move to the previous pane",
             mode = { "n", "t" },
-        },
-    }
-end
-
-function M.peek()
-    return {
-        {
-            "<leader>Mo",
-            function()
-                require("peek").open()
-            end,
-            desc = "[M]arkdown: [o]pen preview",
-        },
-        {
-            "<leader>Mc",
-            function()
-                require("peek").close()
-            end,
-            desc = "[M]arkdown: [c]lose preview",
         },
     }
 end
