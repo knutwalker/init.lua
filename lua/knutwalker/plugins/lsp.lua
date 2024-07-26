@@ -33,22 +33,25 @@ return {
         "rafamadriz/friendly-snippets",
 
         -- Progress Report
-        { "j-hui/fidget.nvim",                                 tag = "legacy" },
+        { "j-hui/fidget.nvim",        tag = "legacy" },
 
         -- LSP kind symbols for completion items
         "onsails/lspkind-nvim",
 
-        -- Multiline diagnostics
-        { url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
+        -- Inline diagnostics
+        {
+            "rachartier/tiny-inline-diagnostic.nvim",
+            event = "VeryLazy",
+        },
 
         -- File location
-        { "SmiteshP/nvim-navic",                               lazy = true },
+        { "SmiteshP/nvim-navic",      lazy = true },
 
         -- LSP Signature
-        { "ray-x/lsp_signature.nvim",                          config = true },
+        { "ray-x/lsp_signature.nvim", config = true },
 
         -- Incremental renaming
-        { "smjonas/inc-rename.nvim",                           config = true },
+        { "smjonas/inc-rename.nvim",  config = true },
     },
     config = function()
         local lsp = require("lsp-zero")

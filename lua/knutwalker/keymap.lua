@@ -896,7 +896,7 @@ function M.telescope()
             desc = "[G]it [d]iff current file",
         },
         {
-            "<leader>{",
+            "<leader>}",
             function()
                 require("telescope.builtin").diagnostics()
             end,
