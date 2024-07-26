@@ -47,12 +47,16 @@ return {
         -- Code Actions
         {
             "rachartier/tiny-code-action.nvim",
-            -- dependencies = {
-            --     { "nvim-lua/plenary.nvim" },
-            --     { "nvim-telescope/telescope.nvim" },
-            -- },
             event = "LspAttach",
-            config = true,
+            opts = {
+                telescope_opts = {
+                    layout_strategy = "vertical",
+                    layout_config = {
+                        mirror = true,
+                        preview_height = { 0.7, min = 10 }
+                    },
+                },
+            }
         },
 
         -- File location
