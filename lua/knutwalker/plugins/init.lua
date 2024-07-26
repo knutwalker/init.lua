@@ -311,4 +311,29 @@ return {
             { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle [Y]azi" },
         },
     },
+
+    {
+        "christopher-francisco/tmux-status.nvim",
+        lazy = true,
+        opts = {
+            window = {
+                separator = " | ",
+                icon_zoom = "Z",
+                icon_mark = "M",
+                icon_bell = "!",
+                icon_mute = "~",
+                icon_activity = "#",
+                text = "name",
+            },
+            session = {
+                icon = ""
+            },
+            colors = {
+                window_active = "#87a987",
+                window_inactive = "#727169",
+                window_inactive_recent = "#727169",
+                session = "#949fb5",
+            },
+        },
+    },
 }
