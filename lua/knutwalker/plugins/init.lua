@@ -225,7 +225,7 @@ return {
 
     {
         'rmagatti/auto-session',
-        config = {
+        opts = {
             auto_session_suppress_dirs = { '/', '~/', '~/Downloads', '~/dev/tmp/' },
         },
     },
