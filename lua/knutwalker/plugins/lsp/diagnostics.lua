@@ -71,7 +71,7 @@ end
 
 function M.setup_after_lsp()
     require("tiny-inline-diagnostic").setup({
-        options = { multiple_diag_under_cursor = false, show_source = true },
+        options = { multiple_diag_under_cursor = false, show_source = true, multilines = true },
     })
 end
 
