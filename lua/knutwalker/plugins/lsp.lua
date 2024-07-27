@@ -42,6 +42,9 @@ return {
         {
             "rachartier/tiny-inline-diagnostic.nvim",
             event = "VeryLazy",
+            opts = {
+                options = { multiple_diag_under_cursor = false, show_source = false, multilines = false, },
+            }
         },
 
         -- Code Actions
@@ -135,9 +138,6 @@ return {
         require("mason-lspconfig").setup({
             handlers = mason_lspconfig_setup(),
         })
-
-        -- Setup LSP diagnostics
-        require("knutwalker.plugins.lsp.diagnostics").setup_after_lsp()
 
         -- Configure rust-tools
         require("knutwalker.plugins.lsp.rust").setup(rust_lsp_opts)
