@@ -490,12 +490,12 @@ function M.harpoon()
         },
         {
             "]'",
-            function() require("harpoon"):list():next() end,
+            function() require("harpoon"):list():next({ ui_nav_wrap = true }) end,
             desc = "Navigate to next harpoon entry",
         },
         {
             "['",
-            function() require("harpoon"):list():prev() end,
+            function() require("harpoon"):list():prev({ ui_nav_wrap = true }) end,
             desc = "Navigate to previous harpoon entry",
         },
         {
