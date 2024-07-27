@@ -9,6 +9,8 @@ return {
 
     { "folke/which-key.nvim",          config = true },
 
+    { "windwp/nvim-autopairs",         event = "InsertEnter",                                                     opts = { check_ts = true } },
+
     { "declancm/maximize.nvim",        keys = keymap.maximizer(),                                                 opts = { default_keymaps = false } },
 
     { "famiu/bufdelete.nvim",          keys = keymap.bufdelete(),                                                 cmd = { "Bdelete" } },
