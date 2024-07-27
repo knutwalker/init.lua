@@ -24,6 +24,9 @@ require("lazy").setup("knutwalker.plugins", {
         -- Don't notify when changes are found
         notify = false,
     },
+    pkg = {
+        sources = { "lazy" },
+    },
     rocks = {
         enabled = false,
         hererocks = false,
