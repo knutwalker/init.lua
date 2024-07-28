@@ -43,7 +43,7 @@ return {
             "rachartier/tiny-inline-diagnostic.nvim",
             event = "VeryLazy",
             opts = {
-                options = { multiple_diag_under_cursor = false, show_source = false, multilines = false, },
+                options = { multiple_diag_under_cursor = false, show_source = true, multilines = false, },
             }
         },
 
