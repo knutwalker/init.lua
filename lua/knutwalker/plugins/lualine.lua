@@ -41,12 +41,6 @@ return {
                         return m or str -- :gsub("%%%%5C", ""):gsub("%%%%3C", ""):gsub("%%%%3E", "")
                     end,
                 },
-                {
-                    require('tmux-status').tmux_windows,
-                    cond = require('tmux-status').show,
-                    separator = "",
-                    padding = { left = 1 }
-                },
             },
             lualine_x = {
                 {
@@ -68,12 +62,6 @@ return {
             lualine_y = { "progress", "searchcount" },
             lualine_z = {
                 { "location", separator = "", padding = 0 },
-                {
-                    require('tmux-status').tmux_session,
-                    cond = require('tmux-status').show,
-                    separator = "",
-                    padding = 0
-                },
             },
         },
         inactive_sections = {
