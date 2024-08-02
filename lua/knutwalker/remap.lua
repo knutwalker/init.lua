@@ -22,21 +22,15 @@ bind("n", "N", "Nzzzv", { desc = "Previous search result" })
 bind({ "n", "v", "x" }, "<leader>v", '"_dP', { desc = "Paste without losing copied content" })
 bind({ "n", "v", "x" }, "<leader>V", '"_dp', { desc = "Paste without losing copied content" })
 
--- paste with p or P and move cursor to the end of the pasted text
-bind({ "n", "v", "x" }, "p", "gp", { desc = "Paste and move cursor to the end of the pasted text" })
-bind({ "n", "v", "x" }, "P", "gP", { desc = "Paste and move cursor to the end of the pasted text" })
-bind({ "n", "v", "x" }, "gp", "p", { desc = "Paste and leave cursor at the beginning of the pasted text" })
-bind({ "n", "v", "x" }, "gP", "P", { desc = "Paste and leave cursor at the beginning of the pasted text" })
-
 -- yank and paste to and from the system clipboard
 bind("n", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
 bind("v", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
 bind("n", "<leader>Y", '"+Y', { desc = "[Y]ank to system clipboard" })
 
-bind("n", "<leader>p", '"+gp', { desc = "[P]aste from system clipboard" })
-bind("v", "<leader>p", '"+gp', { desc = "[P]aste from system clipboard" })
-bind("n", "<leader>P", '"+gP', { desc = "[P]aste from system clipboard" })
-bind("v", "<leader>P", '"+gP', { desc = "[P]aste from system clipboard" })
+bind("n", "<leader>p", '"+p', { desc = "[P]aste from system clipboard" })
+bind("v", "<leader>p", '"+p', { desc = "[P]aste from system clipboard" })
+bind("n", "<leader>P", '"+P', { desc = "[P]aste from system clipboard" })
+bind("v", "<leader>P", '"+P', { desc = "[P]aste from system clipboard" })
 
 bind("n", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
 bind("v", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
