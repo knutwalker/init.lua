@@ -79,3 +79,6 @@ opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,te
 
 -- Disable command line
 opt.cmdheight = 0
+
+-- Don't show the into messaage
+vim.opt.shortmess:append({ I = true })
