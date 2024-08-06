@@ -87,8 +87,11 @@ return {
                 },
             },
             lualine_x = {},
-            lualine_y = {},
-            lualine_z = { "tabs" },
+            lualine_y = { "windows" },
+            lualine_z = { {
+                "datetime",
+                style = "iso" -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+            } },
         },
         winbar = {},
         inactive_winbar = {},
