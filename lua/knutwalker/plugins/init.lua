@@ -3,8 +3,6 @@ local keymap = require("knutwalker.keymap")
 return {
     { "nvim-lua/plenary.nvim",         lazy = true },
 
-    { "kyazdani42/nvim-web-devicons",  lazy = true },
-
     { "tpope/vim-unimpaired",          event = "BufReadPost" },
 
     { "folke/which-key.nvim",          config = true },
