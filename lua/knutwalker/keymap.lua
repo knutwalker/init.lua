@@ -463,6 +463,14 @@ function M.harpoon()
         {
             "<leader>fm",
             function()
+                local harpoon = require("harpoon")
+                harpoon.ui:toggle_quick_menu(harpoon:list())
+            end,
+            desc = "[F]ind Harpoon [M]arks (Harpoon UI)",
+        },
+        {
+            "<leader>fM",
+            function()
                 local harpoon_files = require("harpoon"):list()
                 local conf = require("telescope.config").values
                 local file_paths = {}
@@ -481,20 +489,12 @@ function M.harpoon()
             desc = "[F]ind Harpoon [m]arks",
         },
         {
-            "<leader>fM",
-            function()
-                local harpoon = require("harpoon")
-                harpoon.ui:toggle_quick_menu(harpoon:list())
-            end,
-            desc = "[F]ind Harpoon [M]arks (Harpoon UI)",
-        },
-        {
-            "]'",
+            "]<localleader>",
             function() require("harpoon"):list():next({ ui_nav_wrap = true }) end,
             desc = "Navigate to next harpoon entry",
         },
         {
-            "['",
+            "[<localleader>",
             function() require("harpoon"):list():prev({ ui_nav_wrap = true }) end,
             desc = "Navigate to previous harpoon entry",
         },
