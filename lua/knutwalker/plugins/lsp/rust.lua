@@ -14,7 +14,7 @@ function M.setup(lsp_opts)
             checkOnSave = { command = "clippy" },
             check = { command = "clippy" },
             completion = { callable = { snippets = "add_parentheses" }, privateEditable = { enable = true } },
-            diagnostics = { enable = true, disabled = { "inactive-code" }, experimental = { enable = true } },
+            diagnostics = { enable = true, disabled = { "inactive-code", "unlinked-file" }, experimental = { enable = true } },
             files = { excludeDirs = { "references" } },
             hover = {
                 actions = {
