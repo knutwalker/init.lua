@@ -7,7 +7,6 @@ return {
 
     { "folke/which-key.nvim",          config = true },
 
-
     { "declancm/maximize.nvim",        keys = keymap.maximizer(),                                                 opts = { default_keymaps = false } },
 
     { "famiu/bufdelete.nvim",          keys = keymap.bufdelete(),                                                 cmd = { "Bdelete" } },
@@ -204,5 +203,20 @@ return {
     {
         "OXY2DEV/markview.nvim",
         lazy = false, -- Recommended
+    },
+
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {
+            ignore_next_char = ".",
+            disable_in_visualblock = true,
+            enable_moveright = false,
+            enable_afterquote = false,
+            enable_check_bracket_line = false,
+            enable_bracket_in_quote = false,
+            map_bs = false,
+
+        }
     }
 }
