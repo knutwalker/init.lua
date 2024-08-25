@@ -75,6 +75,7 @@ function M.attach(bind)
     local rt = require("rust-tools")
 
     bind("<leader>R<CR>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x", "v" })
+    bind("<leader><Esc>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x", "v" })
     bind([[<leader>\]], rt.hover_actions.hover_actions, "RA Hover Action", { "n", "x", "v" })
     bind("<leader>k", rt.hover_actions.hover_actions, "RA: Hover Action", { "n", "x", "v" })
 
