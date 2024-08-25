@@ -60,9 +60,6 @@ function M.setup(lsp)
         end, { "i", "s" }),
     })
 
-    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
     -- Load some vscode snippets
     local snippets_path = vim.fn.stdpath("data") .. "/vscode_snippets/"
     -- require("luasnip.util.log").set_loglevel("info")

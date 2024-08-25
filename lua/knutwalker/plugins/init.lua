@@ -219,13 +219,14 @@ return {
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
+        enabled = false,
         opts = {
             ignore_next_char = ".",
             disable_in_visualblock = true,
-            enable_moveright = false,
-            enable_afterquote = false,
-            enable_check_bracket_line = false,
-            enable_bracket_in_quote = false,
+            enable_moveright = true,
+            enable_afterquote = true,
+            enable_check_bracket_line = true,
+            enable_bracket_in_quote = true,
             map_bs = false,
 
         }
