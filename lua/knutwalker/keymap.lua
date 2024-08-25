@@ -1011,4 +1011,10 @@ function M.substitute()
     }
 end
 
+function M.undotree()
+    return {
+        { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle [U]ndo tree" },
+    }
+end
+
 return M

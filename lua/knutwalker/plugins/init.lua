@@ -237,4 +237,17 @@ return {
         opts = {},
         keys = keymap.substitute(),
     },
+
+    {
+        "mbbill/undotree",
+        cmd = "UndotreeToggle",
+        keys = keymap.undotree(),
+        init = function()
+            -- Undotree config, before plugin is loaded
+            vim.g.undotree_WindowLayout = 2
+            vim.g.undotree_ShortIndicators = 1
+            vim.g.undotree_SplitWidth = 60
+            vim.g.undotree_SetFocusWhenToggle = 1
+        end,
+    },
 }
