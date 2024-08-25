@@ -123,7 +123,6 @@ function M.setup(lsp)
                 ellipsis_char = "…",
                 preset = "default",
                 menu = {
-                    Supermaven = "[🤖]",
                     nvim_lsp = "[lsp]",
                     nvim_lua = "[lua]",
                     luasnip = "[snip]",
@@ -167,7 +166,6 @@ function M.setup(lsp)
 
         -- setup completion sources
         sources = cmp.config.sources({
-            -- { name = "supermaven" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = "luasnip" },
