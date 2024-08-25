@@ -51,7 +51,6 @@ return {
         {
             "rachartier/tiny-code-action.nvim",
             event = "LspAttach",
-            commit = "f2267087dec6d3019c272d6b30eb5b49c8be288c",
             opts = {
                 telescope_opts = {
                     layout_strategy = "vertical",
