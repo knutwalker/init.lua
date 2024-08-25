@@ -124,6 +124,9 @@ bind(
     { desc = "Open [l]ocation list in [T]rouble", silent = true, noremap = true }
 )
 
+-- search for the next git conflict marker
+bind("n", "<leader>gH", "/<<<<<<CR>", { desc = "Search for the next git conflict marker" })
+
 -- lazygit integration
 bind("n", "<leader>gl", function()
     require("lazy.util").float_term({ "lazygit" }, {
