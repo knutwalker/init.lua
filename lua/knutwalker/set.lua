@@ -40,6 +40,9 @@ opt.background = "dark"
 opt.list = true
 opt.listchars = "space:·,lead:·,trail:·,nbsp:☐,tab:▸ ,extends:❯,precedes:❮"
 
+-- set foldmethod to marker
+opt.foldmethod = "marker"
+
 -- always show the sign column
 vim.wo.signcolumn = "yes"
 
