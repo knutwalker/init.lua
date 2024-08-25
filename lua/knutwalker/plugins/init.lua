@@ -230,5 +230,11 @@ return {
             map_bs = false,
 
         }
-    }
+    },
+
+    {
+        "gbprod/substitute.nvim",
+        opts = {},
+        keys = keymap.substitute(),
+    },
 }
