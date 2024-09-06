@@ -128,13 +128,12 @@ bind(
 bind("n", "<leader>gH", "/<<<<<<CR>", { desc = "Search for the next git conflict marker" })
 
 -- lazygit integration
-bind("n", "<leader>gl", function()
+bind("n", "<leader>ly", function()
     require("lazy.util").float_term({ "lazygit" }, {
         size = { width = 0.95, height = 0.95 },
         margin = { top = 0, right = 0, bottom = 0, left = 0 },
     })
-end, { desc = "Open [l]azygit" })
-bind("n", "<leader>ly", "<leader>gl", { desc = "Open [l]az[y]git", remap = true })
+end, { desc = "Open [l]az[y]git" })
 
 -- git-coprs integration
 bind("n", "<leader>gp", function()
