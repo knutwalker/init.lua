@@ -184,3 +184,13 @@ bind("n", "<leader><leader>", function()
         margin = { top = 2, right = 2, bottom = 2, left = 2 },
     })
 end, { desc = "Open Sessionizer" })
+
+-- load or toggle supermaven
+bind("n", "<leader>C", function()
+    local loaded = ((require("lazy.core.config").plugins["supermaven-nvim"] or {})._ or {}).loaded
+    if loaded == nil then
+        require("lazy").load({ plugins = { "supermaven-nvim" }, wait = true, show = false })
+    else
+        vim.cmd("SupermavenToggle")
+    end
+end, { desc = "Toggle Supermaven" })
