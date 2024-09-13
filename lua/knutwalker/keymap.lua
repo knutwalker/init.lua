@@ -977,40 +977,6 @@ function M.yazi()
     }
 end
 
-function M.substitute()
-    return {
-        {
-            "cx",
-            function()
-                require("substitute.exchange").operator()
-            end,
-            desc = "Substitute pending operator",
-        },
-        {
-            "cxx",
-            function()
-                require("substitute.exchange").line()
-            end,
-            desc = "Substitute current line",
-        },
-        {
-            "X",
-            function()
-                require("substitute.exchange").visual()
-            end,
-            mode = { "x" },
-            desc = "Substitute",
-        },
-        {
-            "cxc",
-            function()
-                require("substitute.exchange").cancel()
-            end,
-            desc = "Substitute to end of line",
-        },
-    }
-end
-
 function M.undotree()
     return {
         { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle [U]ndo tree" },

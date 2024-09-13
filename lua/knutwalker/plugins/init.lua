@@ -61,6 +61,14 @@ return {
     },
 
     {
+        'echasnovski/mini.operators',
+        event = "BufReadPost",
+        config = function()
+            require("mini.operators").setup()
+        end
+    },
+
+    {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
         main = "ibl",
@@ -230,12 +238,6 @@ return {
             map_bs = false,
 
         }
-    },
-
-    {
-        "gbprod/substitute.nvim",
-        opts = {},
-        keys = keymap.substitute(),
     },
 
     {
