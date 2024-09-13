@@ -632,7 +632,7 @@ function M.telescope()
         {
             "<leader>e",
             function()
-                require("telescope.builtin").oldfiles()
+                require("telescope.builtin").oldfiles({ only_cwd = true })
             end,
             desc = "Search [e]dit history",
         },
