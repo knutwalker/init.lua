@@ -585,14 +585,14 @@ function M.oil()
         {
             "<leader>t",
             function()
-                require("oil").open_float(os.getenv("SESSION_ROOT"))
+                require("oil").open_float()
             end,
             desc = "Open/Focus File[t]ree",
         },
         {
             "<leader>T",
             function()
-                require("oil").close()
+                require("oil").open_float(os.getenv("SESSION_ROOT"))
             end,
             desc = "Close File[t]ree",
         },
