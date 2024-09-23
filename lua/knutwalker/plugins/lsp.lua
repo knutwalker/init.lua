@@ -73,6 +73,9 @@ return {
         { "smjonas/inc-rename.nvim",  config = true },
     },
     config = function()
+        -- ZLS: don't show parse errors in a separate window
+        vim.g.zig_fmt_parse_errors = 0
+
         local lsp = require("lsp-zero")
 
         require("knutwalker.plugins.lsp.cmp").setup(lsp)
