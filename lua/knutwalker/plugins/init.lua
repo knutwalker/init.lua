@@ -69,6 +69,15 @@ return {
     },
 
     {
+        'echasnovski/mini.pairs',
+        event = "BufReadPost",
+        version = '*',
+        config = function()
+            require("mini.pairs").setup()
+        end
+    },
+
+    {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
         main = "ibl",
