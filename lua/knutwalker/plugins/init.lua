@@ -55,6 +55,7 @@ return {
     {
         "echasnovski/mini.move",
         event = "BufReadPost",
+        version = '*',
         config = function()
             require("mini.move").setup()
         end,
@@ -63,6 +64,7 @@ return {
     {
         'echasnovski/mini.operators',
         event = "BufReadPost",
+        version = '*',
         config = function()
             require("mini.operators").setup()
         end
