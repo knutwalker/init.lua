@@ -80,8 +80,8 @@ vim.opt.iskeyword:append("-")
 -- Set proper sessionoptions according to https://github.com/rmagatti/auto-session/blob/08c279882d4117a3e6ade1a014f7cf4af7c34fec/README.md#recommended-sessionoptions-config
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
--- Disable command line
-opt.cmdheight = 0
+-- Don't disable command line
+opt.cmdheight = 1
 
 -- Don't show the into messaage
 vim.opt.shortmess:append({ I = true })
