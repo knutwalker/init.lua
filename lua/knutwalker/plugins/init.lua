@@ -13,6 +13,8 @@ return {
 
     { "avli/vim-lox-syntax",           event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
 
+    { "andrewferrier/debugprint.nvim", keys = "g?",                                                               config = true },
+
     { "rareitems/put_at_end.nvim",     keys = keymap.put_at_end() },
 
     {
