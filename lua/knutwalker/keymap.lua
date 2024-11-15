@@ -823,48 +823,6 @@ function M.todo_comments()
             "<cmd>TodoTelescope<CR>",
             desc = "Find [T]odos",
         },
-        {
-            "<leader>fT",
-            "<cmd>TodoTrouble<CR>",
-            desc = "Find [T]odos in Touble",
-        },
-    }
-end
-
-function M.trouble()
-    return {
-        {
-            "<leader>f{",
-            "<CMD>TroubleToggle workspace_diagnostics<CR>",
-            desc = "Open workspace diagnostics in Trouble",
-            silent = true,
-            noremap = true,
-        },
-        {
-            "<leader>f[",
-            "<CMD>TroubleToggle document_diagnostics<CR>",
-            desc = "Open document diagnostics in Trouble",
-            silent = true,
-            noremap = true,
-        },
-        {
-            "]x",
-            function()
-                require("trouble").next({ skip_groups = true, jump = true })
-            end,
-            desc = "Jump to the next Trouble item",
-            silent = true,
-            nowait = true,
-        },
-        {
-            "[x",
-            function()
-                require("trouble").prev({ skip_groups = true, jump = true })
-            end,
-            desc = "Jump to the previous Trouble item",
-            silent = true,
-            nowait = true,
-        },
     }
 end
 

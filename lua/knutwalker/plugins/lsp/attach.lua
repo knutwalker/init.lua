@@ -60,7 +60,6 @@ function M.setup()
 
         bind("gd", buf.definition, "[G]o to [d]efinition")
         bind("<leader>lgd", telescope.lsp_definitions, "[G]o to [d]efinition")
-        bind("gD", "<CMD>TroubleToggle lsp_definitions<CR>", "[G]o to [D]efinition in Trouble")
 
         bind("<leader>s", telescope.lsp_document_symbols, "Search [s]ymbols in this file")
         bind("<leader>ls", buf.document_symbol, "Search [s]ymbols in this file")
@@ -76,7 +75,6 @@ function M.setup()
 
         bind("gr", buf.references, "[G]o to [r]eferences")
         bind("<leader>lgr", telescope.lsp_references, "[G]o to [r]eferences")
-        bind("gR", "<CMD>TroubleToggle lsp_references<CR>", "[G]o to [R]eferences in Trouble")
 
         vim.keymap.set("n", "<leader>rr", function()
             return ":IncRename " .. vim.fn.expand("<cword>")
@@ -87,7 +85,6 @@ function M.setup()
         bind("gy", buf.type_definition, "[G]o to t[y]pe definition")
         bind("gY", function() buf.typehierarchy("supertypes") end, "[G]o to supert[y]pes")
         bind("<leader>lgy", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
-        bind("<leader>lgY", "<CMD>TroubleToggle lsp_type_definitions<CR>", "[G]o to t[y]pe definition in Trouble")
 
         bind("<leader>S", telescope.lsp_dynamic_workspace_symbols, "Search [S]ymbols in this workspace")
         bind("<leader>lS", function() buf.workspace_symbol() end, "Search [S]ymbols in this workspace")

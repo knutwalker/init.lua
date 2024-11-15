@@ -23,16 +23,10 @@ return {
                 sorting_strategy = "ascending",
                 mappings = {
                     i = {
-                        ["<c-y>"] = function(...)
-                            require("trouble.sources.telescope").open(...)
-                        end,
                         ["<c-x>"] = false,
                         ["<c-h>"] = actions.select_horizontal,
                     },
                     n = {
-                        ["<c-y>"] = function(...)
-                            require("trouble.sources.telescope").open(...)
-                        end,
                         ["<c-x>"] = false,
                         ["<c-h>"] = actions.select_horizontal,
                     },

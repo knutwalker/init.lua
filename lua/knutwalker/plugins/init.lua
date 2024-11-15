@@ -131,21 +131,10 @@ return {
 
     {
         "folke/todo-comments.nvim",
-        cmd = { "TodoTrouble", "TodoTelescope" },
+        cmd = { "TodoTelescope" },
         event = "BufReadPost",
         keys = keymap.todo_comments(),
         config = true,
-    },
-
-    {
-        "folke/trouble.nvim",
-        cmd = { "TroubleToggle", "Trouble" },
-        keys = keymap.trouble(),
-        opts = {
-            auto_open = false,
-            auto_jump = {},
-            use_diagnostic_signs = true,
-        },
     },
 
     {
