@@ -45,7 +45,7 @@ function M.setup_before_lsp()
         { desc = "Go to next diagnostic" })
 
     vim.keymap.set("n", "<leader>[", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-    vim.keymap.set("n", "<leader>qd", vim.diagnostic.setloclist, { desc = "Set diagnostic to loclist" })
+    vim.keymap.set("n", "<leader>{", vim.diagnostic.setqflist, { desc = "Send diagnostic to quickfixlist" })
 
     -- Setup diagnostics
     vim.diagnostic.config({
