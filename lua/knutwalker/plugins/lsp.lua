@@ -63,9 +63,6 @@ return {
             }
         },
 
-        -- File location
-        { "SmiteshP/nvim-navic",      lazy = true },
-
         -- LSP Signature
         { "ray-x/lsp_signature.nvim", config = true },
 

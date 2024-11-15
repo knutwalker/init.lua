@@ -122,10 +122,6 @@ function M.setup()
                 callback = buf.clear_references,
             })
         end
-
-        if capabilities.documentSymbolProvider then
-            require("nvim-navic").attach(client, bufnr)
-        end
     end
 
     return on_attach

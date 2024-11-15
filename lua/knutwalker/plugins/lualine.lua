@@ -22,7 +22,8 @@ return {
         },
         sections = {
             lualine_a = { "mode" },
-            lualine_b = {
+            lualine_b = { "branch", "diff" },
+            lualine_c = {
                 { "diagnostics", separator = "" },
                 {
                     function()
@@ -30,9 +31,10 @@ return {
                     end,
                 },
             },
-            lualine_c = {
+            lualine_x = {
                 {
                     "filename",
+                    separator = "",
                     path = 1,            -- show relative path to project root
                     shorting_target = 0, -- don't shorten the path, important for the jdt fix
                     fmt = function(str)
@@ -41,8 +43,6 @@ return {
                         return m or str -- :gsub("%%%%5C", ""):gsub("%%%%3C", ""):gsub("%%%%3E", "")
                     end,
                 },
-            },
-            lualine_x = {
                 {
                     "encoding",
                     separator = "",
@@ -50,7 +50,6 @@ return {
                         return vim.bo.fileencoding ~= "utf-8"
                     end,
                 },
-                { "filetype", separator = "" },
                 {
                     "fileformat",
                     separator = "",
@@ -72,27 +71,7 @@ return {
             lualine_y = {},
             lualine_z = {},
         },
-        tabline = {
-            lualine_a = {},
-            lualine_b = { "branch", "diff" },
-            lualine_c = {
-                {
-                    function()
-                        local ret = require("nvim-navic").get_location()
-                        return ret:len() > 2000 and "navic error" or ret
-                    end,
-                    cond = function()
-                        return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-                    end,
-                },
-            },
-            lualine_x = {},
-            lualine_y = { "windows" },
-            lualine_z = { {
-                "datetime",
-                style = "iso" -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-            } },
-        },
+        tabline = {},
         winbar = {},
         inactive_winbar = {},
         extensions = { "neo-tree", "nvim-dap-ui", "symbols-outline", "quickfix" },
