@@ -758,6 +758,18 @@ function M.telescope()
             desc = "[F]ind All [E]mojis",
         },
         {
+            "<leader>fo",
+            function()
+                require("telescope.builtin").vim_options()
+            end,
+            desc = "[F]ind vim [O]ptions",
+        },
+        {
+            "<leader>fT",
+            "<CMD>Telescope<CR>",
+            desc = "[T]elescope",
+        },
+        {
             "<leader>fq",
             function()
                 require("telescope.builtin").quickfix()
@@ -765,28 +777,14 @@ function M.telescope()
             desc = "[F]ind [q]uickfix items",
         },
         {
-            "<leader>gg",
+            "<leader>fQ",
             function()
-                require("telescope.builtin").git_status()
+                require("telescope.builtin").quickfixhistory()
             end,
-            desc = "[G]it status",
+            desc = "[F]ind [q]uickfix items",
         },
         {
             "<leader>gb",
-            function()
-                require("telescope.builtin").git_branches()
-            end,
-            desc = "[G]it [b]ranches",
-        },
-        {
-            "<leader>gc",
-            function()
-                require("telescope.builtin").git_commits()
-            end,
-            desc = "[G]it [c]ommits",
-        },
-        {
-            "<leader>gd",
             function()
                 require("telescope.builtin").git_bcommits()
             end,

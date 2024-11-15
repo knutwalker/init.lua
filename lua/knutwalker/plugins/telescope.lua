@@ -3,7 +3,6 @@ return {
     branch = "0.1.x",
     cmd = { "Telescope", "Tel" },
     dependencies = {
-        "nvim-telescope/telescope-ui-select.nvim",
         "nvim-telescope/telescope-symbols.nvim",
         "molecule-man/telescope-menufacture",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "gmake" },
@@ -48,7 +47,6 @@ return {
         })
 
         telescope.load_extension("fzf")
-        telescope.load_extension("ui-select")
         telescope.load_extension("menufacture")
     end,
 }
