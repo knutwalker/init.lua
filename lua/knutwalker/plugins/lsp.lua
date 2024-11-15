@@ -50,9 +50,9 @@ return {
         -- Code Actions
         {
             "rachartier/tiny-code-action.nvim",
-            commit = "f2267087dec6d3019c272d6b30eb5b49c8be288c",
             event = "LspAttach",
             opts = {
+                backend = "difftastic",
                 telescope_opts = {
                     layout_strategy = "vertical",
                     layout_config = {
