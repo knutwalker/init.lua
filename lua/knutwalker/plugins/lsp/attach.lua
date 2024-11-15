@@ -32,30 +32,50 @@ function M.setup()
 
         local capabilities = client.server_capabilities
 
-        bind("<leader><CR>", function() require("tiny-code-action").code_action() end, "Code Action", { "n", "x", "v" })
-        bind("<M-Return>", function() require("tiny-code-action").code_action() end, "Code Action", { "n", "x", "v" })
-        bind("<M-Return>", "<C-o>:lua require(\"tiny-code-action\").code_action()<CR>", "Code Action", { "i" })
+        local ca = function()
+            local success, tca = pcall(require, "tiny-code-action")
+            if success then
+                tca.code_action()
+            else
+                buf.code_action()
+            end
+        end
+
+        bind("<leader><CR>", ca, "Code Action", { "n", "x", "v" })
+        bind("<localleader><space>", ca, "Code Action", { "n", "x", "v" })
+        bind("<localleader><CR>", function() buf.code_action() end, "Code Action", { "n", "x", "v" })
+        bind("<M-Return>", ca, "Code Action", { "n", "x", "v" })
+        bind("<M-Return>", ca, "Code Action", { "i" })
 
         bind("<leader>lr", cl.run, "[R]un Code Lens")
         bind("<leader>lR", cl.refresh, "[R]efresh Code Lens")
 
+        bind("gI", buf.incoming_calls, "[I]ncoming calls")
+        bind("gO", buf.outgoing_calls, "[O]utgoing calls")
+
+        bind("<leader>h", function() vim.lsp.inlay_hint.enable(true, { bufnr = bufnr }) end, "Enable inlay [h]ints")
+        bind("<leader>H", function() vim.lsp.inlay_hint.enable(false, { bufnr = bufnr }) end, "Disable inlay [h]ints")
+
         bind("gl", buf.declaration, "[G]o to dec[l]aration")
 
-        bind("gd", telescope.lsp_definitions, "[G]o to [d]efinition")
+        bind("gd", buf.definition, "[G]o to [d]efinition")
+        bind("<leader>lgd", telescope.lsp_definitions, "[G]o to [d]efinition")
         bind("gD", "<CMD>TroubleToggle lsp_definitions<CR>", "[G]o to [D]efinition in Trouble")
-        bind("<leader>fd", telescope.lsp_definitions, "[F]ind [d]efinitions")
 
         bind("<leader>s", telescope.lsp_document_symbols, "Search [s]ymbols in this file")
+        bind("<leader>ls", buf.document_symbol, "Search [s]ymbols in this file")
 
         bind("K", buf.hover, "Hover symbol")
         bind("<M-k>", buf.hover, "Hover symbol", "i")
-        if client.name ~= "rust_analyzer" then
-            bind("<leader>k", buf.hover, "Hover symbol")
-        end
 
-        bind("gi", telescope.lsp_implementations, "[G]o to [i]mplementation")
+        bind("H", buf.signature_help, "Signature [H]elp")
+        bind("<M-h>", buf.signature_help, "Signature [H]elp", "i")
 
-        bind("gr", telescope.lsp_references, "[G]o to [r]eferences")
+        bind("gi", buf.implementation, "[G]o to [i]mplementation")
+        bind("<leader>lgi", telescope.lsp_implementations, "[G]o to [i]mplementation")
+
+        bind("gr", buf.references, "[G]o to [r]eferences")
+        bind("<leader>lgr", telescope.lsp_references, "[G]o to [r]eferences")
         bind("gR", "<CMD>TroubleToggle lsp_references<CR>", "[G]o to [R]eferences in Trouble")
 
         vim.keymap.set("n", "<leader>rr", function()
@@ -64,14 +84,13 @@ function M.setup()
         bind("<leader>rn", ":IncRename ", "[R]e[n]ame to")
         bind("<leader>rR", buf.rename, "[R]ename (non-incremental)")
 
-        bind("<leader>H", buf.signature_help, "Signature [H]elp")
-        bind("<C-h>", buf.signature_help, "Signature [H]elp", "i")
-
-        bind("gy", telescope.lsp_type_definitions, "[G]o to t[y]pe definition")
-        bind("gY", "<CMD>TroubleToggle lsp_type_definitions<CR>", "[G]o to t[y]pe definition in Trouble")
-        bind("<leader>fy", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
+        bind("gy", buf.type_definition, "[G]o to t[y]pe definition")
+        bind("gY", function() buf.typehierarchy("supertypes") end, "[G]o to supert[y]pes")
+        bind("<leader>lgy", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
+        bind("<leader>lgY", "<CMD>TroubleToggle lsp_type_definitions<CR>", "[G]o to t[y]pe definition in Trouble")
 
         bind("<leader>S", telescope.lsp_dynamic_workspace_symbols, "Search [S]ymbols in this workspace")
+        bind("<leader>lS", function() buf.workspace_symbol() end, "Search [S]ymbols in this workspace")
         bind("<leader>fs", telescope.lsp_workspace_symbols, "Search [S]ymbols in this workspace (once)")
 
         if capabilities.documentFormattingProvider then

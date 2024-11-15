@@ -63,11 +63,8 @@ return {
             }
         },
 
-        -- LSP Signature
-        { "ray-x/lsp_signature.nvim", config = true },
-
         -- Incremental renaming
-        { "smjonas/inc-rename.nvim",  config = true },
+        { "smjonas/inc-rename.nvim", config = true },
     },
     config = function()
         -- ZLS: don't show parse errors in a separate window

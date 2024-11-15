@@ -79,21 +79,6 @@ function M.attach(bind)
     bind([[<leader>\]], rt.hover_actions.hover_actions, "RA Hover Action", { "n", "x", "v" })
     bind("<leader>k", rt.hover_actions.hover_actions, "RA: Hover Action", { "n", "x", "v" })
 
-    local hints_on = false
-    local function toggle_hints()
-        local enable = not hints_on
-        hints_on = enable
-        vim.notify("Inlay hints have been " .. (enable and "enabled" or "disabled"))
-        if enable then
-            rt.inlay_hints.set()
-        else
-            rt.inlay_hints.unset()
-        end
-    end
-
-    bind("<leader>h", toggle_hints, "RA: Toggle inlay [h]ints", { "n", "v" })
-    bind("<M-h>", toggle_hints, "RA: Toggle inlay [h]ints", "i")
-
     bind("<leader>Rhs", rt.inlay_hints.set, "[R]ust inlay [h]ints [s]et")
     bind("<leader>Rhu", rt.inlay_hints.unset, "[R]ust inlay [h]ints [u]nset")
     bind("<leader>Rhe", rt.inlay_hints.enable, "[R]ust inlay [h]ints [e]nable")
