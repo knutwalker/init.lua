@@ -71,12 +71,16 @@ return {
     },
 
     {
-        'echasnovski/mini.pairs',
-        event = "BufReadPost",
-        version = '*',
-        config = function()
-            require("mini.pairs").setup()
-        end
+        'altermo/ultimate-autopair.nvim',
+        event = { 'InsertEnter' },
+        branch = 'v0.6',
+        opts = {
+            cmap = false,
+            pair_cmap = false,
+            fastwarp = { enable = false },
+            close = { enable = false },
+            tabout = { enable = false },
+        },
     },
 
     {
@@ -239,22 +243,6 @@ return {
     {
         "OXY2DEV/markview.nvim",
         lazy = false, -- Recommended
-    },
-
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        enabled = false,
-        opts = {
-            ignore_next_char = ".",
-            disable_in_visualblock = true,
-            enable_moveright = true,
-            enable_afterquote = true,
-            enable_check_bracket_line = true,
-            enable_bracket_in_quote = true,
-            map_bs = false,
-
-        }
     },
 
     {
