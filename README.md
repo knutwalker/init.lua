@@ -23,19 +23,16 @@ NVIM_APPNAME=knutwalker/init.lua/ nvim
 
 ## Plugins
 
-### bars-and-lines
+### ai
 
-+ [SmiteshP/nvim-navic](https://dotfyle.com/plugins/SmiteshP/nvim-navic)
-### color
-
-+ [NvChad/nvim-colorizer.lua](https://dotfyle.com/plugins/NvChad/nvim-colorizer.lua)
++ [supermaven-inc/supermaven-nvim](https://dotfyle.com/plugins/supermaven-inc/supermaven-nvim)
 ### colorscheme
 
 + [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
 ### comment
 
-+ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 + [echasnovski/mini.comment](https://dotfyle.com/plugins/echasnovski/mini.comment)
++ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 ### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
@@ -45,17 +42,15 @@ NVIM_APPNAME=knutwalker/init.lua/ nvim
 + [rcarriga/nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
 + [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 + [andrewferrier/debugprint.nvim](https://dotfyle.com/plugins/andrewferrier/debugprint.nvim)
-### diagnostics
-
-+ [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
 ### editing-support
 
 + [chrisgrieser/nvim-various-textobjs](https://dotfyle.com/plugins/chrisgrieser/nvim-various-textobjs)
 + [monaqa/dial.nvim](https://dotfyle.com/plugins/monaqa/dial.nvim)
++ [altermo/ultimate-autopair.nvim](https://dotfyle.com/plugins/altermo/ultimate-autopair.nvim)
 + [echasnovski/mini.move](https://dotfyle.com/plugins/echasnovski/mini.move)
 + [nvim-treesitter/nvim-treesitter-context](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-context)
 + [folke/zen-mode.nvim](https://dotfyle.com/plugins/folke/zen-mode.nvim)
-+ [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
++ [echasnovski/mini.operators](https://dotfyle.com/plugins/echasnovski/mini.operators)
 ### file-explorer
 
 + [stevearc/oil.nvim](https://dotfyle.com/plugins/stevearc/oil.nvim)
@@ -81,7 +76,6 @@ NVIM_APPNAME=knutwalker/init.lua/ nvim
 + [smjonas/inc-rename.nvim](https://dotfyle.com/plugins/smjonas/inc-rename.nvim)
 + [rachartier/tiny-inline-diagnostic.nvim](https://dotfyle.com/plugins/rachartier/tiny-inline-diagnostic.nvim)
 + [VonHeikemen/lsp-zero.nvim](https://dotfyle.com/plugins/VonHeikemen/lsp-zero.nvim)
-+ [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
 + [mfussenegger/nvim-jdtls](https://dotfyle.com/plugins/mfussenegger/nvim-jdtls)
 + [kosayoda/nvim-lightbulb](https://dotfyle.com/plugins/kosayoda/nvim-lightbulb)
 + [nvimtools/none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
