@@ -19,6 +19,23 @@ function M.setup()
             vim.keymap.set(mode, keys, func, { buffer = bufnr, remap = false, desc = desc })
         end
 
+        local ca = function()
+            local success, tca = pcall(require, "tiny-code-action")
+            if success then
+                tca.code_action()
+            else
+                buf.code_action()
+            end
+        end
+
+        local on_list = function(options)
+            vim.fn.setqflist({}, ' ', options)
+            vim.cmd.cfirst()
+            vim.cmd.copen()
+        end
+
+        local capabilities = client.server_capabilities
+
         bind("<leader>li", "<cmd>LspInfo<CR>", "Information")
         bind("<leader>lI", "<cmd>NullLsInfo<CR>", "Null-LS Information")
 
@@ -28,17 +45,6 @@ function M.setup()
 
         if client.name == "rust_analyzer" then
             require("knutwalker.plugins.lsp.rust").attach(bind)
-        end
-
-        local capabilities = client.server_capabilities
-
-        local ca = function()
-            local success, tca = pcall(require, "tiny-code-action")
-            if success then
-                tca.code_action()
-            else
-                buf.code_action()
-            end
         end
 
         bind("<leader><CR>", ca, "Code Action", { "n", "x", "v" })
@@ -56,13 +62,13 @@ function M.setup()
         bind("<leader>h", function() vim.lsp.inlay_hint.enable(true, { bufnr = bufnr }) end, "Enable inlay [h]ints")
         bind("<leader>H", function() vim.lsp.inlay_hint.enable(false, { bufnr = bufnr }) end, "Disable inlay [h]ints")
 
-        bind("gl", buf.declaration, "[G]o to dec[l]aration")
+        bind("gl", function() buf.declaration({ on_list = on_list }) end, "[G]o to dec[l]aration")
 
-        bind("gd", buf.definition, "[G]o to [d]efinition")
+        bind("gd", function() buf.definition({ on_list = on_list }) end, "[G]o to [d]efinition")
         bind("<leader>lgd", telescope.lsp_definitions, "[G]o to [d]efinition")
 
         bind("<leader>s", telescope.lsp_document_symbols, "Search [s]ymbols in this file")
-        bind("<leader>ls", buf.document_symbol, "Search [s]ymbols in this file")
+        bind("<leader>ls", function() buf.document_symbol({ on_list = on_list }) end, "Search [s]ymbols in this file")
 
         bind("K", buf.hover, "Hover symbol")
         bind("<M-k>", buf.hover, "Hover symbol", "i")
@@ -70,10 +76,10 @@ function M.setup()
         bind("H", buf.signature_help, "Signature [H]elp")
         bind("<M-h>", buf.signature_help, "Signature [H]elp", "i")
 
-        bind("gi", buf.implementation, "[G]o to [i]mplementation")
+        bind("gi", function() buf.implementation({ on_list = on_list }) end, "[G]o to [i]mplementation")
         bind("<leader>lgi", telescope.lsp_implementations, "[G]o to [i]mplementation")
 
-        bind("gr", buf.references, "[G]o to [r]eferences")
+        bind("gr", function() buf.references(nil, { on_list = on_list }) end, "[G]o to [r]eferences")
         bind("<leader>lgr", telescope.lsp_references, "[G]o to [r]eferences")
 
         vim.keymap.set("n", "<leader>rr", function()
@@ -82,7 +88,7 @@ function M.setup()
         bind("<leader>rn", ":IncRename ", "[R]e[n]ame to")
         bind("<leader>rR", buf.rename, "[R]ename (non-incremental)")
 
-        bind("gy", buf.type_definition, "[G]o to t[y]pe definition")
+        bind("gy", function() buf.type_definition({ on_list = on_list }) end, "[G]o to t[y]pe definition")
         bind("gY", function() buf.typehierarchy("supertypes") end, "[G]o to supert[y]pes")
         bind("<leader>lgy", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
 
