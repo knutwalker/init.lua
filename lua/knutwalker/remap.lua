@@ -24,6 +24,10 @@ bind({ "n", "v", "x" }, "D", '"_D', { desc = "Paste into the unnamed register" }
 bind({ "n", "v", "x" }, "<localleader>d", 'd', { desc = "Paste" })
 bind({ "n", "v", "x" }, "<localleader>D", 'D', { desc = "Paste" })
 
+-- paste with space v without losing the copied content
+bind({ "n", "v", "x" }, "<leader>v", '"_dP', { desc = "Paste without losing copied content" })
+bind({ "n", "v", "x" }, "<leader>V", '"_dp', { desc = "Paste without losing copied content" })
+
 -- yank and paste to and from the system clipboard
 bind("n", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
 bind("v", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
