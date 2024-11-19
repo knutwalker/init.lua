@@ -939,4 +939,14 @@ function M.undotree()
     }
 end
 
+function M.vimtest()
+    return {
+        { "<leader>kn", "<cmd>TestNearest<CR>", desc = "Test [n]earest" },
+        { "<leader>kf", "<cmd>TestFile<CR>",    desc = "Test [f]ile" },
+        { "<leader>ks", "<cmd>TestSuite<CR>",   desc = "Test [s]uite" },
+        { "<leader>kl", "<cmd>TestLast<CR>",    desc = "Test [l]ast" },
+        { "<leader>kv", "<cmd>TestVisit<CR>",   desc = "Test [v]isit" },
+    }
+end
+
 return M

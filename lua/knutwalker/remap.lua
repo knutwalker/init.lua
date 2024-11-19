@@ -120,6 +120,9 @@ bind("n", "<leader>lo", ":lopen", { desc = "[O]pen the location list" })
 bind("n", "<leader>lq", ":lclose<CR>", { desc = "[Q]uit location list" })
 bind("n", "<leader>ll", ":ll", { desc = "Select an item from the location list" })
 
+-- run make
+bind("n", "<leader>kk", ":make<CR>", { desc = "Run ma[k]e" })
+
 -- search for the next git conflict marker
 bind("n", "<leader>gH", "/<<<<<<CR>", { desc = "Search for the next git conflict marker" })
 

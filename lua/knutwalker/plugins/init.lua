@@ -249,4 +249,12 @@ return {
             vim.g.undotree_SetFocusWhenToggle = 1
         end,
     },
+
+    {
+        "vim-test/vim-test",
+        init = function()
+            vim.g['test#strategy'] = 'neovim'
+        end,
+        keys = keymap.vimtest(),
+    }
 }
