@@ -21,12 +21,8 @@ function M.setup(lsp)
         -- Replace with selected item
         ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
         -- Open usggestions
-        ["<C-t>"] = cmp.mapping.complete(),
-        -- Open usggestions
         ["<C-Space>"] = cmp.mapping.complete(),
         -- Close suggestions, in all modes
-        ["<C-e>"] = cmp.mapping.close(),
-        -- Close suggestions, only in insert mode
         ["<ESC>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.close()
@@ -59,6 +55,7 @@ function M.setup(lsp)
             end
         end, { "i", "s" }),
     })
+    cmp_mappings["<C-e>"] = nil
 
     -- Load some vscode snippets
     local snippets_path = vim.fn.stdpath("data") .. "/vscode_snippets/"
