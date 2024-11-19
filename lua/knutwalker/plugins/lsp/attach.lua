@@ -31,7 +31,9 @@ function M.setup()
         local on_list = function(options)
             vim.fn.setqflist({}, ' ', options)
             vim.cmd.cfirst()
-            vim.cmd.copen()
+            if #options.items > 1 then
+                vim.cmd.copen()
+            end
         end
 
         local capabilities = client.server_capabilities
