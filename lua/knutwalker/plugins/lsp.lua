@@ -69,6 +69,7 @@ return {
     config = function()
         -- ZLS: don't show parse errors in a separate window
         vim.g.zig_fmt_parse_errors = 0
+        vim.g.zig_fmt_autosave = 0
 
         local lsp = require("lsp-zero")
 
@@ -142,6 +143,18 @@ return {
 
         -- Configure JDT ls
         require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
+
+        -- ZLS autofix
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            desc = "Run ZLS autofix",
+            pattern = { "*.zig", "*.zon" },
+            callback = function(ev)
+                vim.lsp.buf.code_action({
+                    context = { only = { "source.fixAll" }, diagnostics = {} },
+                    apply = true,
+                })
+            end
+        })
 
         -- Configure Formatter
 
