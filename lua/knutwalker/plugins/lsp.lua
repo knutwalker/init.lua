@@ -144,18 +144,6 @@ return {
         -- Configure JDT ls
         require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
 
-        -- ZLS autofix
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            desc = "Run ZLS autofix",
-            pattern = { "*.zig", "*.zon" },
-            callback = function(ev)
-                vim.lsp.buf.code_action({
-                    context = { only = { "source.fixAll" }, diagnostics = {} },
-                    apply = true,
-                })
-            end
-        })
-
         -- Configure Formatter
 
         -- Configure git source
