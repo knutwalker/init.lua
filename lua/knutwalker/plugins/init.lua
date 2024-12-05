@@ -71,22 +71,6 @@ return {
     },
 
     {
-        'altermo/ultimate-autopair.nvim',
-        event = { 'InsertEnter' },
-        branch = 'v0.6',
-        opts = {
-            map = true,
-            pair_map = true,
-            cmap = false,
-            pair_cmap = false,
-            bs = { enable = false },
-            fastwarp = { enable = false },
-            close = { enable = true, map = '<C-t>' },
-            tabout = { enable = true, hopout = true, map = '<C-e>' },
-        },
-    },
-
-    {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
         main = "ibl",
