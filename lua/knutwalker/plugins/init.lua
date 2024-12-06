@@ -153,13 +153,7 @@ return {
 
     {
         "stevearc/oil.nvim",
-        opts = {
-            columns = {
-                "icon",
-                "permissions",
-                "size",
-            },
-        },
+        opts = { columns = {} },
         dependencies = { "nvim-tree/nvim-web-devicons" },
         keys = keymap.oil(),
     },
