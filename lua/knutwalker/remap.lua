@@ -5,8 +5,8 @@ vim.g.maplocalleader = ","
 local bind = vim.keymap.set
 
 -- Intent lines while keeping visual selection
-bind("v", "<", "<gv", { desc = "Indent lines in" })
-bind("v", ">", ">gv", { desc = "Indent lines out" })
+bind("x", "<", "<gv", { desc = "Indent lines in" })
+bind("x", ">", ">gv", { desc = "Indent lines out" })
 
 -- join lines with J while keeping the cursor at the beginning
 -- join lines with C-j to move the cursor to the end
@@ -18,28 +18,31 @@ bind("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
 bind("n", "n", "nzzzv", { desc = "Next search result" })
 bind("n", "N", "Nzzzv", { desc = "Previous search result" })
 
--- don't yank on paste
-bind({ "n", "v", "x" }, "d", '"_d', { desc = "Paste into the unnamed register" })
-bind({ "n", "v", "x" }, "D", '"_D', { desc = "Paste into the unnamed register" })
-bind({ "n", "v", "x" }, "<localleader>d", 'd', { desc = "Paste" })
-bind({ "n", "v", "x" }, "<localleader>D", 'D', { desc = "Paste" })
+-- delete without losing copied content
+bind({ "n", "x" }, "d", '"_d', { desc = "Paste into the unnamed register" })
+bind({ "n", "x" }, "D", '"_D', { desc = "Paste into the unnamed register" })
+bind({ "n", "x" }, "<localleader>d", 'd', { desc = "Paste" })
+bind({ "n", "x" }, "<localleader>D", 'D', { desc = "Paste" })
 
--- paste with space v without losing the copied content
-bind({ "n", "v", "x" }, "<leader>v", '"_dP', { desc = "Paste without losing copied content" })
-bind({ "n", "v", "x" }, "<leader>V", '"_dp', { desc = "Paste without losing copied content" })
+-- paste without losing the copied content
+bind({ "x" }, "p", '"_dp', { desc = "Paste without losing copied content" })
+bind({ "x" }, "P", '"_dP', { desc = "Paste without losing copied content" })
+bind({ "x" }, "<localleader>p", 'p', { desc = "Paste" })
+bind({ "x" }, "<localleader>P", 'P', { desc = "Paste" })
+
+-- delete with x without copying into register
+bind("n", "x", '"_x', { desc = "[X] Delete without copying into register" })
 
 -- yank and paste to and from the system clipboard
-bind("n", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
-bind("v", "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
-bind("n", "<leader>Y", '"+Y', { desc = "[Y]ank to system clipboard" })
+bind({ "n", "x" }, "<leader>y", '"+y', { desc = "[Y]ank to system clipboard" })
+bind({ "n", "x" }, "<leader>Y", '"+Y', { desc = "[Y]ank to system clipboard" })
 
 bind("n", "<leader>p", '"+p', { desc = "[P]aste from system clipboard" })
-bind("v", "<leader>p", '"+p', { desc = "[P]aste from system clipboard" })
 bind("n", "<leader>P", '"+P', { desc = "[P]aste from system clipboard" })
-bind("v", "<leader>P", '"+P', { desc = "[P]aste from system clipboard" })
+bind("x", "<leader>p", '"_d"+p', { desc = "[P]aste from system clipboard" })
+bind("x", "<leader>P", '"_d"+P', { desc = "[P]aste from system clipboard" })
 
-bind("n", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
-bind("v", "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
+bind({ "n", "x" }, "<leader>d", '"+d', { desc = "[D]elete to system clipboard" })
 
 -- always trigger ESC when Ctrl-C is pressed
 bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode", noremap = true })
@@ -48,8 +51,7 @@ bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode",
 bind("n", "0", "^", { desc = "Go to first non-whitespace character" })
 
 -- save in insert mode
-bind("i", "<C-s>", "<CMD>:w<CR><ESC>")
-bind("n", "<C-s>", "<CMD>:w<CR><ESC>")
+bind({ "n", "i" }, "<C-s>", "<CMD>:w<CR><ESC>")
 
 -- Add undo break-points
 bind("i", ",", ",<c-g>u")
@@ -78,9 +80,6 @@ bind(
 
 -- space escape to remove highlighting
 bind("n", "<ESC>", ":nohl<CR>", { desc = "Remove highlighting" })
-
--- delete with space x without copying into register
-bind("n", "x", '"_x', { desc = "[X] Delete without copying into register" })
 
 -- space + and space - to increment/decrement
 bind("n", "<leader>=", "<C-a>", { remap = true, desc = "Increment number" })

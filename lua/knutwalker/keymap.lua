@@ -87,7 +87,7 @@ function M.crates()
             function()
                 require("crates").update_crate()
             end,
-            mode = { "n", "v" },
+            mode = { "n", "x" },
             desc = "[u]pdate [c]rate on line/in selection",
             noremap = true,
             silent = true,
@@ -106,7 +106,7 @@ function M.crates()
             function()
                 require("crates").upgrade_crate()
             end,
-            mode = { "n", "v" },
+            mode = { "n", "x" },
             desc = "[U]pgrade [c]rate on line/in selection",
             noremap = true,
             silent = true,
@@ -415,7 +415,7 @@ function M.dial()
             function()
                 return require("dial.map").inc_visual()
             end,
-            mode = "v",
+            mode = "x",
             desc = "Increment",
             expr = true,
             noremap = true,
@@ -425,7 +425,7 @@ function M.dial()
             function()
                 return require("dial.map").dec_visual()
             end,
-            mode = "v",
+            mode = "x",
             desc = "Decrement",
             expr = true,
             noremap = true,
@@ -435,7 +435,7 @@ function M.dial()
             function()
                 return require("dial.map").inc_gvisual()
             end,
-            mode = "v",
+            mode = "x",
             desc = "Increment",
             expr = true,
             noremap = true,
@@ -445,7 +445,7 @@ function M.dial()
             function()
                 return require("dial.map").dec_gvisual()
             end,
-            mode = "v",
+            mode = "x",
             desc = "Decrement",
             expr = true,
             noremap = true,

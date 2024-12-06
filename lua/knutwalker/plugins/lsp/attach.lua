@@ -49,10 +49,10 @@ function M.setup()
             require("knutwalker.plugins.lsp.rust").attach(bind)
         end
 
-        bind("<leader><CR>", ca, "Code Action", { "n", "x", "v" })
-        bind("<localleader><space>", ca, "Code Action", { "n", "x", "v" })
-        bind("<localleader><CR>", function() buf.code_action() end, "Code Action", { "n", "x", "v" })
-        bind("<M-Return>", ca, "Code Action", { "n", "x", "v" })
+        bind("<leader><CR>", ca, "Code Action", { "n", "x" })
+        bind("<localleader><space>", ca, "Code Action", { "n", "x" })
+        bind("<localleader><CR>", function() buf.code_action() end, "Code Action", { "n", "x" })
+        bind("<M-Return>", ca, "Code Action", { "n", "x" })
         bind("<M-Return>", ca, "Code Action", { "i" })
 
         bind("<leader>lr", cl.run, "[R]un Code Lens")
@@ -110,8 +110,7 @@ function M.setup()
 
             vim.api.nvim_buf_create_user_command(bufnr, "Format", format, { desc = "Format file with LSP" })
 
-            bind("<leader>lf", format, "[L]sp: [F]ormat")
-            bind("<leader>lf", format, "[L]sp: [F]ormat", "v")
+            bind("<leader>lf", format, "[L]sp: [F]ormat", { "n", "x" })
 
             bind("<leader>lF", function()
                 vim.g.autoformat_disabled = not vim.g.autoformat_disabled

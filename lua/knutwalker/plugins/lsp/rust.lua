@@ -74,10 +74,10 @@ end
 function M.attach(bind)
     local rt = require("rust-tools")
 
-    bind("<leader>R<CR>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x", "v" })
-    bind("<leader><Esc>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x", "v" })
-    bind([[<leader>\]], rt.hover_actions.hover_actions, "RA Hover Action", { "n", "x", "v" })
-    bind("<leader>k", rt.hover_actions.hover_actions, "RA: Hover Action", { "n", "x", "v" })
+    bind("<leader>R<CR>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x" })
+    bind("<leader><Esc>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x" })
+    bind([[<leader>\]], rt.hover_actions.hover_actions, "RA Hover Action", { "n", "x" })
+    bind("<leader>k", rt.hover_actions.hover_actions, "RA: Hover Action", { "n", "x" })
 
     bind("<leader>Rhs", rt.inlay_hints.set, "[R]ust inlay [h]ints [s]et")
     bind("<leader>Rhu", rt.inlay_hints.unset, "[R]ust inlay [h]ints [u]nset")
@@ -89,10 +89,10 @@ function M.attach(bind)
 
     bind("<leader>Rj", function()
         rt.move_item.move_item(false)
-    end, "[R]ust Move item down", { "n", "x", "v" })
+    end, "[R]ust Move item down", { "n", "x" })
     bind("<leader>Rk", function()
         rt.move_item.move_item(true)
-    end, "[R]ust Move item up", { "n", "x", "v" })
+    end, "[R]ust Move item up", { "n", "x" })
 
     bind("<leader>Rha", rt.hover_actions.hover_actions, "[R]ust [h]over [a]ctions")
     bind("<leader>Rhr", rt.hover_range.hover_range, "[R]ust [h]over [r]ange")
@@ -100,7 +100,7 @@ function M.attach(bind)
     bind("<leader>Rc", rt.open_cargo_toml.open_cargo_toml, "[R]ust [c]argo toml")
     bind("<leader>Rp", rt.parent_module.parent_module, "[R]ust [p]arent module")
 
-    bind("<leader>RJ", rt.join_lines.join_lines, "[R]ust [J]oin lines", { "n", "x", "v" })
+    bind("<leader>RJ", rt.join_lines.join_lines, "[R]ust [J]oin lines", { "n", "x" })
 
     bind("<leader>Rs", function()
         rt.ssr.ssr(vim.fn.input("SSR > "))
