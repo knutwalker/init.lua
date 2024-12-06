@@ -929,7 +929,9 @@ end
 
 function M.yazi()
     return {
-        { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle [Y]azi" },
+        { "<leader><leader>t", "<cmd>Yazi<CR>",        desc = "Open yazi at the current file" },
+        { "<leader><leader>T", "<cmd>Yazi cwd<CR>",    desc = "Open yazi in the current wd" },
+        { "<leader><leader>`", "<cmd>Yazi toggle<CR>", desc = "Result the last yazi session" },
     }
 end
 

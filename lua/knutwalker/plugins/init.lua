@@ -195,12 +195,11 @@ return {
     },
 
     {
-        "DreamMaoMao/yazi.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
+        "mikavilpas/yazi.nvim",
         keys = keymap.yazi(),
+        opts = {
+            open_for_directories = true,
+        },
     },
 
     {

@@ -175,15 +175,6 @@ bind("n", "<leader>gvw", function()
     git_drive(cmd)
 end, { desc = "git-dri[v]e [w]ith" })
 
--- sessionizer integration
-bind("n", "<leader><leader>", function()
-    require("lazy.util").float_term({ "sessionizer" }, {
-        border = "rounded",
-        size = { width = 0.75, height = 0.75 },
-        margin = { top = 2, right = 2, bottom = 2, left = 2 },
-    })
-end, { desc = "Open Sessionizer" })
-
 -- load or toggle supermaven
 bind("n", "<leader>C", function()
     local loaded = ((require("lazy.core.config").plugins["supermaven-nvim"] or {})._ or {}).loaded
