@@ -639,7 +639,9 @@ function M.telescope()
         {
             "<leader>ff",
             function()
-                require("telescope").extensions.menufacture.find_files()
+                require("telescope").extensions.menufacture.find_files({
+                    no_ignore = true
+                })
             end,
             desc = "[F]ind all [F]iles",
         },
