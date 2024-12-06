@@ -33,9 +33,7 @@ return {
         "chrisgrieser/nvim-various-textobjs",
         event = "BufReadPost",
         opts = {
-            useDefaultKeymaps = true,
-            keymaps = { useDefaults = true },
-            disabledKeymaps = { "gc" },
+            keymaps = { useDefaults = true, disabledDefaults = { "gc" } },
         },
     },
 
