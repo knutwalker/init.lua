@@ -5,10 +5,12 @@ function M.setup(lsp_opts)
         return
     end
 
-    local sdkman_dir = os.getenv("HOME") .. "/.sdkman/candidates/java"
+    local java_installs = os.getenv("HOME") .. "/.local/share/mise/installs/java/"
     local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
     local data_dir = vim.fn.stdpath("data") .. "/jdtls/data/" .. project_name
+    local project_dir = vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })
+    local root_dir = #project_dir > 0 and project_dir[1] or vim.fn.getcwd()
 
     local jdt_opts = {
         cmd = {
@@ -31,14 +33,14 @@ function M.setup(lsp_opts)
             "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
             "--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
             "-jar",
-            jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.600.v20231012-1237.jar",
+            jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar",
             "-configuration",
             jdtls_path .. "/config_mac",
             "-data",
             data_dir,
         },
 
-        root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
+        root_dir = root_dir,
 
         settings = {
             java = {
@@ -60,16 +62,16 @@ function M.setup(lsp_opts)
                 configuration = {
                     runtimes = {
                         {
-                            name = "JavaSE-11",
-                            path = sdkman_dir .. "/11.0.21-tem/",
-                        },
-                        {
                             name = "JavaSE-17",
-                            path = sdkman_dir .. "/17.0.9-tem/",
+                            path = java_installs .. "/temurin-17/",
                         },
                         {
-                            name = "JavaSE-22",
-                            path = sdkman_dir .. "/22.ea.26-open/",
+                            name = "JavaSE-21",
+                            path = java_installs .. "/temurin-21/",
+                        },
+                        {
+                            name = "JavaSE-23",
+                            path = java_installs .. "/temurin-23/",
                         },
                     },
                 },
@@ -142,4 +144,3 @@ function M.attach(bind)
 end
 
 return M
-
