@@ -411,9 +411,27 @@ function M.dial()
             noremap = true,
         },
         {
+            "g<C-a>",
+            function()
+                return require("dial.map").inc_gnormal()
+            end,
+            desc = "Increment",
+            expr = true,
+            noremap = true,
+        },
+        {
+            "g<C-x>",
+            function()
+                return require("dial.map").dec_gnormal()
+            end,
+            desc = "Decrement",
+            expr = true,
+            noremap = true,
+        },
+        {
             "<C-a>",
             function()
-                return require("dial.map").inc_visual()
+                return require("dial.map").inc_visual() .. "gv"
             end,
             mode = "x",
             desc = "Increment",
@@ -423,7 +441,7 @@ function M.dial()
         {
             "<C-x>",
             function()
-                return require("dial.map").dec_visual()
+                return require("dial.map").dec_visual() .. "gv"
             end,
             mode = "x",
             desc = "Decrement",
@@ -433,7 +451,7 @@ function M.dial()
         {
             "g<C-a>",
             function()
-                return require("dial.map").inc_gvisual()
+                return require("dial.map").inc_gvisual() .. "gv"
             end,
             mode = "x",
             desc = "Increment",
@@ -443,7 +461,7 @@ function M.dial()
         {
             "g<C-x>",
             function()
-                return require("dial.map").dec_gvisual()
+                return require("dial.map").dec_gvisual() .. "gv"
             end,
             mode = "x",
             desc = "Decrement",
