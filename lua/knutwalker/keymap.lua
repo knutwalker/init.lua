@@ -572,28 +572,12 @@ end
 function M.maximizer()
     return {
         {
-            "<C-m>",
+            "<C-n>",
             function()
                 require("maximize").toggle()
             end,
             silent = true,
             desc = "Toggle [m]aximizer",
-        },
-        {
-            "<F3>",
-            function()
-                require("maximize").restore()
-            end,
-            silent = true,
-            desc = "Restore maximized window",
-        },
-        {
-            "<S-F3>",
-            function()
-                require("maximize").maximize()
-            end,
-            silent = true,
-            desc = "Maximize current window",
         },
     }
 end

@@ -7,8 +7,6 @@ return {
 
     { "folke/which-key.nvim",          config = true },
 
-    { "declancm/maximize.nvim",        keys = keymap.maximizer(),                                                 opts = { default_keymaps = false } },
-
     { "famiu/bufdelete.nvim",          keys = keymap.bufdelete(),                                                 cmd = { "Bdelete" } },
 
     { "avli/vim-lox-syntax",           event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
@@ -16,6 +14,20 @@ return {
     { "andrewferrier/debugprint.nvim", event = { "BufReadPost" },                                                 config = true },
 
     { "rareitems/put_at_end.nvim",     keys = keymap.put_at_end() },
+
+
+    {
+        "declancm/maximize.nvim",
+        keys = keymap.maximizer(),
+        cmd = { "Maximize" },
+        opts = {
+            plugins = {
+                aerial = { enabled = false },
+                dapui = { enabled = false },
+                tree = { enabled = false },
+            },
+        },
+    },
 
     {
         "ThePrimeagen/harpoon",

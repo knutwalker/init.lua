@@ -65,6 +65,9 @@ vim.keymap.set({ "o", "x" }, "is", '<cmd>lua require("various-textobjs").subword
 -- Never press Q
 bind("n", "Q", "<nop>")
 
+-- Disable default <CR> behavior
+bind("n", "<CR>", "<nop>")
+
 -- Toggle dark/light mode
 bind("n", "<leader>M`", function()
     require("knutwalker.colors").toggle()
