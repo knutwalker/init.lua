@@ -72,6 +72,8 @@ function M.setup(lsp_opts)
 end
 
 function M.attach(bind)
+    M.workaround_nvim_30985()
+
     local rt = require("rust-tools")
 
     bind("<leader>R<CR>", rt.code_action_group.code_action_group, "[R]ust Code Action", { "n", "x" })
@@ -122,6 +124,18 @@ function M.attach(bind)
             end
         end
     end, "[R]ust clean [W]orkspace")
+end
+
+function M.workaround_nvim_30985()
+    for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+        local default_diagnostic_handler = vim.lsp.handlers[method]
+        vim.lsp.handlers[method] = function(err, result, context, config)
+            if err ~= nil and err.code == -32802 then
+                return
+            end
+            return default_diagnostic_handler(err, result, context, config)
+        end
+    end
 end
 
 return M
