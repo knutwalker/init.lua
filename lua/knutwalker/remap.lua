@@ -25,8 +25,8 @@ bind({ "n", "x" }, "<localleader>d", 'd', { desc = "Paste" })
 bind({ "n", "x" }, "<localleader>D", 'D', { desc = "Paste" })
 
 -- paste without losing the copied content
-bind({ "x" }, "p", '"_dp', { desc = "Paste without losing copied content" })
-bind({ "x" }, "P", '"_dP', { desc = "Paste without losing copied content" })
+bind({ "x" }, "p", '"_dP', { desc = "Paste without losing copied content" })
+bind({ "x" }, "P", '"_dp', { desc = "Paste without losing copied content" })
 bind({ "x" }, "<localleader>p", 'p', { desc = "Paste" })
 bind({ "x" }, "<localleader>P", 'P', { desc = "Paste" })
 
