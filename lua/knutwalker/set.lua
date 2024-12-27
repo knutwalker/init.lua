@@ -40,6 +40,9 @@ opt.background = "dark"
 opt.list = true
 opt.listchars = "space:·,lead:·,trail:·,nbsp:☐,tab:▸ ,extends:❯,precedes:❮"
 
+-- hide end of buffer marker
+vim.opt.fillchars = { eob = ' ' }
+
 -- set foldmethod to marker
 opt.foldmethod = "marker"
 
