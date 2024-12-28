@@ -67,10 +67,11 @@ function M.setup()
         bind("gl", function() buf.declaration({ on_list = on_list }) end, "[G]o to dec[l]aration")
 
         bind("gd", function() buf.definition({ on_list = on_list }) end, "[G]o to [d]efinition")
-        bind("<leader>lgd", telescope.lsp_definitions, "[G]o to [d]efinition")
+        bind("<leader><leader>d", telescope.lsp_definitions, "[G]o to [d]efinition")
 
         bind("<leader>s", telescope.lsp_document_symbols, "Search [s]ymbols in this file")
-        bind("<leader>ls", function() buf.document_symbol({ on_list = on_list }) end, "Search [s]ymbols in this file")
+        bind("<leader><leader>s", function() buf.document_symbol({ on_list = on_list }) end,
+            "Search [s]ymbols in this file")
 
         bind("K", buf.hover, "Hover symbol")
         bind("<M-k>", buf.hover, "Hover symbol", "i")
@@ -79,10 +80,10 @@ function M.setup()
         bind("<M-h>", buf.signature_help, "Signature [H]elp", "i")
 
         bind("gi", function() buf.implementation({ on_list = on_list }) end, "[G]o to [i]mplementation")
-        bind("<leader>lgi", telescope.lsp_implementations, "[G]o to [i]mplementation")
+        bind("<leader><leader>i", telescope.lsp_implementations, "[G]o to [i]mplementation")
 
         bind("gr", function() buf.references(nil, { on_list = on_list }) end, "[G]o to [r]eferences")
-        bind("<leader>lgr", telescope.lsp_references, "[G]o to [r]eferences")
+        bind("<leader><leader>r", telescope.lsp_references, "[G]o to [r]eferences")
 
         vim.keymap.set("n", "<leader>rr", function()
             return ":IncRename " .. vim.fn.expand("<cword>")
@@ -92,10 +93,10 @@ function M.setup()
 
         bind("gy", function() buf.type_definition({ on_list = on_list }) end, "[G]o to t[y]pe definition")
         bind("gY", function() buf.typehierarchy("supertypes") end, "[G]o to supert[y]pes")
-        bind("<leader>lgy", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
+        bind("<leader><leader>y", telescope.lsp_type_definitions, "[F]ind t[y]pe definitions")
 
         bind("<leader>S", telescope.lsp_dynamic_workspace_symbols, "Search [S]ymbols in this workspace")
-        bind("<leader>lS", function() buf.workspace_symbol() end, "Search [S]ymbols in this workspace")
+        bind("<leader><leader>S", function() buf.workspace_symbol() end, "Search [S]ymbols in this workspace")
         bind("<leader>fs", telescope.lsp_workspace_symbols, "Search [S]ymbols in this workspace (once)")
 
         if capabilities.documentFormattingProvider then
