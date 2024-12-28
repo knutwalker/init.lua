@@ -955,4 +955,13 @@ function M.vimtest()
     }
 end
 
+function M.debugprint()
+    return {
+        { "g?",    mode = { "n", "x" } },
+        { "<C-G>", mode = "i" },
+        { "g??",   "<cmd>ToggleCommentDebugPrints<CR>", desc = "Toggle debug prints" },
+        { "g?D",   "<cmd>DeleteDebugPrints<CR>",        desc = "Delete debug prints" },
+    }
+end
+
 return M

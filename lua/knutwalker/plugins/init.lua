@@ -1,20 +1,24 @@
 local keymap = require("knutwalker.keymap")
 
 return {
-    { "nvim-lua/plenary.nvim",         lazy = true },
+    { "nvim-lua/plenary.nvim",     lazy = true },
 
-    { "tpope/vim-unimpaired",          event = "BufReadPost" },
+    { "tpope/vim-unimpaired",      event = "BufReadPost" },
 
-    { "folke/which-key.nvim",          config = true },
+    { "folke/which-key.nvim",      config = true },
 
-    { "famiu/bufdelete.nvim",          keys = keymap.bufdelete(),                                                 cmd = { "Bdelete" } },
+    { "famiu/bufdelete.nvim",      keys = keymap.bufdelete(),                                                 cmd = { "Bdelete" } },
 
-    { "avli/vim-lox-syntax",           event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
+    { "avli/vim-lox-syntax",       event = { "BufReadPre *.lox", "BufReadPre *.crox", "BufReadPre *.bollox" } },
 
-    { "andrewferrier/debugprint.nvim", event = { "BufReadPost" },                                                 config = true },
+    { "rareitems/put_at_end.nvim", keys = keymap.put_at_end() },
 
-    { "rareitems/put_at_end.nvim",     keys = keymap.put_at_end() },
-
+    {
+        "andrewferrier/debugprint.nvim",
+        config = true,
+        keys = keymap.debugprint(),
+        cmd = { "ToggleCommentDebugPrints", "DeleteDebugPrints" }
+    },
 
     {
         "declancm/maximize.nvim",
