@@ -215,7 +215,7 @@ return {
     {
         'rmagatti/auto-session',
         opts = {
-            auto_session_suppress_dirs = { '/', '~/', '~/Downloads', '~/dev/tmp/' },
+            suppressed_dirs = { "/", "~/", "~/Downloads", "~/dev/tmp/" }
         },
     },
 
