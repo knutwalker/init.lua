@@ -51,7 +51,7 @@ bind("i", "<C-c>", "<Esc>", { desc = "Trigger <ESC> also in visual insert mode",
 bind("n", "0", "^", { desc = "Go to first non-whitespace character" })
 
 -- save in insert mode
-bind({ "n", "i" }, "<C-s>", "<CMD>:w<CR><ESC>")
+bind({ "n", "i" }, "<C-s>", "<CMD>:up<CR><ESC>")
 
 -- Add undo break-points
 bind("i", ",", ",<c-g>u")
