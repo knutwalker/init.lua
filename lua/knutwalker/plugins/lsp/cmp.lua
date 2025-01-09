@@ -16,10 +16,9 @@ function M.setup(lsp)
         ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
         -- Open suggestions or select next items
         ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-        -- Insert selected item
-        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        -- Replace with selected item
-        ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
+        -- Insert selected item, C-y will select the first, <CR> only when its selected
+        ["<C-y>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Insert }),
         -- Open usggestions
         ["<C-Space>"] = cmp.mapping.complete(),
         -- Close suggestions, in all modes
