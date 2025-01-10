@@ -261,4 +261,12 @@ return {
             },
         },
     },
+
+    {
+        "Wansmer/treesj",
+        keys = keymap.treesj(),
+        opts = {
+            use_default_keymaps = false,
+        },
+    },
 }

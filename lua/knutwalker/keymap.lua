@@ -964,4 +964,11 @@ function M.debugprint()
     }
 end
 
+function M.treesj()
+    return {
+        { "<leader>j", function() require('treesj').join() end,  desc = "[J]oin with treesitter support" },
+        { "<leader>J", function() require('treesj').split() end, desc = "Split/un[J]oin with treesitter support" },
+    }
+end
+
 return M

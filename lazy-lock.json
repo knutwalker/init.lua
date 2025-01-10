@@ -62,6 +62,7 @@
   "tiny-code-action.nvim": { "branch": "main", "commit": "8888f593c04c8acb29b04a71f6187ef6956be0cd" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "36b5eaf3a3b31e3647abbc80669d7c8491d0dcf8" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
+  "treesj": { "branch": "main", "commit": "ec234a9a13d61a7b95900abdb02fabaea1afd9f3" },
   "undotree": { "branch": "master", "commit": "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f" },
   "vim-lox-syntax": { "branch": "main", "commit": "06b8faad64aacfb545f65ba7b50733078d2b23bd" },
   "vim-test": { "branch": "master", "commit": "ade33384bd8ca8555853cf5d7dd26a293fcb332e" },
