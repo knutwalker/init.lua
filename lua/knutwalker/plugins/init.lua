@@ -247,5 +247,18 @@ return {
             vim.g['test#strategy'] = 'neovim'
         end,
         keys = keymap.vimtest(),
-    }
+    },
+
+    {
+        "laytan/cloak.nvim",
+        opts = {
+            patterns = {
+                {
+                    file_pattern = { "gradle.properties", "devenv", ".env*" },
+                    -- example: cloak_pattern = { ":.+", "-.+" } for yaml files.
+                    cloak_pattern = "=.+",
+                },
+            },
+        },
+    },
 }
