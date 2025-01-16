@@ -269,4 +269,9 @@ return {
             use_default_keymaps = false,
         },
     },
+
+    {
+        'danilamihailov/beacon.nvim',
+        event = "CursorMoved",
+    },
 }
