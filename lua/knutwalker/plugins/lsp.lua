@@ -130,6 +130,18 @@ return {
                 },
             })
 
+            set_lspconfig("zls", {
+                cmd = { os.getenv("HOME") .. "/.local/share/zigup/zls/zls" },
+                settings = {
+                    enable_build_on_save = true,
+                    highlight_global_var_declarations = true,
+                    warn_style = false,          -- the default
+                    skip_std_references = false, -- the default
+                    -- enable_autofix = true,
+                    -- force_autofix = true,
+                },
+            })
+
             return {
                 lsp.default_setup,
                 lua_ls = function()
@@ -150,6 +162,17 @@ return {
 
         -- Configure JDT ls
         require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
+
+        -- ZLS AutoFix
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = { "*.zig", "*.zon" },
+            callback = function(ev)
+                vim.lsp.buf.code_action({
+                    context = { triggerKind = 2, only = { "source.fixAll" }, diagnostics = {} },
+                    apply = true,
+                })
+            end
+        })
 
         -- Configure Formatter
 
