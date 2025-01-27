@@ -274,4 +274,20 @@ return {
         'danilamihailov/beacon.nvim',
         event = "CursorMoved",
     },
+
+    {
+        "m00qek/baleia.nvim",
+        version = "*",
+        config = function()
+            local baleia = require("baleia").setup({})
+
+            -- Command to colorize the current buffer
+            vim.api.nvim_create_user_command("AnsiDecode", function()
+                baleia.once(vim.api.nvim_get_current_buf())
+            end, { bang = true })
+
+            -- Command to show logs
+            vim.api.nvim_create_user_command("BaleiaLogs", baleia.logger.show, { bang = true })
+        end,
+    },
 }
