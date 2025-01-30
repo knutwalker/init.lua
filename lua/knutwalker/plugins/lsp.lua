@@ -47,7 +47,6 @@ return {
                 options = {
                     show_source = true,
                     use_icons_from_diagnostic = false,
-                    multiple_diag_under_cursor = false,
                     multilines = false,
                     enable_on_insert = true,
                 },
