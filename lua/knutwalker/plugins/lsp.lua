@@ -165,15 +165,6 @@ return {
         require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
 
         -- ZLS AutoFix
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = { "*.zig", "*.zon" },
-            callback = function(ev)
-                vim.lsp.buf.code_action({
-                    context = { triggerKind = 2, only = { "source.fixAll" }, diagnostics = {} },
-                    apply = true,
-                })
-            end
-        })
 
         -- Configure Formatter
 
