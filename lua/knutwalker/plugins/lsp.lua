@@ -130,9 +130,9 @@ return {
             })
 
             set_lspconfig("zls", {
-                cmd = { os.getenv("HOME") .. "/.zvm/bin/zls" },
+                cmd = { os.getenv("HOME") .. "/.local/share/zvm/bin/zls" },
                 settings = {
-                    zig_exe_path = os.getenv("HOME") .. "/.zvm/bin/zig",
+                    zig_exe_path = os.getenv("HOME") .. "/.local/share/zvm/bin/zig",
                     enable_build_on_save = true,
                     highlight_global_var_declarations = true,
                     warn_style = false,          -- the default
