@@ -271,11 +271,6 @@ return {
     },
 
     {
-        'danilamihailov/beacon.nvim',
-        event = "CursorMoved",
-    },
-
-    {
         "m00qek/baleia.nvim",
         version = "*",
         config = function()
