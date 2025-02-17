@@ -285,4 +285,11 @@ return {
             vim.api.nvim_create_user_command("BaleiaLogs", baleia.logger.show, { bang = true })
         end,
     },
+
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = keymap.flash(),
+    }
 }
