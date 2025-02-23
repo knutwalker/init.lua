@@ -981,4 +981,145 @@ function M.flash()
     }
 end
 
+function M.multicursor()
+    return {
+        {
+            "<C-up>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").lineAddCursor(-1)
+            end,
+            desc = "Add one cursor above"
+        },
+        {
+            "<leader><up>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").lineSkipCursor(-1)
+            end,
+            desc = "Skip one line above"
+        },
+        {
+            "<C-down>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").lineAddCursor(1)
+            end,
+            desc = "Add one cursor below"
+        },
+        {
+            "<leader><down>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").lineSkipCursor(1)
+            end,
+            desc = "Skip one line below"
+        },
+        {
+            "<C-right>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").addCursor("w")
+            end,
+            desc = "Add one cursor to the right"
+        },
+        {
+            "<C-left>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").addCursor("b")
+            end,
+            desc = "Add one cursor to the left"
+        },
+        {
+            "<C-g>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").matchAddCursor(1)
+            end,
+            desc = "Add new cursor by matching word/selection"
+        },
+        {
+            "<C-b>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").operator()
+            end,
+            desc = "Add new cursor based on an operator"
+        },
+        {
+            "<c-leftmouse>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").handleMouse()
+            end,
+            desc = "Add new cursor by clicking"
+        },
+        {
+            "<c-leftdrag>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").handleMouseDrag()
+            end,
+            desc = "Add new cursor by dragging"
+        },
+        {
+            "<c-leftrelease>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").handleMouseRelease()
+            end,
+            desc = "Add cursor by releasing"
+        },
+        {
+            "<c-q>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").clearCursors()
+            end,
+            desc = "Clear cursors"
+        },
+        {
+            "<localleader>a",
+            mode = { "n" },
+            function()
+                require("multicursor-nvim").alignCursors()
+            end,
+            desc = "Align cursors"
+        },
+        {
+            "I",
+            mode = { "x" },
+            function()
+                require("multicursor-nvim").insertVisual()
+            end,
+            desc = "Insert visual selection"
+        },
+        {
+            "A",
+            mode = { "x" },
+            function()
+                require("multicursor-nvim").appendVisual()
+            end,
+            desc = "Append visual selection"
+        },
+        {
+            "<C-i>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").jumpForward()
+            end,
+            desc = "Jump forward"
+        },
+        {
+            "<C-o>",
+            mode = { "n", "x" },
+            function()
+                require("multicursor-nvim").jumpBackward()
+            end,
+            desc = "Jump backward"
+        },
+    }
+end
+
 return M
