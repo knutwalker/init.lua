@@ -53,6 +53,9 @@ bind("n", "0", "^", { desc = "Go to first non-whitespace character" })
 -- save in insert mode
 bind({ "n", "i" }, "<C-s>", "<CMD>:up<CR><ESC>")
 
+-- quit all
+bind({ "n" }, "<leader><leader>q", "<CMD>:wqa<CR>")
+
 -- Add undo break-points
 bind("i", ",", ",<c-g>u")
 bind("i", ".", ".<c-g>u")
