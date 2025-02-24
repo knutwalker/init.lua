@@ -209,14 +209,6 @@ return {
     },
 
     {
-        "mikavilpas/yazi.nvim",
-        keys = keymap.yazi(),
-        opts = {
-            open_for_directories = true,
-        },
-    },
-
-    {
         'rmagatti/auto-session',
         opts = {
             suppressed_dirs = { "/", "~/", "~/Downloads", "~/dev/tmp/" }

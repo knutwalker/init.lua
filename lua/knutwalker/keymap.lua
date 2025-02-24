@@ -931,14 +931,6 @@ function M.glow()
     }
 end
 
-function M.yazi()
-    return {
-        { "<leader><leader>t", "<cmd>Yazi<CR>",        desc = "Open yazi at the current file" },
-        { "<leader><leader>T", "<cmd>Yazi cwd<CR>",    desc = "Open yazi in the current wd" },
-        { "<leader><leader>`", "<cmd>Yazi toggle<CR>", desc = "Result the last yazi session" },
-    }
-end
-
 function M.undotree()
     return {
         { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle [U]ndo tree" },
