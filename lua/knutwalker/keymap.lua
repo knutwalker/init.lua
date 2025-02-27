@@ -604,6 +604,13 @@ end
 function M.telescope()
     return {
         {
+            "<leader><leader>/",
+            function()
+                require("telescope.builtin").builtin()
+            end,
+            desc = "Search Telescope",
+        },
+        {
             "<leader>/",
             function()
                 local builtin = require("telescope").extensions.menufacture
@@ -713,13 +720,6 @@ function M.telescope()
             desc = "[F]ind [']marks",
         },
         {
-            "<leader>fM",
-            function()
-                require("telescope.builtin").man_pages()
-            end,
-            desc = "[F]ind [M]an",
-        },
-        {
             [[<leader>"]],
             function()
                 require("telescope.builtin").registers()
@@ -774,18 +774,18 @@ function M.telescope()
             desc = "[T]elescope",
         },
         {
-            "<leader>fq",
+            "<leader>Q",
             function()
                 require("telescope.builtin").quickfix()
             end,
-            desc = "[F]ind [q]uickfix items",
+            desc = "Find [q]uickfix items",
         },
         {
             "<leader>fQ",
             function()
                 require("telescope.builtin").quickfixhistory()
             end,
-            desc = "[F]ind [q]uickfix items",
+            desc = "[F]ind [q]uickfix history",
         },
         {
             "<leader>gb",
