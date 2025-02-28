@@ -12,7 +12,7 @@ return {
         { "simrat39/rust-tools.nvim" },
 
         -- Java LSP support
-        { "mfussenegger/nvim-jdtls" },
+        { 'nvim-java/nvim-java' },
 
         -- Formatting
         "nvimtools/none-ls.nvim",
@@ -77,6 +77,9 @@ return {
         vim.g.zig_fmt_parse_errors = 0
         vim.g.zig_fmt_autosave = 0
 
+        -- Setup nvim-java before anything else
+        require('java').setup()
+
         local lsp = require("lsp-zero")
 
         require("knutwalker.plugins.lsp.cmp").setup(lsp)
@@ -108,7 +111,7 @@ return {
 
         -- save configs for RA/JDT and null-ls since we set those up manually
         local rust_lsp_opts = lsp.build_options("rust_analyzer", {})
-        local jdtls_lsp_opts = lsp.build_options("jdtls", {})
+        -- local jdtls_lsp_opts = lsp.build_options("jdtls", {})
 
         lsp.setup()
 
@@ -160,8 +163,8 @@ return {
         -- Configure rust-tools
         require("knutwalker.plugins.lsp.rust").setup(rust_lsp_opts)
 
-        -- Configure JDT ls
-        require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
+        -- -- Configure JDT ls
+        -- require("knutwalker.plugins.lsp.java").setup(jdtls_lsp_opts)
 
         -- ZLS AutoFix
 

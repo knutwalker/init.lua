@@ -120,27 +120,27 @@ function M.setup(lsp_opts)
 end
 
 function M.attach(bind)
-    local jdtls = require("jdtls")
-
-    bind("<leader>Jo", jdtls.organize_imports, "[J]ava [O]rganize imports")
-    bind("<leader>Jtc", jdtls.test_class, "[J]ava [T]est [C]lass")
-    bind("<leader>Jtm", jdtls.test_nearest_method, "[J]ava [T]est [M]ethod")
-    bind("<leader>Jv", jdtls.extract_variable, "[J]ava Extract [V]ariable")
-    bind("<leader>Jc", jdtls.extract_constant, "[J]ava Extract [C]onstant")
-    bind("<leader>Jv", function()
-        jdtls.extract_variable(true)
-    end, "[J]ava Extract [V]ariable", "x")
-    bind("<leader>Jc", function()
-        jdtls.extract_constant(true)
-    end, "[J]ava Extract [C]onstant", "x")
-    bind("<leader>Jm", function()
-        jdtls.extract_method(true)
-    end, "[J]ava Extract [M]ethod", "x")
-    bind("<leader>JD", function()
-        require("jdtls.dap").setup_dap_main_class_configs()
-    end, "[J]ava [D]ebugger")
-
-    jdtls.setup_dap({ hotcodereplace = "auto" })
+    -- local jdtls = require("jdtls")
+    --
+    -- bind("<leader>Jo", jdtls.organize_imports, "[J]ava [O]rganize imports")
+    -- bind("<leader>Jtc", jdtls.test_class, "[J]ava [T]est [C]lass")
+    -- bind("<leader>Jtm", jdtls.test_nearest_method, "[J]ava [T]est [M]ethod")
+    -- bind("<leader>Jv", jdtls.extract_variable, "[J]ava Extract [V]ariable")
+    -- bind("<leader>Jc", jdtls.extract_constant, "[J]ava Extract [C]onstant")
+    -- bind("<leader>Jv", function()
+    --     jdtls.extract_variable(true)
+    -- end, "[J]ava Extract [V]ariable", "x")
+    -- bind("<leader>Jc", function()
+    --     jdtls.extract_constant(true)
+    -- end, "[J]ava Extract [C]onstant", "x")
+    -- bind("<leader>Jm", function()
+    --     jdtls.extract_method(true)
+    -- end, "[J]ava Extract [M]ethod", "x")
+    -- bind("<leader>JD", function()
+    --     require("jdtls.dap").setup_dap_main_class_configs()
+    -- end, "[J]ava [D]ebugger")
+    --
+    -- jdtls.setup_dap({ hotcodereplace = "auto" })
 end
 
 return M
