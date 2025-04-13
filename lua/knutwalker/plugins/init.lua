@@ -217,7 +217,10 @@ return {
 
     {
         "OXY2DEV/markview.nvim",
-        lazy = false, -- Recommended
+        lazy = false, -- Recommended,
+        opts = {
+            preview = { enable = false },
+        },
     },
 
     {
