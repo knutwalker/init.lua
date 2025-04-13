@@ -1,2 +1,2 @@
-vim.bo.makeprg = [[zig test %]]
+vim.bo.makeprg = [[zig build test -- %]]
 vim.bo.comments = [[://!,:///,://,:\\]]
