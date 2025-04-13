@@ -5,6 +5,8 @@ opt.guicursor = "n-c-sm:hor100,i-ci-ve:ver25,v-r-cr-o:block"
 -- highlight line with cursor
 opt.cursorline = true
 
+vim.opt.mousescroll = "ver:1,hor:6"
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true
