@@ -1,6 +1,6 @@
--- set leader to space
+-- set leader to space, localleader to \ (which is the default)
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = "\\"
 
 local bind = vim.keymap.set
 
