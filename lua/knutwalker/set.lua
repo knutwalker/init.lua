@@ -1,5 +1,7 @@
 local opt = vim.o
 
+vim.g.omni_sql_no_default_maps = 1
+
 -- big cursor in insert mode
 opt.guicursor = "n-c-sm:hor100,i-ci-ve:ver25,v-r-cr-o:block"
 -- highlight line with cursor
