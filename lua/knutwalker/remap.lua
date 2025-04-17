@@ -112,8 +112,10 @@ bind("n", "<leader>qp", ":cprev<CR>zz", { desc = "[P]revious quickfix item" })
 bind("n", "<leader>qo", ":copen<CR>", { desc = "[O]pen the quickfix list" })
 bind("n", "<leader>qq", ":cclose<CR>", { desc = "[Q]uit quickfix list" })
 bind("n", "<leader>qc", ":cc ", { desc = "Select an item from the quickfix list" })
-bind("n", "<leader>qN", ":cnewer<CR>", { desc = "Newer quickfix list" })
-bind("n", "<leader>qP", ":colder<CR>", { desc = "Older quickfix list" })
+bind("n", "[q", ":cprev<CR>zz", { desc = "Previous quickfix item" })
+bind("n", "]q", ":cnext<CR>zz", { desc = "Next quickfix item" })
+bind("n", "[Q", ":colder<CR>:cc<CR>zz", { desc = "Older quickfix list" })
+bind("n", "]Q", ":cnewer<CR>:cc<CR>zz", { desc = "Newer quickfix list" })
 
 -- navigate the location list
 bind("n", "<leader>ln", ":lnext<CR>zz", { desc = "[N]ext location item" })
